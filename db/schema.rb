@@ -10,7 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171112100128) do
+ActiveRecord::Schema.define(version: 20171117104526) do
+
+  create_table "microposts", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_microposts_on_user_id"
+  end
+
+  create_table "reminders", force: :cascade do |t|
+    t.date     "date"
+    t.string   "reference"
+    t.string   "vocus_ticket"
+    t.string   "nbn_search"
+    t.string   "service_type"
+    t.integer  "priority"
+    t.boolean  "complete",     default: false
+    t.integer  "user_id"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "notes"
+    t.boolean  "vocus"
+    t.index ["user_id", "date"], name: "index_reminders_on_user_id_and_date"
+    t.index ["user_id"], name: "index_reminders_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

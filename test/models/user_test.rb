@@ -77,4 +77,24 @@ class UserTest < ActiveSupport::TestCase
   test "authenticated? should return false for a user with nil digest" do
     assert_not @user.authenticated?('')
   end
+
+  test "associated microposts should be destroyed" do
+    @user.save
+    @user.microposts.create!(content: "Lorem ipsum")
+    assert_difference 'Micropost.count', -1 do
+      @user.destroy
+    end
+  end
+
+  test "associated reminders should be destroyed" do
+    @user.save
+    @user.reminders.create!(date: Date.today, reference: "4044217",
+                            vocus_ticket: "322204", nbn_search: "INC000005717907",
+                            service_type: "FTTN", priority: 5,
+                            complete: false, notes: "OFFLINE | Contact? Usage?",
+                            vocus: false)
+    assert_difference 'Reminder.count', -1 do
+      @user.destroy
+    end
+  end
 end

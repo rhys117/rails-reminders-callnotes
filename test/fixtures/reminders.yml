@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2017-11-16
+  reference: MyString
+  vocus_ticket: MyString
+  nbn_search: MyString
+  service_type: MyString
+  priority: 1
+  complete: false
+  user: one
+
+two:
+  date: 2017-11-16
+  reference: MyString
+  vocus_ticket: MyString
+  nbn_search: MyString
+  service_type: MyString
+  priority: 1
+  complete: false
+  user: two
