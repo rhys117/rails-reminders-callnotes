@@ -1,0 +1,52 @@
+<%= form_for(@reminder, url: yield(:url)) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="form-row row">
+    <div class="form-group col-md-2">
+      <%= f.label :reference %>
+      <%= f.number_field :reference, class: 'form-control input-sm' %>
+    </div>
+    <div class="form-group col-md-2">
+      <%= f.label :vocus_ticket %>
+      <%= f.number_field :vocus_ticket, class: 'form-control input-sm' %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :nbn_search %>
+      <%= f.text_field :nbn_search, class: 'form-control input-sm' %>
+    </div>
+    <div class="form-group col-md-5">
+      <%= f.label :notes %>
+      <%= f.text_field :notes, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-row row">
+    <div class="form-group col-md-2">
+      <%= f.label :select_date, 'Remind me in' %>
+      <%= f.select :select_date, {"Today" => 0, "Tomorrow" => 1, "Two days" => 2, "Three days" => 3, "Five days" => 5, "Seven days" => 7}, { prompt: 'Select one', selected: @reminder.select_date }, { :class => 'form-control input-sm' } %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :date, 'Or set custom date' %>
+      <%= f.date_field :date, class: 'form-control input-sm' %>
+    </div>
+
+    <div class="form-group col-md-2">
+    </div>
+
+    <div class="form-group col-md-1">
+      <%= f.label :vocus %>
+      <%= f.check_box :vocus, {}, class: "form-control" %>
+    </div>
+
+    <div class="form-group col-md-2">
+      <%= f.label :service_type %>
+      <%= f.select :service_type, ["FTTN/B", "FTTP", "HFC", "LTS", "FW", "VOIP/UNIV", "PSTN", "LEGACY SERVICE"], { selected: @reminder.service_type }, class: 'form-control' %>
+    </div>
+
+    <div class="form-group col-md-2">
+      <%= f.label :priority %>
+      <%= f.select :priority, [1, 2, 3, 4, 5], { selected: @reminder.priority }, class: 'form-control' %>
+    </div>
+  </div>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

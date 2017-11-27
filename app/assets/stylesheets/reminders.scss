@@ -1,3 +1,33 @@
 // Place all the styles related to the Reminders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.complete {
+  border: none !important;
+  text-decoration: line-through;
+}
+
+.priority-1 {
+  border-top: 2px solid blue;
+}
+
+.priority-2 {
+  border-top: 2px solid green;
+}
+
+.priority-3 {
+  border-top: 2px solid #bdc400;
+}
+
+.priority-4 {
+  border-top: 2px solid orange;
+}
+
+.priority-5 {
+  border-top: 2px solid red;
+}

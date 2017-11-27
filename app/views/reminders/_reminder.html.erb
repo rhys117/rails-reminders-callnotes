@@ -1,0 +1,20 @@
+<tr id="reminder-<%= reminder.id %>" class="priority-<%= reminder.priority %> <%= "complete" if reminder.complete %>">
+  <td class="col-md-2 text-left">
+    <%= link_to reminder.reference, reference_url(reminder.reference), :target => "_blank" %>
+  </td>
+  <td class="col-md-2 text-right">
+    <%= render partial: 'reminders/service_type', locals: {reminder: reminder} %>
+  </td>
+  <td class="col-md-6 text-left">
+    <%= reminder.notes %>
+  </td>
+  <td>
+    <%= link_to inverse_complete_value(reminder), inverse_complete_reminder_path(reminder.id), :method=> :patch, class: "btn btn-default btn-xs" %>
+  </td>
+  <td>
+    <%= link_to 'Delete', reminder, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-xs" %>
+  </td>
+  <td>
+    <%= link_to 'Edit', edit_reminder_path(reminder.id), class: 'btn btn-default btn-xs' %>
+  </td>
+</tr>

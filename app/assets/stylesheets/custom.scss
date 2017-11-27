@@ -45,15 +45,6 @@ h1 {
   text-align: center;
 }
 
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: $gray_light;
-}
-
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -248,4 +239,22 @@ span.picture {
   input {
     border: 0;
   }
+}
+
+.divider-10{
+  width:100%;
+  min-height:1px;
+  margin-top:10px;
+  margin-bottom:10px;
+  display:inline-block;
+  position:relative;
+}
+
+.divider-40{
+  width:100%;
+  min-height:1px;
+  margin-top:40px;
+  margin-bottom:40px;
+  display:inline-block;
+  position:relative;
 }

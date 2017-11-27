@@ -1,0 +1,12 @@
+<table id="reminders-current" class="col-centered mb-1">
+  <tr>
+    <th class="col-md-2 text-left">Ref #</th>
+    <th class="col-md-2 text-right">Service Type</th>
+    <th class="col-md-6 text-left">Notes</th>
+  </tr>
+  <tr>
+    <% @reminders.each do |reminder| %>
+      <%= render partial: 'reminders/reminder', locals: {reminder: reminder} %>
+    <% end %>
+  </tr>
+</table>

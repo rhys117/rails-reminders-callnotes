@@ -1,0 +1,8 @@
+ <% if reminder.vocus_ticket %>
+  <%= link_to "(vocus)", vocus_url(reminder.vocus_ticket), :target => "_blank" %> 
+<% elsif reminder.vocus %>
+  <%= "(vocus) " if reminder.vocus %>
+<% elsif reminder.nbn_search %>
+  <%= link_to "(nbn)", nbn_url(reminder.nbn_search), :target => "_blank" %> 
+<% end %>
+<%= reminder.service_type %>

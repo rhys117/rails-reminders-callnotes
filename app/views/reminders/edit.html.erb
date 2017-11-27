@@ -1,0 +1,8 @@
+<% provide(:button_text, 'Save changes') %>
+<% provide(:url, reminder_path(method: :patch)) %>
+<h1>Update reminder</h1>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <%= render 'form' %>
+  </div>
+</div>
