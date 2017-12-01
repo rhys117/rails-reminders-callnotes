@@ -3,7 +3,11 @@ class RemindersController < ApplicationController
   before_action :correct_user
 
   def index
-    @reminders = current_user.reminders.ordered_date_completed_priority.paginate(page: params[:page], per_page: 20)
+    @reminders = if params[:search]
+      current_user.reminders.search(params[:search]).ordered_date_completed_priority.paginate(page: params[:page], per_page: 20)
+    else
+      current_user.reminders.ordered_date_completed_priority.paginate(page: params[:page], per_page: 20)
+    end
   end
 
   def new
@@ -14,6 +18,8 @@ class RemindersController < ApplicationController
     @reminder = current_user.reminders.build(reminder_params)
     if @reminder.save
       flash[:success] = "Reminder created"
+      session[:rt_copy] = rt_note(@reminder)
+      session[:rt_date] = @reminder.date
       redirect_back(fallback_location: root_path)
     else
       render 'new'
@@ -35,7 +41,7 @@ class RemindersController < ApplicationController
 
   def update
     if @reminder = current_user.reminders.find(params[:id]).update_attributes(reminder_params)
-      flash[:success] = "Reminder Updated"
+      flash[:success] = "Reminder updated"
       redirect_to(root_url)
     else
       @reminder = current_user.reminders.build(reminder_params)
@@ -47,7 +53,7 @@ class RemindersController < ApplicationController
 
   def destroy
     if current_user.reminders.find(params[:id]).destroy
-      flash[:warning] = "Reminder Deleted"
+      flash[:warning] = "Reminder deleted"
       redirect_back(fallback_location: root_path)
     else
       flash[:error] = "Whoops! Something went wrong"
@@ -65,6 +71,16 @@ class RemindersController < ApplicationController
 
     def reminder_params
       params.require(:reminder).permit(:reference, :vocus_ticket, :nbn_search, :select_date,
-                                       :date, :vocus, :service_type, :notes, :priority)
+                                       :date, :vocus, :service_type, :notes, :priority,
+                                       :fault_type, :check_for, :search)
+    end
+
+    def rt_note(reminder)
+      combined = ""
+      combined << "#{reminder.fault_type.upcase} | " unless reminder.fault_type.nil?
+      combined << "#{reminder.check_for}? " unless reminder.check_for.nil?
+      combined << "#{reminder.notes}" unless reminder.notes.nil?
+      combined
+      "#{@reminder.service_type} #{combined}"
     end
 end

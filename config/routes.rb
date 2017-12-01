@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   resources :users
+  resources :quick_notes
   resources :reminders do
     member do
       patch 'inverse_complete'

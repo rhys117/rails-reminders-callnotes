@@ -14,4 +14,10 @@
 //= require bootstrap
 //= require jquery_ujs
 //= require turbolinks
+//= require clipboard
 //= require_tree .
+
+$(document).ready(function(){  
+  var clipboard = new Clipboard('.copy-text');
+  console.log(clipboard);
+});

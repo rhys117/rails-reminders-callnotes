@@ -9,11 +9,16 @@ class Reminder < ApplicationRecord
   scope :ordered_priority, -> { order(priority: :DESC) }
   validates :user_id, presence: true
   validates :reference, presence: true
-  validates :notes, presence: true
+  validates :notes, presence: true, unless: -> (reminder){reminder.check_for.present?}
   validates :date, presence: true, unless: -> (reminder){reminder.select_date.present?}
   validates :service_type, presence: true
   validates :priority, presence: true
   validates_inclusion_of :complete, :in => [true, false]
+
+
+def self.search(search)
+  where("nbn_search LIKE ? OR notes LIKE ? OR service_type LIKE ? OR reference LIKE ? OR check_for LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+end
 
   private
 

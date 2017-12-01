@@ -7,27 +7,36 @@
     margin: 0 auto;
 }
 
+tr > td {
+  padding-top: 5px;
+}
+
 .complete {
   border: none !important;
   text-decoration: line-through;
 }
 
 .priority-1 {
-  border-top: 2px solid blue;
+  border-left: 5px solid blue;
+  border-bottom: 1px solid grey;
 }
 
 .priority-2 {
-  border-top: 2px solid green;
+  border-left: 5px solid green;
+  border-bottom: 1px solid grey;
 }
 
 .priority-3 {
-  border-top: 2px solid #bdc400;
+  border-left: 5px solid #FFFF00;
+  border-bottom: 1px solid grey;
 }
 
 .priority-4 {
-  border-top: 2px solid orange;
+  border-left: 5px solid #FFB200;
+  border-bottom: 1px solid grey;
 }
 
 .priority-5 {
-  border-top: 2px solid red;
+  border-left: 5px solid red;
+  border-bottom: 1px solid grey;
 }

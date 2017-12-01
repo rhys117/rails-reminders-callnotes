@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
     if logged_in?
       @reminders = current_user.reminders.ordered_priority.where('date <= ? AND complete= ?', Date.today, 'f')
       @reminder = Reminder.new
+      @quick_notes = current_user.quick_notes.all
     end
   end
 

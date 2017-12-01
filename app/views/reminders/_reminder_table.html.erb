@@ -1,16 +1,13 @@
-<% @reminders.group_by(&:date).each do |date, reminders| %>
-  <h2 class="text-center"><%= display_date(date) %></h2>
-  <table id="reminders-<%= date %>" class="col-centered">
-    <tr>
-      <th class="col-md-2 text-left">Ref #</th>
-      <th class="col-md-2 text-right">Service Type</th>
-      <th class="col-md-6 text-left">Notes</th>
-    </tr>
-    <tr>
-      <% reminders.each do |reminder| %>
-        <%= render reminder %>
-      <% end %>
-    </tr>
-  </table>
-  <div class="divider-10"></div>
-<% end %>
+<table id="reminders">
+  <tr>
+    <th class="col-md-1 text-left">Ref #</th>
+    <th class="col-md-3 text-right">Service Type</th>
+    <th class="col-md-4 text-left">Notes</th>
+  </tr>
+  <tr>
+    <% reminders.each do |reminder| %>
+      <%= render reminder %>
+    <% end %>
+  </tr>
+</table>
+

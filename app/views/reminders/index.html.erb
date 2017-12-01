@@ -1,9 +1,20 @@
 <% provide(:title, 'Reminders') %>
 
 <h1 class="text-center">Reminders</h1>
-<div class="divider-40"></div>
 
-<%= render 'reminder_table' %>
+<%= form_tag(reminders_path, method: :get, id: "search-form") do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
+<div class="divider-40"></div>
+<% @reminders.group_by(&:date).each do |date, reminders| %>
+  <div class="col-centered col-md-8">
+    <h2 class="text-center"><%= display_date(date) %></h2>
+      <%= render partial: 'reminder_table', locals: { reminders: reminders } %>
+    <div class="divider-10"></div>
+  </div>
+<% end %>
 
 <div class="text-right">
   <%= will_paginate %>
