@@ -17,7 +17,7 @@ class Reminder < ApplicationRecord
 
 
 def self.search(search)
-  where("nbn_search LIKE ? OR notes LIKE ? OR service_type LIKE ? OR reference LIKE ? OR check_for LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+  where("nbn_search ILIKE ? OR notes ILIKE ? OR service_type ILIKE ? OR reference ILIKE ? OR check_for ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
 end
 
   private
