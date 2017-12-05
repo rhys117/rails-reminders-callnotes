@@ -14,8 +14,8 @@ module RemindersHelper
   def combined_notes(reminder)
     combined = ""
     combined << "#{reminder.fault_type.upcase} | " unless reminder.fault_type.nil?
-    combined << "#{reminder.check_for}? " unless reminder.check_for.nil?
-    combined << "#{reminder.notes}" unless reminder.notes.nil?
+    combined << "#{reminder.notes} " unless reminder.notes.nil?
+    combined << "#{reminder.check_for}?" unless reminder.check_for.nil?
     combined
   end
 end

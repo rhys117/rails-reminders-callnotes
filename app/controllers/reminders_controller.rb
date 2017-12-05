@@ -78,8 +78,8 @@ class RemindersController < ApplicationController
     def rt_note(reminder)
       combined = ""
       combined << "#{reminder.fault_type.upcase} | " unless reminder.fault_type.nil?
-      combined << "#{reminder.check_for}? " unless reminder.check_for.nil?
-      combined << "#{reminder.notes}" unless reminder.notes.nil?
+      combined << "#{reminder.notes} " unless reminder.notes.nil?
+      combined << "#{reminder.check_for}?" unless reminder.check_for.nil?
       combined
       "#{@reminder.service_type} #{combined}"
     end

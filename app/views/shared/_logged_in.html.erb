@@ -7,6 +7,12 @@
 </aside>
 
 <section class="d-inline-block">
+  <div class='col-md-9'></div>
+  <div class="col-md-3">
+    <%= form_tag(reminders_path, method: :get, id: "search-form") do %>
+    <%= text_field_tag :search, nil, { placeholder: 'search', class: 'form-control' } %>
+  <% end %>
+  </div>
   <h2>Current Reminders</h2>
     <div class="divider-10"></div>
     <%= render partial: 'reminders/reminder_table', locals: { reminders: @reminders } %>

@@ -29,17 +29,17 @@
   <div class="form-row row">
     <div class="form-group col-md-2">
       <%= f.label :fault_type %>
-      <%= f.select :fault_type, ["Offline", "Dropouts", "Speed", "Outage"], { include_blank: 'optional', selected: @reminder.fault_type }, class: 'form-control input-sm' %>
-    </div>
-
-    <div class="form-group col-md-2">
-      <%= f.label :check_for, "Check for?" %>
-      <%= f.select :check_for, ["Online/usage", "Customer contact", "nbn reponse", "vocus response", "Work ticket update", "2DayWarning"], { include_blank: "optional", selected: @reminder.check_for }, class: 'form-control input-sm' %>
+      <%= f.select :fault_type, ["Offline", "Dropouts", "Speed", "Outage", "Migration"], { include_blank: 'optional', selected: @reminder.fault_type }, class: 'form-control input-sm' %>
     </div>
 
     <div class="form-group col-md-3">
       <%= f.label :notes %>
       <%= f.text_field :notes, class: 'form-control' %>
+    </div>
+
+    <div class="form-group col-md-2">
+      <%= f.label :check_for, "Check for?" %>
+      <%= f.select :check_for, ["online/usage", "customer contact", "nbn reponse", "vocus response", "work ticket update", "2DayWarning"], { include_blank: "optional", selected: @reminder.check_for }, class: 'form-control input-sm' %>
     </div>
 
     <div class="form-group col-md-1">

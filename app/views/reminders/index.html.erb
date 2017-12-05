@@ -1,11 +1,13 @@
 <% provide(:title, 'Reminders') %>
 
-<h1 class="text-center">Reminders</h1>
+<div class='col-md-10'></div>
+<div class="col-md-2">
+  <%= form_tag(reminders_path, method: :get, id: "search-form") do %>
+    <%= text_field_tag :search, nil, { placeholder: 'search', class: 'form-control' } %>
+  <% end %>
+</div>
 
-<%= form_tag(reminders_path, method: :get, id: "search-form") do %>
-  <%= text_field_tag :search %>
-  <%= submit_tag 'Search' %>
-<% end %>
+<h1 class="text-center">Reminders</h1>
 
 <div class="divider-40"></div>
 <% @reminders.group_by(&:date).each do |date, reminders| %>
