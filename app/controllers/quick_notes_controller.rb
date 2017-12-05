@@ -3,6 +3,10 @@ class QuickNotesController < ApplicationController
     @quick_note = QuickNote.new
   end
 
+  def index
+    @quick_notes = current_user.quick_notes.all.paginate(page: params[:page])
+  end
+
   def create
     @quick_note = current_user.quick_notes.build(quick_note_params)
     if @quick_note.save
@@ -11,6 +15,12 @@ class QuickNotesController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def destroy
+    current_user.quick_notes.find(params[:id]).destroy
+    flash[:success] = "Quick note deleted"
+    redirect_to quick_notes_url
   end
 
   private

@@ -1,0 +1,10 @@
+<% provide(:title, 'All Quick Notes') %>
+<h1>All Quick Notes</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <%= render @quick_notes %>
+</ul>
+
+<%= will_paginate %>
