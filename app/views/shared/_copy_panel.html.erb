@@ -3,7 +3,7 @@
 <% @quick_notes.group_by(&:category).each do |category, notes| %>
   <h4><%= category %></h4>
     <% notes.each do |note| %>
-      <p class="copy-data" id="<%= "#{note.category}-#{note.name}" %>"><%= note.content %></p>
-      <a class="copy-text btn-primary btn-xs text-nowrap" data-clipboard-target="#<%= "#{note.category}-#{note.name}" %>" data-clipboard-action="copy"><%= note.name %></a>
+      <p class="copy-data" id="<%= note_id(note) %>"><%= note.content %></p>
+      <a class="copy-text btn-primary btn-xs text-nowrap" data-clipboard-target="#<%= note_id(note) %>" data-clipboard-action="copy"><%= note.name %></a>
     <% end %>
 <% end %>

@@ -24,4 +24,8 @@ module ApplicationHelper
   def nbn_url(search)
     "https://www1.nbnco.com.au/online_customers/page/home?search=#{search}"
   end
+
+  def note_id(note)
+    "#{note.category}-#{note.name}".gsub(' ', '-')
+  end
 end
