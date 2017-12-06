@@ -1,7 +1,7 @@
 <% provide(:title, 'Reminders') %>
 
-<div class='col-md-10'></div>
-<div class="col-md-2">
+<div class="col-md-9"></div>
+<div class="col-md-3">
   <%= form_tag(reminders_path, method: :get, id: "search-form") do %>
     <%= text_field_tag :search, nil, { placeholder: 'search', class: 'form-control' } %>
   <% end %>
