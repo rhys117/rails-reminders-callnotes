@@ -42,7 +42,7 @@ class RemindersController < ApplicationController
   def update
     if @reminder = current_user.reminders.find(params[:id]).update_attributes(reminder_params)
       flash[:success] = "Reminder updated"
-      redirect_to(root_url)
+      redirect_to(root_path)
     else
       @reminder = current_user.reminders.build(reminder_params)
       @reminder.save
