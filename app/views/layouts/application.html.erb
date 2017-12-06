@@ -16,13 +16,13 @@
 
       <div class="text-right">
         <% if session[:rt_copy] %>
-          <p class="copy-data" id="reminder_copy"><%= session.delete(:rt_copy) %></p>
-          <a class="copy-text btn btn-primary" data-clipboard-target="#reminder_copy" data-clipboard-action="copy">Copy RT reminder</a>
+          <p class="copy-data" id="reminder-copy"><%= session.delete(:rt_copy) %></p>
+          <a class="copy-text btn btn-primary" data-clipboard-target="#reminder-copy" data-clipboard-action="copy">Copy RT reminder</a>
         <% end %>
 
         <% if session[:rt_date] %>
-          <p class="copy-data" id="date_copy"><%= session.delete(:rt_date) %></p>
-          <a class="copy-text btn btn-primary" data-clipboard-target="#date_copy" data-clipboard-action="copy">Copy date</a>
+          <p class="copy-data" id="date-copy"><%= session.delete(:rt_date) %></p>
+          <a class="copy-text btn btn-primary" data-clipboard-target="#date-copy" data-clipboard-action="copy">Copy date</a>
         <% end %>
       </div>
       <div class="divider-10"></div>
