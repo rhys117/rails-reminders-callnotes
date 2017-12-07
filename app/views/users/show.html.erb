@@ -1,6 +1,6 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-md-3">
     <section class="user_info">
       <h1>
         <%= gravatar_for @user %>
@@ -8,13 +8,15 @@
       </h1>
     </section>
   </aside>
-  <div class="col-md-8">
-    <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
-      <ol class="microposts">
-        <%= render @microposts %>
-      </ol>
-      <%= will_paginate @microposts %>
+  <div class="col-md-9">
+    <% if @user.reminders.any? %>
+      <h3>Reminders (<%= @user.reminders.count %>)</h3>
+      <% @reminders.group_by(&:date).each do |date, reminders| %>
+        <h2 class="text-center"><%= display_date(date) %></h2>
+          <%= render partial: 'reminders/reminder_table', locals: { reminders: reminders } %>
+        <div class="divider-10"></div>
+      <% end %>
+      <%= will_paginate @reminders %>
     <% end %>
   </div>
 </div>

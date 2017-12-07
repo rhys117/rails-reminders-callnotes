@@ -17,6 +17,10 @@ class QuickNotesController < ApplicationController
     end
   end
 
+  def edit
+    @quick_note = current_user.quick_notes.find(params[:id])
+  end
+
   def destroy
     current_user.quick_notes.find(params[:id]).destroy
     flash[:success] = "Quick note deleted"
