@@ -1,5 +1,5 @@
 <li>
-  <%= link_to "#{quick_note.category} #{quick_note.name}", edit_quick_note_path(quick_note.id) %> | 
+  <%= link_to "#{quick_note.name}", edit_quick_note_path(quick_note.id) %> | 
   <%= link_to "delete", quick_note, method: :delete,
                               data: { confirm: "You sure?" } %>
 </li>

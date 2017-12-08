@@ -1,10 +1,17 @@
 <% provide(:title, 'All Quick Notes') %>
-<h1>All Quick Notes</h1>
+<h1>Edit Quick Notes</h1>
 
 <%= will_paginate %>
 
-<ul class="users">
-  <%= render @quick_notes %>
-</ul>
+<div class="col-centered">
+  <% @quick_notes.group_by(&:category).each do |category, quick_notes| %>
+    <h2><%= category %></h2>
+    <ul>
+      <% quick_notes.each do |quick_note| %>
+        <%= render partial: 'quick_note', locals: { quick_note: quick_note } %>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
 
 <%= will_paginate %>

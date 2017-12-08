@@ -39,7 +39,7 @@
 
     <div class="form-group col-md-2">
       <%= f.label :check_for, "Check for?" %>
-      <%= f.select :check_for, ["online/usage", "customer contact", "nbn reponse", "vocus response", "work ticket update", "2DayWarning"], { include_blank: "optional", selected: @reminder.check_for }, class: 'form-control input-sm' %>
+      <%= f.select :check_for, ["online/usage", "customer contact", "nbn reponse", "vocus response", "work ticket update", "2DayWarning", "resolved"], { include_blank: "optional", selected: @reminder.check_for }, class: 'form-control input-sm' %>
     </div>
 
     <div class="form-group col-md-1">
@@ -49,7 +49,7 @@
 
     <div class="form-group col-md-2">
       <%= f.label :service_type %>
-      <%= f.select :service_type, ["FTTN/B", "FTTP", "HFC", "LTS", "FW", "VOIP/UNIV", "PSTN", "LEGACY SERVICE"], { selected: @reminder.service_type }, class: 'form-control input-sm' %>
+      <%= f.select :service_type, ["FTTN/B", "FTTP", "HFC", "LTS", "FW", "VOIP/UNIV", "PSTN", "LEGACY SERVICE"], { prompt: 'select one', selected: @reminder.service_type }, class: 'form-control input-sm' %>
     </div>
 
     <div class="form-group col-md-2">

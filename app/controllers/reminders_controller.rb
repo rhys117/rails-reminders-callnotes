@@ -4,9 +4,9 @@ class RemindersController < ApplicationController
 
   def index
     @reminders = if params[:search]
-      current_user.reminders.search(params[:search]).ordered_date_completed_priority.paginate(page: params[:page], per_page: 20)
+      current_user.reminders.search(params[:search]).ordered_date_completed_priority.paginate(page: params[:page], per_page: 35)
     else
-      current_user.reminders.ordered_date_completed_priority.paginate(page: params[:page], per_page: 20)
+      current_user.reminders.ordered_date_completed_priority.paginate(page: params[:page], per_page: 35)
     end
   end
 

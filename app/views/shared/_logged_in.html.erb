@@ -13,7 +13,7 @@
     <%= text_field_tag :search, nil, { placeholder: 'search', class: 'form-control' } %>
   <% end %>
   </div>
-  <h2>Current Reminders</h2>
+  <h2>Current Reminders (<%= @reminders.count %>)</h2>
     <div class="divider-10"></div>
     <%= render partial: 'reminders/reminder_table', locals: { reminders: @reminders } %>
   </div>
