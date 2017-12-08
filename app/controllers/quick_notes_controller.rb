@@ -21,6 +21,18 @@ class QuickNotesController < ApplicationController
     @quick_note = current_user.quick_notes.find(params[:id])
   end
 
+  def update
+    if @quick_note = current_user.quick_notes.find(params[:id]).update_attributes(quick_note_params)
+      flash[:success] = "quick_note updated"
+      redirect_to(root_path)
+    else
+      @quick_note = current_user.quick_notes.build(quick_note_params)
+      @quick_note.save
+      flash[:danger] = @quick_note.errors.full_messages.to_sentence
+      redirect_to(edit_quick_note_path(params[:id]))
+    end
+  end
+
   def destroy
     current_user.quick_notes.find(params[:id]).destroy
     flash[:success] = "Quick note deleted"
