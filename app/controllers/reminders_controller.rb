@@ -17,7 +17,7 @@ class RemindersController < ApplicationController
   def create
     @reminder = current_user.reminders.build(reminder_params)
     if @reminder.save
-      flash[:success] = "Reminder created"
+      flash[:success] = "Reminder created #{@reminder.reference}"
       session[:rt_copy] = rt_note(@reminder)
       session[:rt_date] = @reminder.date
       redirect_back(fallback_location: root_path)
@@ -30,8 +30,8 @@ class RemindersController < ApplicationController
     reminder = Reminder.find(params[:id])
     reminder.complete = !reminder.complete
     reminder.save
-    flash[:success] = "Reminder marked complete" if reminder.complete
-    flash[:warning] = "Reminder marked incomplete" if !reminder.complete
+    flash[:success] = "Reminder marked complete #{reminder.reference}" if reminder.complete
+    flash[:warning] = "Reminder marked incomplete #{reminder.reference}" if !reminder.complete
     redirect_back(fallback_location: root_path)
   end
 
@@ -40,9 +40,12 @@ class RemindersController < ApplicationController
   end
 
   def update
-    if @reminder = current_user.reminders.find(params[:id]).update_attributes(reminder_params)
-      flash[:success] = "Reminder updated"
-      redirect_to(root_path)
+    if current_user.reminders.find(params[:id]).update_attributes(reminder_params)
+      reminder = current_user.reminders.find(params[:id])
+      flash[:success] = "Reminder updated #{reminder.reference}"
+      session[:rt_copy] = rt_note(reminder)
+      session[:rt_date] = reminder.date
+      redirect_to(root_url)
     else
       @reminder = current_user.reminders.build(reminder_params)
       @reminder.save
@@ -81,6 +84,6 @@ class RemindersController < ApplicationController
       combined << "#{reminder.notes} " unless reminder.notes.nil?
       combined << "#{reminder.check_for}?" unless reminder.check_for.nil?
       combined
-      "#{@reminder.service_type} #{combined}"
+      "#{reminder.service_type} #{combined}"
     end
 end
