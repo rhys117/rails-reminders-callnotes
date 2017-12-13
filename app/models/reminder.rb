@@ -27,7 +27,7 @@ end
     end
 
     def override_date
-      if self.select_date.length > 0
+      unless self.select_date.nil?
         self.date = Date.current.next_day(self.select_date[0].to_i)
       end
     end
