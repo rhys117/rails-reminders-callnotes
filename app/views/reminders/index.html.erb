@@ -1,12 +1,6 @@
 <% provide(:title, 'Reminders') %>
 
-<div class="col-md-9"></div>
-<div class="col-md-3">
-  <%= form_tag(reminders_path, method: :get, id: "search-form") do %>
-    <%= text_field_tag :search, nil, { placeholder: 'search', class: 'form-control' } %>
-  <% end %>
-</div>
-
+<%= render 'shared/reminders_search' %>
 <h1 class="text-center">Reminders</h1>
 
 <div class="divider-40"></div>

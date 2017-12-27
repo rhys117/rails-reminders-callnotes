@@ -7,12 +7,7 @@
 </aside>
 
 <section class="d-inline-block">
-  <div class="col-md-9"></div>
-  <div class="col-md-3">
-    <%= form_tag(reminders_path, method: :get, id: "search-form") do %>
-    <%= text_field_tag :search, nil, { placeholder: 'search', class: 'form-control' } %>
-  <% end %>
-  </div>
+  <%= render 'shared/reminders_search' %>
   <h2>Current Reminders (<%= @reminders.count %>)</h2>
     <div class="divider-10"></div>
     <%= render partial: 'reminders/reminder_table', locals: { reminders: @reminders } %>
@@ -21,10 +16,10 @@
 
 <div class="divider-40"></div>
 
-<h2 class="col-md-9 col-centered">New Reminder</h2>
-<div class="divider-10"></div>
-<div class="row">
-  <div class="col-md-9 col-centered">
+<div class='col-md-8 col-centered'>
+  <h2>New Reminder</h2>
+  <div class="divider-10"></div>
+  <div class="row">
     <%= render 'reminders/form' %>
   </div>
 </div>

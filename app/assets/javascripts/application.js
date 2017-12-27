@@ -20,4 +20,17 @@
 $(document).ready(function(){  
   var clipboard = new Clipboard('.copy-text');
   console.log(clipboard);
+
+  $('#filter_out').on('keyup',function(){
+    var searchTerm = $(this).val().toLowerCase();
+    $('#reminders tr').each(function(){
+        var lineStr = $(this).text().toLowerCase();
+        if(lineStr.indexOf(searchTerm) !== -1 && searchTerm.length > 0){
+          $(this).hide();
+        }else{
+          $(this).show();
+        }
+    });
+  });
 });
+
