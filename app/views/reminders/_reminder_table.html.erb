@@ -1,13 +1,17 @@
 <table id="reminders">
-  <tr>
-    <th class="col-md-1 text-left">Ref #</th>
-    <th class="col-md-3 text-right">Service Type</th>
-    <th class="col-md-4 text-left">Notes</th>
-  </tr>
-  <tr>
-    <% reminders.each do |reminder| %>
-      <%= render reminder %>
-    <% end %>
-  </tr>
+  <thead>
+    <tr>
+      <th class="col-md-1 text-left">Ref #</th>
+      <th class="col-md-3 text-right">Service Type</th>
+      <th class="col-md-4 text-left">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% reminders.each do |reminder| %>
+        <%= render reminder %>
+      <% end %>
+    </tr>
+  </tbody>
 </table>
 

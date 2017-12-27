@@ -23,7 +23,7 @@ $(document).ready(function(){
 
   $('#filter_out').on('keyup',function(){
     var searchTerm = $(this).val().toLowerCase();
-    $('#reminders tr').each(function(){
+    $('#reminders tbody tr').each(function(){
         var lineStr = $(this).text().toLowerCase();
         if(lineStr.indexOf(searchTerm) !== -1 && searchTerm.length > 0){
           $(this).hide();
