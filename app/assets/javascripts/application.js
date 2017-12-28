@@ -21,16 +21,31 @@ $(document).ready(function(){
   var clipboard = new Clipboard('.copy-text');
   console.log(clipboard);
 
-  $('#filter_out').on('keyup',function(){
-    var searchTerm = $(this).val().toLowerCase();
-    $('#reminders tbody tr').each(function(){
-        var lineStr = $(this).text().toLowerCase();
-        if(lineStr.indexOf(searchTerm) !== -1 && searchTerm.length > 0){
-          $(this).hide();
-        }else{
-          $(this).show();
-        }
-    });
-  });
+  $('#filter_out').on('keyup', filter_out);
+  $('#search').on('keyup', search);
 });
+
+function filter_out(){
+  var searchTerm = $(this).val().toLowerCase();
+  $('#reminders tbody tr').each(function(){
+      var lineStr = $(this).text().toLowerCase();
+      if(lineStr.indexOf(searchTerm) !== -1 && searchTerm.length > 0){
+        $(this).hide();
+      }else{
+        $(this).show();
+      }
+  });
+}
+
+function search(){
+  var searchTerm = $(this).val().toLowerCase();
+  $('#reminders tbody tr').each(function(){
+      var lineStr = $(this).text().toLowerCase();
+      if(lineStr.indexOf(searchTerm) === -1 && searchTerm.length > 0){
+        $(this).hide();
+      }else{
+        $(this).show();
+      }
+  });
+}
 
