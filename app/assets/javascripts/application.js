@@ -17,16 +17,41 @@
 //= require clipboard
 //= require_tree .
 
-$(document).ready(function(){  
+$(document).ready(function(){
   var clipboard = new Clipboard('.copy-text');
   console.log(clipboard);
 
   $('#filter_out').on('keyup', filter_out);
   $('#search').on('keyup', search);
+
+  // filter_out_alt(localStorage.getItem("filter_out"));
+  // search_alt(localStorage.getItem("search"));
+
+  $('#filter_out').val(localStorage.getItem("filter_out"));
+  $('#search').val(localStorage.getItem("search"));
+
+  // this is temp fix
+  filter_out_alt(localStorage.getItem("filter_out"));
+
 });
 
 function filter_out(){
   var searchTerm = $(this).val().toLowerCase();
+  localStorage.setItem("filter_out", searchTerm);
+  console.log('this');
+  $('#reminders tbody tr').each(function(){
+      var lineStr = $(this).text().toLowerCase();
+      if(lineStr.indexOf(searchTerm) !== -1 && searchTerm.length > 0){
+        $(this).hide();
+      }else{
+        $(this).show();
+      }
+  });
+}
+
+function filter_out_alt(filter){
+  var searchTerm = filter.toLowerCase();
+  localStorage.setItem("filter_out", searchTerm);
   $('#reminders tbody tr').each(function(){
       var lineStr = $(this).text().toLowerCase();
       if(lineStr.indexOf(searchTerm) !== -1 && searchTerm.length > 0){
@@ -39,6 +64,20 @@ function filter_out(){
 
 function search(){
   var searchTerm = $(this).val().toLowerCase();
+  localStorage.setItem("search", searchTerm);
+  $('#reminders tbody tr').each(function(){
+      var lineStr = $(this).text().toLowerCase();
+      if(lineStr.indexOf(searchTerm) === -1 && searchTerm.length > 0){
+        $(this).hide();
+      }else{
+        $(this).show();
+      }
+  });
+}
+
+function search_alt(search){
+  var searchTerm = search.toLowerCase();
+  localStorage.setItem("search", searchTerm);
   $('#reminders tbody tr').each(function(){
       var lineStr = $(this).text().toLowerCase();
       if(lineStr.indexOf(searchTerm) === -1 && searchTerm.length > 0){
