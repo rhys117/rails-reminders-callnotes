@@ -5,6 +5,8 @@ class RemindersController < ApplicationController
   def index
     @reminders = if params[:search]
       current_user.reminders.search(params[:search].strip).ordered_date_completed_priority.paginate(page: params[:page], per_page: 35)
+    elsif params[:filter_out]
+      
     else
       current_user.reminders.ordered_date_completed_priority.paginate(page: params[:page], per_page: 35)
     end
@@ -75,7 +77,7 @@ class RemindersController < ApplicationController
     def reminder_params
       params.require(:reminder).permit(:reference, :vocus_ticket, :nbn_search, :select_date,
                                        :date, :vocus, :service_type, :notes, :priority,
-                                       :fault_type, :check_for, :search)
+                                       :fault_type, :check_for, :search, :filter_out)
     end
 
     def rt_note(reminder)

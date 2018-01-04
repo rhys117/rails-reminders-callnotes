@@ -27,7 +27,7 @@
   </div>
 
   <div class="form-row row">
-    <div class="form-group col-md-1">
+    <div class="form-group col-md-2">
       <%= f.label :priority %>
       <%= f.select :priority, [1, 2, 3, 4, 5], { selected: @reminder.priority }, class: 'form-control input-sm' %>
     </div>
@@ -47,7 +47,7 @@
       <%= f.select :fault_type, ["Offline", "Dropouts", "Speed", "Outage", "Migration"], { include_blank: 'optional', selected: @reminder.fault_type }, class: 'form-control input-sm' %>
     </div>
 
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-3">
       <%= f.label :notes %>
       <%= f.text_field :notes, class: 'form-control input-sm' %>
     </div>
