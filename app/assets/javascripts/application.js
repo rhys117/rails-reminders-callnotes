@@ -89,3 +89,44 @@ function search_alt(search){
   });
 }
 
+function PresetOnlineUsage(){
+  $('#reminder_check_for').val('online/usage')
+  $('#reminder_priority').val('2')
+  $('#reminder_select_date').val('2')
+}
+
+function PresetCustomerContact(){
+  $('#reminder_check_for').val('customer contact')
+  $('#reminder_priority').val('2')
+  $('#reminder_select_date').val('5')
+}
+
+function PresetNbnResponse(){
+  $('#reminder_check_for').val('nbn response')
+  $('#reminder_priority').val('3')
+  $('#reminder_select_date').val('2')
+}
+
+function PresetWorkTicketUpdate(){
+  $('#reminder_check_for').val('work ticket update')
+  $('#reminder_priority').val('2')
+  $('#reminder_select_date').val('2')
+}
+
+function PresetVocusResponse(){
+  $('#reminder_check_for').val('vocus response')
+  $('#reminder_priority').val('3')
+  $('#reminder_select_date').val('2')
+}
+
+function Preset2DayWarning(){
+  $('#reminder_check_for').val('2DayWarning')
+  $('#reminder_priority').val('1')
+  $('#reminder_select_date').val('2')
+}
+
+function PresetResolved(){
+  $('#reminder_check_for').val('resolved')
+  $('#reminder_priority').val('1')
+  $('#reminder_select_date').val('2')
+}
