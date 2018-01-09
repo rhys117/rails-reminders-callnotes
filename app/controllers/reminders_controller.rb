@@ -3,10 +3,11 @@ class RemindersController < ApplicationController
   before_action :correct_user
 
   def index
+    @current_reminders = current_user.reminders.ordered_priority.where('date <= ? AND complete= ?', Date.current, 'f')
     @reminders = if params[:search]
       current_user.reminders.search(params[:search].strip).ordered_date_completed_priority.paginate(page: params[:page], per_page: 35)
     elsif params[:filter_out]
-      
+      # code for filtering out
     else
       current_user.reminders.ordered_date_completed_priority.paginate(page: params[:page], per_page: 35)
     end

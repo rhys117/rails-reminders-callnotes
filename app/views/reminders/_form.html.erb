@@ -1,4 +1,7 @@
-<%= form_for(@reminder, url: yield(:url)) do |f| %>
+<%= form_for(@reminder, :html => { url: yield(:url), class: 'col-md-9 row col-centered'}) do |f| %>
+  <% if :form_title %>
+    <h2><%= yield(:form_title) %></h2>
+  <% end %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="form-row row">
     <div class="form-group col-md-2">
@@ -58,7 +61,7 @@
     </div>
   </div>
 
-  <div class="form-group">
+  <div class="form-group text-center">
     <button type="button" class='btn btn-default' onclick='PresetOnlineUsage()'>Online/usage</button>
     <button type="button" class='btn btn-default' onclick='PresetCustomerContact()'>Customer contact</button>
     <button type="button" class='btn btn-default' onclick='PresetNbnResponse()'>nbn response</button>

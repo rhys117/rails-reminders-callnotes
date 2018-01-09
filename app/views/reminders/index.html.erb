@@ -1,11 +1,20 @@
 <% provide(:title, 'Reminders') %>
 
 <%= render 'shared/reminders_search' %>
-<h1 class="text-center">Reminders</h1>
 
+<h2 class='col-md-offset-2'>Current Reminders (<%= @current_reminders.count %>)</h2>
+<div class="divider-10"></div>
+<div class="col-md-9 col-centered">
+  <%= render partial: 'reminders/reminder_table', locals: { reminders: @current_reminders } %>
+</div>
 <div class="divider-40"></div>
+
+<h2 class="col-md-offset-2">Future Reminders</h2>
+
+<div class="divider-10"></div>
+
 <% @reminders.group_by(&:date).each do |date, reminders| %>
-  <div class="col-centered col-md-8">
+  <div class="col-centered col-md-9">
     <h2 class="text-center"><%= display_date(date) %></h2>
       <%= render partial: 'reminder_table', locals: { reminders: reminders } %>
     <div class="divider-10"></div>
