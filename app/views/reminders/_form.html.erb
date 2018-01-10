@@ -1,4 +1,4 @@
-<%= form_for(@reminder, :html => { url: yield(:url), class: 'col-md-9 row col-centered'}) do |f| %>
+<%= form_for(@reminder, :html => { url: yield(:url), class: 'col-md-10 row col-centered reminder-form'}) do |f| %>
   <% if :form_title %>
     <h2><%= yield(:form_title) %></h2>
   <% end %>
