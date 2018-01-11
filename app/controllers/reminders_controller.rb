@@ -5,10 +5,10 @@ class RemindersController < ApplicationController
   def index
     if params[:search]
       @current_reminders = current_reminders.search(params[:search].strip) #.paginate(page: params[:page], per_page: 35)
-      @future_reminders = current_user.reminders.ordered_date_completed_priority #.paginate(page: params[:page], per_page: 35)
+      @future_reminders = future_reminders.ordered_date_completed_priority #.paginate(page: params[:page], per_page: 35)
     else
-      @current_reminders = current_reminders.search(params[:search].strip) #.paginate(page: params[:page], per_page: 35)
-      @future_reminders = current_user.reminders.ordered_date_completed_priority #.paginate(page: params[:page], per_page: 35)
+      @current_reminders = current_reminders.where('complete= ?', 'f') #.paginate(page: params[:page], per_page: 35)
+      @future_reminders = future_reminders.where('complete= ?', 'f') #.paginate(page: params[:page], per_page: 35)
     end
 
     if params[:filter_out]
@@ -73,7 +73,11 @@ class RemindersController < ApplicationController
   private
 
     def current_reminders
-      @current_reminders = current_user.reminders.ordered_priority.where('date <= ? AND complete= ?', Date.current, 'f')
+      current_user.reminders.ordered_priority.where('date <= ?', Date.current)
+    end
+
+    def future_reminders
+      current_user.reminders.where('date > ?', Date.current)
     end
 
     # Before actions
