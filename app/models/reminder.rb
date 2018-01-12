@@ -5,7 +5,7 @@ class Reminder < ApplicationRecord
   before_save :complete_false_if_nil
 
   belongs_to :user
-  scope :ordered_date_completed_priority, -> { order(date: :DESC, complete: :ASC, priority: :DESC) }
+  scope :ordered_date_completed_priority, -> { order(date: :ASC, complete: :ASC, priority: :DESC) }
   scope :ordered_priority, -> { order(priority: :DESC) }
   validates :user_id, presence: true
   validates :reference, presence: true
