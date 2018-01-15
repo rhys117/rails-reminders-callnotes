@@ -1,9 +1,11 @@
 <div class="col-md-4 pull-right">
-  <%= text_field_tag :filter_out, nil, { placeholder: 'filter out of list', class: 'form-control' } %>
-  <%= form_tag(reminders_path, method: :get, class: "input-group") do %>
-    <%= text_field_tag :search, nil, { placeholder: 'search list', class: 'form-control' } %>
-    <span class='input-group-btn'>
-      <button class="btn btn-primary" type="submit">Search all</button>
-    </span>
+  <%= form_tag(reminders_path, method: :get, class: "input-group search-input") do %>
+    <%= text_field_tag :filter_out, nil, { placeholder: 'filter out of list', class: 'search-input form-control' } %>
+    <div class="input-group">
+      <%= text_field_tag :search, nil, { placeholder: 'search list', class: 'form-control' } %>
+      <span class='input-group-btn'>
+        <button class="btn btn-primary" type="submit">Filter/search all</button>
+      </span>
+    </div>
   <% end %>
 </div>
