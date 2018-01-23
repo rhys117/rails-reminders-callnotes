@@ -14,15 +14,15 @@ module ApplicationHelper
   end
 
   def reference_url(reference)
-    "https://rt.skymesh.net.au/Ticket/Display.html?id=#{reference}"
+    "#{URLS['reference_url']}#{reference}"
   end
 
   def vocus_url(reference)
-    "https://members.wcg.net.au/view_ticket.php?id=#{reference}"
+    "#{URLS['vocus_url']}#{reference}"
   end
 
   def nbn_url(search)
-    "https://www1.nbnco.com.au/online_customers/page/home?search=#{search}"
+    "#{URLS['nbn_url']}#{search}"
   end
 
   def note_id(note)

@@ -2,13 +2,14 @@ class User < ApplicationRecord
   has_many :microposts, dependent: :destroy
   has_many :reminders, dependent: :destroy
   has_many :quick_notes, dependent: :destroy
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :sign_up_secret
   before_save { email.downcase! }
   validates :name,  presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
+  validates :sign_up_secret, inclusion: [SIGN_UP['secret']]
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 

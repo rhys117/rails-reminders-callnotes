@@ -1,0 +1,1 @@
+SIGN_UP = YAML.load_file("#{::Rails.root}/config/sign_up.yml")

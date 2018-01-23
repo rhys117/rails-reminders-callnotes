@@ -35,6 +35,7 @@ class UsersController < ApplicationController
       flash[:success] = "Profile updated"
       redirect_to @user
     else
+      flash[:error] = "Something went wrong"
       render 'edit'
     end
   end
@@ -49,7 +50,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, :sign_up_secret)
     end
 
     # Before filters
