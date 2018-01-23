@@ -20,8 +20,3 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-# Ignore sign up secret
-/config/sign_up.yml
-
-# Ignore external set urls
-/config/urls.yml
