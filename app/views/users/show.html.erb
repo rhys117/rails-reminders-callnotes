@@ -7,15 +7,6 @@
       </h1>
     </section>
   </aside>
-  <div class="col-md-9">
-    <% if @user.reminders.any? %>
-      <h3>Reminders (<%= @user.reminders.count %>)</h3>
-      <% @reminders.group_by(&:date).each do |date, reminders| %>
-        <h2 class="text-center"><%= display_date(date) %></h2>
-          <%= render partial: 'reminders/reminder_table', locals: { reminders: reminders } %>
-        <div class="divider-10"></div>
-      <% end %>
-      <%= will_paginate @reminders %>
-    <% end %>
-  </div>
+  <%= render partial: 'reminders/current_and_future', locals: { current_reminders: @current_reminders, future_riminders: @future_reminders } %>
+    <div class="divider-10"></div>
 </div>

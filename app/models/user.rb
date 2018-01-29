@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :microposts, dependent: :destroy
+  has_many :call_notes, dependent: :destroy
   has_many :reminders, dependent: :destroy
   has_many :quick_notes, dependent: :destroy
   attr_accessor :remember_token, :sign_up_secret
