@@ -1,0 +1,57 @@
+<%= form_for(call_note) do |f| %>
+  <% if call_note.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(call_note.errors.count, "error") %> prohibited this call_note from being saved:</h2>
+
+      <ul>
+      <% call_note.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class='form-row row'>
+    <%= f.label :call, 'Call Commenced:' %>
+    <%= f.datetime_select :time, { :discard_day => true, :discard_month => true, :discard_year => true }, class: 'form-group col-md-1' %>
+  </div>
+
+  <div class='form-row row'>
+    <div class='form-group col-md-2'>
+      <%= f.label :call_type %>
+      <%= f.select :call_type, { 'Incoming live call' => 'live_call', 'Outgoing call' => 'call_for', 'Outgoing callback request' => 'callback' }, { prompt: 'select one' }, { class: 'form-control' } %>
+    </div>
+
+    <div class='form-group col-md-2'>
+      <%= f.label :phone_number %>
+      <%= f.text_field :phone_number, class: 'form-control' %>
+    </div>
+
+    <div class='form-group col-md-2'>
+      <%= f.label :call_answer, 'Call answer' %>
+      <%= f.select :call_answer, { 'Spoke to' => 'spoke_to', 'Left VM' => 'left_vm', 'Rang Out. No VM' => 'rang_out' }, { prompt: 'select one' }, { class: 'form-control' } %>
+    </div>
+    <div class="form-group col-md-2">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class='form-group col-md-2'>
+      <%= f.label :id_check %>
+      <%= f.select :id_check, { 'Confirmed ID' => 'confirmed_id', 'Confirmed as technical advocate' => 'confirmed_id_tech' , 'Confirmed as authorised representative' => 'confirmed_id_auth', 'Caller not on account' => 'not_on_account' }, { prompt: 'select one' }, { class: 'form-control' } %>
+    </div>
+  </div>
+
+  <div class='form-row row'>
+    <%= f.label :additional_notes %>
+    <%= f.text_area :additional_notes, class: 'form-control' %>
+  </div>
+
+  <div class='form-row row'>
+
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

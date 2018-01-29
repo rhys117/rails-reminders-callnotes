@@ -1,4 +1,6 @@
 class QuickNotesController < ApplicationController
+  before_action :logged_in_user
+
   def new
     @quick_note = QuickNote.new
   end

@@ -9,7 +9,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @reminders = @user.reminders.paginate(page: params[:page])
+    @current_reminders = current_reminders #.paginate(page: params[:page], per_page: 35)
+    @future_reminders = future_reminders #.paginate(page: params[:page], per_page: 35)
   end
 
   def new
@@ -51,6 +52,14 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation, :sign_up_secret)
+    end
+
+    def current_reminders
+      @user.reminders.ordered_priority.where('date <= ?', Date.current)
+    end
+
+    def future_reminders
+      @user.reminders.where('date > ?', Date.current).ordered_date_completed_priority
     end
 
     # Before filters

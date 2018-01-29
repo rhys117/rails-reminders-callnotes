@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @call_note.time %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @call_note.name %>
+</p>
+
+<%= link_to 'Edit', edit_call_note_path(@call_note) %> |
+<%= link_to 'Back', call_notes_path %>

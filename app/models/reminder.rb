@@ -38,7 +38,7 @@ end
 
     def normalize_blank_values
       attributes.each do |column, value|
-      self[column].present? || self[column] = nil
+        self[column].present? || self[column] = nil
+      end
     end
-  end
 end
