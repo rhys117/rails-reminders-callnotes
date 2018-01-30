@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @quick_notes = quick_notes
     @current_reminders = current_reminders #.paginate(page: params[:page], per_page: 35)
     @future_reminders = future_reminders #.paginate(page: params[:page], per_page: 35)
   end
@@ -60,6 +61,10 @@ class UsersController < ApplicationController
 
     def future_reminders
       @user.reminders.where('date > ?', Date.current).ordered_date_completed_priority
+    end
+
+    def quick_notes
+      @user.quick_notes.all
     end
 
     # Before filters
