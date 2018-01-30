@@ -1,31 +1,10 @@
-<p id="notice"><%= notice %></p>
+<textarea class='generate_notes'>
+# <%= params[:call_note]['time(4i)'] %>:<%= params[:call_note]['time(5i)'] %>
+<%= @enquiry_notes %>
+</textarea>
 
-<h1>Call Notes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Time</th>
-      <th>Name</th>
-      <th>Belongs to</th>
-      <th></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @call_notes.each do |call_note| %>
-      <tr>
-        <td><%= call_note.time %></td>
-        <td><%= call_note.name %></td>
-        <td><%= link_to 'Show', call_note %></td>
-        <td><%= link_to 'Edit', edit_call_note_path(call_note) %></td>
-        <td><%= link_to 'Destroy', call_note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<textarea>
+<%= params[:call_note] %>
+</textarea>
 
 <%= link_to 'New Call Note', new_call_note_path %>

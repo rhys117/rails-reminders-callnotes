@@ -5,26 +5,6 @@ class CallNotesController < ApplicationController
   # GET /call_notes
   # GET /call_notes.json
   def index
-    @call_notes = CallNote.all
-  end
-
-  # GET /call_notes/1
-  # GET /call_notes/1.json
-  def show
-  end
-
-  # GET /call_notes/new
-  def new
-    @call_note = CallNote.new
-  end
-
-  # GET /call_notes/1/edit
-  def edit
-  end
-
-  # POST /call_notes
-  # POST /call_notes.json
-  def create
     @enquiry_notes = ""
 
     notes_params_pairs = notes_params_pairs(params)
@@ -44,8 +24,25 @@ class CallNotesController < ApplicationController
         end
       end
     end
+  end
 
-    render 'generated_notes'
+  # GET /call_notes/1
+  # GET /call_notes/1.json
+  def show
+  end
+
+  # GET /call_notes/new
+  def new
+    @call_note = CallNote.new
+  end
+
+  # GET /call_notes/1/edit
+  def edit
+  end
+
+  # POST /call_notes
+  # POST /call_notes.json
+  def create
     # @call_note = CallNote.new(call_note_params)
 
     # respond_to do |format|
