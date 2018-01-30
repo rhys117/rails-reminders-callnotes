@@ -44,11 +44,34 @@
 
   <div class='form-row row'>
     <%= f.label :additional_notes %>
-    <%= f.text_area :additional_notes, class: 'form-control generated_notes' %>
+    <%= f.text_area :additional_notes, class: 'form-control generate_notes' %>
   </div>
 
   <div class='form-row row'>
+    <div class='form-group col-md-3'>
+      <%= f.label :call_conclusion %>
+      <%= f.select :call_conclusion, { 'No further query' => 'no_further_query', 'Customer will monitor for further issues' => 'customer_will_monitor', 'Customer will contact support' => 'customer_will_contact', 'Advised customer of work' => 'advised_work' }, { prompt: 'select one' }, { class: 'form-control' } %>
+    </div>
 
+    <div class='form-group col-md-3'>
+      <%= f.label :conclusion_condition, 'Condition/Work discription' %>
+      <%= f.text_field :conclusion_condition, class: 'form-control' %>
+    </div>
+
+    <div class='form-group col-md-2'>
+      <%= f.label :conclusion_agreed_contact, 'Agreed to contact on' %>
+      <%= f.select :conclusion_agreed_contact, { 'Next update' => 'next_update', 'Date' => 'date' }, { prompt: 'select one' }, { class: 'form-control' } %>
+    </div>
+
+    <div class='form-group col-md-2'>
+      <%= f.label :conclusion_contact_date, 'Date' %>
+      <%= f.date_field :conclusion_contact_date, class: 'form-control input-sm' %>
+    </div>
+
+    <div class='form-group col-md-2'>
+      <%= f.label :conclusion_best_contact, 'Best contact' %>
+      <%= f.text_field :conclusion_best_contact, class: 'form-control' %>
+    </div>
   </div>
 
   <div class="actions">

@@ -92,7 +92,9 @@ class CallNotesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def call_note_params
       params.require(:call_note).permit(:time, :name, :call_type, :phone_number, :call_answer,
-                                        :id_check, :additional_notes, :call_conclusion)
+                                        :id_check, :additional_notes, :call_conclusion, :conclusion_condition,
+                                        :conclusion_agreed_contact, :conclusion_contact_date,
+                                        :conclusion_best_contact)
     end
 
     def notes_params_pairs(params)
@@ -103,11 +105,11 @@ class CallNotesController < ApplicationController
       }
       call_answer = call_answer_pairs[params[:call_note]['call_answer']]
 
-      # conclusion_call_update_pairs = {
-      #   'next_update' => "next update",
-      #   'date' => "#{params[:conclusion_contact_date]}"
-      # }
-      # conclusion_call_update = conclusion_call_update_pairs[params[:call_note]['conclusion_agreed_contact']]
+      conclusion_call_update_pairs = {
+        'next_update' => "next update",
+        'date' => "#{params[:call_note]['conclusion_contact_date']}"
+      }
+      conclusion_call_update = conclusion_call_update_pairs[params[:call_note]['conclusion_agreed_contact']]
       {
         :call_type => {
           'live_call' => "Live call from #{params[:call_note]['phone_number']} >> #{call_answer} #{params[:call_note]['name']}",
@@ -119,18 +121,14 @@ class CallNotesController < ApplicationController
           'confirmed_id_tech' => "- confirmed ID as technical advocate \n",
           'confirmed_id_auth' => "- confirmed ID as authorised representative \n",
           'not_on_account' => "- caller not on account \n"
-        }# ,
-        # :call_conclusion => {
-        #   "advised_work" => "Advised expected timeframe for #{params[:call_note]['conclusion_work_advised']} and agreed to contact on #{conclusion_call_update} \n- best contact is: #{params[:call_note]['conclusion_best_contact']}",
-        #   "customer_will_contact" => "Customer will contact support when #{params[:call_note]['conclusion_contact_condition']}",
-        #   "customer_will_monitor" => "Customer will monitor for further issues",
-        #   "no_further_query" => "No further query"
-        # }
+        },
+        :call_conclusion => {
+          "advised_work" => "Advised expected timeframe for #{params[:call_note]['conclusion_condition']} and agreed to contact on #{conclusion_call_update} \n- best contact is: #{params[:call_note]['conclusion_best_contact']}",
+          "customer_will_contact" => "Customer will contact support when #{params[:call_note]['conclusion_condition']}",
+          "customer_will_monitor" => "Customer will monitor for further issues",
+          "no_further_query" => "No further query"
+        }
       }
     end
-    # <div class='form-group col-md-4'>
-    #   <%= f.label :call_conclusion %>
-    #   <%= f.select :call_conclusion, { 'No further query' => 'no_further_query', 'Advised customer of work' => 'advised_work', 'Customer will contact support' => 'customer_will_contact', 'Customer will monitor for further issues' => 'customer_will_monitor' }, { prompt: 'select one' }, { class: 'form-control' } %>
-    # </div>
 end
 
