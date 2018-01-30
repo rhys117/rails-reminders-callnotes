@@ -1,12 +1,23 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-3">
-    <section class="user_info">
-      <h1>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
-  <%= render partial: 'reminders/current_and_future', locals: { current_reminders: @current_reminders, future_riminders: @future_reminders } %>
+<aside class="col-md-3 d-inline-block">
+  <section class="user_info">
+    <%= render 'shared/copy_panel' %>
+  </section>
+</aside>
+
+<section class="d-inline-block">
+  <%= render 'shared/reminders_search' %>
+  <h2>Current Reminders (<%= @current_reminders.count %>)</h2>
     <div class="divider-10"></div>
-</div>
+    <%= render partial: 'reminders/reminder_table', locals: { reminders: @current_reminders } %>
+  </div>
+</section>
+
+<div class="divider-40"></div>
+
+<section class="d-inline-block col-md-offset-3">
+  <h2>Future Reminders (<%= @future_reminders.count %>) <a class="btn btn-default btn-sm" href="#new-reminder">create new</a></h2>
+    <div class="divider-10"></div>
+    <%= render partial: 'reminders/reminder_table', locals: { reminders: @future_reminders } %>
+  </div>
+</section>

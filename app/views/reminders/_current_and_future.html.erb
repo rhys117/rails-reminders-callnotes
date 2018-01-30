@@ -12,7 +12,7 @@
 <% @future_reminders.group_by(&:date).each do |date, reminders| %>
   <div class="col-centered col-md-9">
     <h2 class="text-center"><%= display_date(date) %></h2>
-      <%= render partial: 'reminder_table', locals: { reminders:  reminders } %>
+      <%= render partial: 'reminders/reminder_table', locals: { reminders:  reminders } %>
     <div class="divider-10"></div>
   </div>
 <% end %>
