@@ -16,8 +16,9 @@
 <div class="divider-40"></div>
 
 <section class="d-inline-block col-md-offset-3">
-  <h2>Future Reminders (<%= @future_reminders.count %>) <a class="btn btn-default btn-sm" href="#new-reminder">create new</a></h2>
+  <% @future_reminders.group_by(&:date).each do |date, reminders| %>
+    <h2 class="text-center"><%= display_date(date) %></h2>
+        <%= render partial: 'reminders/reminder_table', locals: { reminders:  reminders } %>
     <div class="divider-10"></div>
-    <%= render partial: 'reminders/reminder_table', locals: { reminders: @future_reminders } %>
-  </div>
+  <% end %>
 </section>
