@@ -13,6 +13,10 @@ $gray-medium-light: #eaeaea;
 
 /* universal */
 
+.d-block {
+  display: block;
+}
+
 body {
   padding-top: 60px;
 }
@@ -145,15 +149,6 @@ aside {
   }
 }
 
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-
-.gravatar_edit {
-  margin-top: 15px;
-}
-
 /* forms */
 
 input, textarea, select, .uneditable-input {
@@ -253,6 +248,13 @@ span.picture {
   input {
     border: 0;
   }
+}
+
+.datetime_select {
+  display: inline-block;
+  width: 30%;
+  margin-right: 10px;
+  float: left;
 }
 
 .divider-10{

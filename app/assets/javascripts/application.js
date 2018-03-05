@@ -54,6 +54,13 @@ document.addEventListener("turbolinks:load", function() {
   }
 })
 
+function PrependToNotes(string) {
+  var content = $("#"+string).val();
+  var current_notes = $('#call_note_additional_notes').val();
+  var combined = current_notes + "\n" + content + "\n";
+  $('#call_note_additional_notes').val(combined);
+}
+
 function PresetOnlineUsage(){
   $('#reminder_check_for').val('online/usage')
   $('#reminder_priority').val('2')

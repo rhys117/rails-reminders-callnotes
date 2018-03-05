@@ -1,0 +1,31 @@
+Patient Details
+-----------------------
+Given Names: string
+Surname: String
+DOB: Date
+Address: String
+Medicare Number: Integer
+Medicaare reference number: Integer
+Private Health cover company: string
+Private Health cover number: string
+
+Next of Kin
+-----------------------
+Given Names: Strings
+Surname: Strings
+Address: String
+Contact Number Mobile: integer
+Contact Number Landline: integer
+
+Emergency Contact
+-----------------------
+Given Names: Strings
+Surname: Strings
+Address: String
+Contact Number Mobile: integer
+Contact Number Landline: integer
+
+
+Medical History
+-----------------------
+

@@ -1,0 +1,14 @@
+<%= form_for :work_ticket, url: "my_controller/my_action" do |f| %>
+  <% @work_questions.each do |question, answers| %>
+    <%= f.label question.to_sym %>
+    <% if answers == 'textarea' %>
+      <%= f.text_area question.to_sym, class: 'form-control' %>
+    <% elsif answers %>
+      <%= f.select question.to_sym, select_hash(answers), { prompt: 'select one' }, { class: 'form-control' } %>
+    <% else %>
+      <%= f.text_field question.to_sym, class: 'form-control' %>
+    <% end %>
+  <% end %>
+
+  <%= f.submit  %>
+<% end  %>

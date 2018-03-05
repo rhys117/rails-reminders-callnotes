@@ -6,6 +6,7 @@ class CallNotesController < ApplicationController
   # GET /call_notes.json
   def index
     @enquiry_notes = ""
+    @work_notes = params[:call_note][:work_notes]
 
     notes_params_pairs = notes_params_pairs(params)
     custom_input = {}
@@ -31,8 +32,19 @@ class CallNotesController < ApplicationController
   def show
   end
 
+  def from_category
+    file = YAML.load_file("#{::Rails.root}/lib/assets/call_notes_quick_add.yml")
+    @selected = file[params[:cat_id]]
+    respond_to do |format|
+      format.js
+    end
+  end
+
   # GET /call_notes/new
   def new
+    # @work_questions = YAML.load_file("#{::Rails.root}/lib/note_templates/lts/offline.yml")
+    @items = {}
+    @quick_add_groups = YAML.load_file("#{::Rails.root}/lib/assets/call_notes_quick_add.yml").keys
     @call_note = CallNote.new
   end
 
@@ -91,7 +103,7 @@ class CallNotesController < ApplicationController
       params.require(:call_note).permit(:time, :name, :call_type, :phone_number, :call_answer,
                                         :id_check, :additional_notes, :call_conclusion, :conclusion_condition,
                                         :conclusion_agreed_contact, :conclusion_contact_date,
-                                        :conclusion_best_contact)
+                                        :conclusion_best_contact, :work_notes)
     end
 
     def notes_params_pairs(params)

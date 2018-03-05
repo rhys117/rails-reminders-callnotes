@@ -12,8 +12,10 @@
   <% end %>
 
   <div class='form-row row'>
-    <%= f.label :call, 'Call Commenced:' %>
-    <%= f.datetime_select :time, { :discard_day => true, :discard_month => true, :discard_year => true }, class: 'form-group col-md-1' %>
+    <div class='form-group col-md-3'>
+      <%= f.label :call, 'Call Commenced', class: 'd-block' %>
+      <%= f.datetime_select :time, { :discard_day => true, :discard_month => true, :discard_year => true }, class: 'form-control datetime_select' %>
+    </div>
   </div>
 
   <div class='form-row row'>
@@ -43,8 +45,19 @@
   </div>
 
   <div class='form-row row'>
-    <%= f.label :additional_notes %>
+    <%= f.label :additional_notes , 'Enquiry notes' %>
     <%= f.text_area :additional_notes, class: 'form-control generate_notes' %>
+  </div>
+
+  <div class='form-row row'>
+    <% @quick_add_groups.each do |group| %>
+      <%= link_to group, fetch_items_path(:cat_id => group), :remote => true %>
+    <% end %>
+  </div>
+  <div class='form-row row'>
+    <div class='form-group' id="items_grid" >
+    <%= render partial: 'items_list', locals: {items: @items} %>
+    </div>
   </div>
 
   <div class='form-row row'>
@@ -74,7 +87,16 @@
     </div>
   </div>
 
+  <div class='form-row row'>
+    <%= f.label :work_notes %>
+    <%= f.text_area :work_notes, class: 'form-control' %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
+
+
