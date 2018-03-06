@@ -1,0 +1,17 @@
+<div id='enquiry_templates'>
+  <ul class="nav nav-tabs justify-content-center">
+    <% groups.each do |group| %>
+      <li class="nav-item <%= 'active' if group == params[:cat_id] %>">
+        <%= link_to group, fetch_enquiry_templates_path(:cat_id => group), :remote => true, form_class: 'nav-link' %>
+      </li>
+    <% end %>
+  </ul>
+
+
+  <div class='form-group'>
+    <% items.each do |key, value| %>
+      <button type="button" class='btn btn-default btn-sm btn-margin-top' onclick="PrependToEnquiryNotes('<%= key.parameterize.underscore %>')"><%= key %></button>
+      <textarea class='copy-data' id="<%= key.parameterize.underscore %>"><%= value %></textarea>
+    <% end %>
+  </div>
+</div>

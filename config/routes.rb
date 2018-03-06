@@ -16,5 +16,6 @@ Rails.application.routes.draw do
     end
   end
   resources :call_notes
-  get "/fetch_items" => 'call_notes#from_category', as: 'fetch_items'
+  get "/fetch_enquiry_templates" => 'call_notes#enquiry_templates', as: 'fetch_enquiry_templates'
+  get "/fetch_work_templates" => "call_notes#work_templates", as: 'fetch_work_templates'
 end

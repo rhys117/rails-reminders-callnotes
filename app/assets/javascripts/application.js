@@ -54,11 +54,18 @@ document.addEventListener("turbolinks:load", function() {
   }
 })
 
-function PrependToNotes(string) {
+function PrependToEnquiryNotes(string) {
   var content = $("#"+string).val();
   var current_notes = $('#call_note_additional_notes').val();
   var combined = current_notes + "\n" + content + "\n";
   $('#call_note_additional_notes').val(combined);
+}
+
+function PrependToWorkNotes(string) {
+  var content = $("#"+string).val();
+  var current_notes = $('#call_note_work_notes').val();
+  var combined = current_notes + content;
+  $('#call_note_work_notes').val(combined);
 }
 
 function PresetOnlineUsage(){

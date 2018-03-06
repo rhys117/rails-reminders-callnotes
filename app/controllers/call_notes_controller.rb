@@ -32,9 +32,17 @@ class CallNotesController < ApplicationController
   def show
   end
 
-  def from_category
-    file = YAML.load_file("#{::Rails.root}/lib/assets/call_notes_quick_add.yml")
-    @selected = file[params[:cat_id]]
+  def enquiry_templates
+    @enquiry_quick_groups = enquiry_generator_templates
+    @selected = YAML.load_file("#{::Rails.root}/lib/generator_templates/enquiry/#{params[:cat_id].downcase}.yml")
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def work_templates
+    @work_quick_groups = work_generator_templates
+    @selected = YAML.load_file("#{::Rails.root}/lib/generator_templates/work/#{params[:cat_id].downcase}.yml")
     respond_to do |format|
       format.js
     end
@@ -44,7 +52,8 @@ class CallNotesController < ApplicationController
   def new
     # @work_questions = YAML.load_file("#{::Rails.root}/lib/note_templates/lts/offline.yml")
     @items = {}
-    @quick_add_groups = YAML.load_file("#{::Rails.root}/lib/assets/call_notes_quick_add.yml").keys
+    @work_quick_groups = work_generator_templates
+    @enquiry_quick_groups = enquiry_generator_templates
     @call_note = CallNote.new
   end
 
@@ -104,6 +113,14 @@ class CallNotesController < ApplicationController
                                         :id_check, :additional_notes, :call_conclusion, :conclusion_condition,
                                         :conclusion_agreed_contact, :conclusion_contact_date,
                                         :conclusion_best_contact, :work_notes)
+    end
+
+    def enquiry_generator_templates
+      Dir["#{::Rails.root}/lib/generator_templates/enquiry/*"].map {|f| File.basename(f, '.yml').upcase }
+    end
+
+    def work_generator_templates
+      Dir["#{::Rails.root}/lib/generator_templates/work/*"].map {|f| File.basename(f, '.yml').upcase }
     end
 
     def notes_params_pairs(params)

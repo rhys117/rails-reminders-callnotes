@@ -1,0 +1,14 @@
+Calling to report: 'Customer is calling to report service is '
+Calling for update: 'Customer calling for an update on current case '
+Known outage: |
+  Customer reports service is offline
+  - advised customer was part of widespread outage
+  >> customer understood
+
+  Discussed advisory on website
+Exceeded data: |
+  Customer has exceeded data allowance
+  >> Discussed with customer:
+  - how to control/monitor usage: yes/no
+  - data blocks/plan upgrades
+  -- customer requested upgrade/did not wish to purchase anymore data at this time
