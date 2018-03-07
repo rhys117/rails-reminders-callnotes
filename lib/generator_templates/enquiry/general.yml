@@ -12,3 +12,15 @@ Exceeded data: |
   - how to control/monitor usage: yes/no
   - data blocks/plan upgrades
   -- customer requested upgrade/did not wish to purchase anymore data at this time
+
+  [Confirmed customer understood and agreed to cost]
+  >> processed
+  [paste sams dialog confirmation/s here]
+Password reset: |
+  Customer is calling requesting a password reset
+  - customer has access to billing email: yes/no
+  [-- customer unable to access, sent link via sms]
+  >> sent customer one time link and confirmed customer could change/login
+Setup details: |
+  Customer seeking configuration details for our network
+  >> supplied details

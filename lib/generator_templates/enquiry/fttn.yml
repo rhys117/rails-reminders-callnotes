@@ -3,5 +3,6 @@ Router model: |
   - SkyMesh Supplied: Yes/No
   - Confirmed FTTN compatible
 Modem lights: |
-  DSL Sync: Off/Negotiating/Solid
-  Internet: Off/Flashing/Solid Green/Red
+  Modem Lights:
+  - DSL Sync: Off/Negotiating/Solid
+  - Internet: Off/Flashing/Solid Green/Red
