@@ -6,4 +6,9 @@ module CallNotesHelper
     end
     select_hash
   end
+
+  def active_class?(param, match_phrase)
+    param = 'GENERAL' if param.nil?
+    true if param == match_phrase
+  end
 end

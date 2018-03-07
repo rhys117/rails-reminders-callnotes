@@ -1,7 +1,7 @@
 <div id='enquiry_templates'>
   <ul class="nav nav-tabs justify-content-center">
     <% groups.each do |group| %>
-      <li class="nav-item <%= 'active' if group == params[:cat_id] %>">
+      <li class="nav-item <%= 'active' if active_class?(params[:cat_id], group) %>">
         <%= link_to group, fetch_enquiry_templates_path(:cat_id => group), :remote => true, form_class: 'nav-link' %>
       </li>
     <% end %>

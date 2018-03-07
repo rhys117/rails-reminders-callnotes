@@ -1,0 +1,229 @@
+Replace - Dead Router: |
+  Customer has a dead router
+  Router Model:
+  Internet service type: 
+  Unit is a permaloan or is within warranty still?: Yes / No (If no, use '- Deploy Router' instead)
+
+  Please send replacement router to:
+  AddressLine1
+  AddressLine2
+
+  Power LED (next to DC input): On / Off
+  Confirmed they are using the correct power adapter?
+  Tried another power point?: Yes / No
+  Any other equipment failed at the same time?:
+
+  Customer has been provided the reply paid address and reference number to return the faulty router to?: Yes / No
+  Customer understands that they need to return all components provided with the faulty router? (listed below): Yes / No
+   - The faulty router unit
+   - All cabling, including power adapter and network/DSL cables
+   - All peripherals specific to the device (like antennae, or stands)
+  Customer understands that they need to return the router, power supply and cables to receive a full credit?: Yes / No
+  Customer understands that the router needs to be returned within 14 days or they may be charged the full cost of the replacement unit?: Yes / No
+
+  Other information of note:
+
+  **** Warranty does not cover Storm Damage****
+Replace - Slow Speeds: |
+  Customers router causing slow speeds.
+  Router Model:
+  Internet service type: 
+  Unit is a permaloan or is within warranty still?: Yes / No (If no, use '- Deploy Router' instead)
+
+  Please send replacement router to:
+  AddressLine1
+  AddressLine2
+
+  Customer connected to router using: Wireless / Ethernet
+  Power cycle Router: Yes / No
+  Confirmed they are using the correct power adapter? Yes / No
+  Bypassed Router: Yes / No
+  Still having slow speeds after bypass? Yes / No
+  FR Router: Yes / No
+  Router firmware version: 
+  Still having slow speeds after FR? Yes / No
+  Tested with a second client device? Yes / No
+
+  Example Speed Tests:
+  With router:
+  Without router:
+
+  Customer has been provided the reply paid address and reference number to return the faulty router to?: Yes / No
+  Customer understands that they need to return all components provided with the faulty router? (listed below): Yes / No
+   - The faulty router unit
+   - All cabling, including power adapter and network/DSL cables
+   - All peripherals specific to the device (like antennae, or stands)
+  Customer understands that they need to return the router, power supply and cables to receive a full credit?: Yes / No
+  Customer understands that the router needs to be returned within 14 days or they may be charged the full cost of the replacement unit?: Yes / No
+Replace - Sync Loss: |
+  Customers router causing Sync loss.
+  Router Model:
+  Internet service type: FTTB / FTTN
+  Unit is a permaloan or is within warranty still?: Yes / No (If no, use '- Deploy Router' instead)
+
+  Please send replacement router to:
+  AddressLine1
+  AddressLine2
+
+  Power cycle router: Yes / No
+  Confirmed they are using the correct power adapter? Yes / No
+  FR and reconfigure Router: Yes / No
+  Router firmware version: 
+  Second phone cable tested: Yes / No
+  Completed Isolation test (only modem connected to phone port): Yes / No
+  Tested all phone ports in house: Yes / No
+
+  NBN testing shows Modem is likely cause(include tests):  
+   
+  Customer has been provided the reply paid address and reference number to return the faulty router to?: Yes / No
+  Customer understands that they need to return all components provided with the faulty router? (listed below): Yes / No
+   - The faulty router unit
+   - All cabling, including power adapter and network/DSL cables
+   - All peripherals specific to the device (like antennae, or stands)
+  Customer understands that they need to return the router, power supply and cables to receive a full credit?: Yes / No
+  Customer understands that the router needs to be returned within 14 days or they may be charged the full cost of the replacement unit?: Yes / No
+
+  Other information of note:
+Replace - Internet dropouts: | 
+  Customers router causing internet dropouts.
+  Router Model:
+  Internet service type: 
+  Unit is a permaloan or is within warranty still?: Yes / No (If no, use '- Deploy Router' instead)
+
+  Please send replacement router to:
+  AddressLine1
+  AddressLine2
+
+  Dropouts only happening on one computer? Yes / No
+  (if yes, then issue most likely local)
+  Customer connected to router using: Wireless / Ethernet
+  - If wireless, have you ruled out distance or interference as a factor (eg. wireless phone handsets)? Please describe the troubleshooting done:
+  Power cycle router: Yes / No
+  Confirmed they are using the correct power adapter? Yes / No
+  FR Router and reconfigure: Yes / No
+  Router firmware version:
+   
+  Customer has been provided the reply paid address and reference number to return the faulty router to?: Yes / No
+  Customer understands that they need to return all components provided with the faulty router? (listed below): Yes / No
+   - The faulty router unit
+   - All cabling, including power adapter and network/DSL cables
+   - All peripherals specific to the device (like antennae, or stands)
+  Customer understands that they need to return the router, power supply and cables to receive a full credit?: Yes / No
+  Customer understands that the router needs to be returned within 14 days or they may be charged the full cost of the replacement unit?: Yes / No
+
+  Other information of note:
+Replace - Unable to connect to router: | 
+  Unable to connect to router.
+  Router Model:
+  Internet service type: 
+  Unit is a permaloan or is within warranty still?: Yes / No (If no, use '- Deploy Router' instead)
+
+  Please send replacement router to:
+  AddressLine1
+  AddressLine2
+
+  Customer connected to router using: Wireless / Ethernet
+  Router showing as online?: Yes / No
+  LAN port light: On / Off
+  CPE IP address via router: 
+  Power cycle router: Yes / No
+  Confirmed they are using the correct power adapter? Yes / No
+  Different Ethernet cable tried: Yes / No
+  Bypass router: Yes / No
+  Can the customer connect after Bypass: Yes / No
+  FR Router and re-configured: Yes / No
+   
+  Customer has been provided the reply paid address and reference number to return the faulty router to?: Yes / No
+  Customer understands that they need to return all components provided with the faulty router? (listed below): Yes / No
+   - The faulty router unit
+   - All cabling, including power adapter and network/DSL cables
+   - All peripherals specific to the device (like antennae, or stands)
+  Customer understands that they need to return the router, power supply and cables to receive a full credit?: Yes / No
+  Customer understands that the router needs to be returned within 14 days or they may be charged the full cost of the replacement unit?: Yes / No
+
+  Other information of note:
+Replace - Unable to connect to internet: |
+  Unable to connect to internet via router
+  Router Model:
+  Internet service type: 
+  Unit is a permaloan or is within warranty still?: Yes / No (If no, use '- Deploy Router' instead)
+
+  Please send replacement router to:
+  AddressLine1
+  AddressLine2
+
+  Customer connected to router using: Wireless / Ethernet
+  Router showing as online?: Yes / No
+  LAN port light: On / Off
+  CPE IP address via router: 
+  Power cycle router: Yes / No
+  Confirmed they are using the correct power adapter? Yes / No
+  Different Ethernet cable tried: Yes / No
+  Bypass router: Yes / No
+  Can the customer connect after Bypass: Yes / No
+  FR Router and re-configured: Yes / No
+   
+  Customer has been provided the reply paid address and reference number to return the faulty router to?: Yes / No
+  Customer understands that they need to return all components provided with the faulty router? (listed below): Yes / No
+   - The faulty router unit
+   - All cabling, including power adapter and network/DSL cables
+   - All peripherals specific to the device (like antennae, or stands)
+  Customer understands that they need to return the router, power supply and cables to receive a full credit?: Yes / No
+  Customer understands that the router needs to be returned within 14 days or they may be charged the full cost of the replacement unit?: Yes / No
+
+  Other information of note:
+Replace - Unable to Auth PPPoE: | 
+  Unable to Authenticate PPPOE
+  Router Model:
+  Internet service type: 
+  Unit is a permaloan or is within warranty still?: Yes / No (If no, use '- Deploy Router' instead)
+
+  Please send replacement router to:
+  AddressLine1
+  AddressLine2
+
+  Power cycle router: Yes / No
+  Confirmed they are using the correct power adapter? Yes / No
+  FR and reconfigure Router: Yes / No
+  Router firmware version: 
+  PPP Credentials Used: 
+
+  WAN connection Troubleshooting:
+  Router bypassed (direct PPP dial from PC):
+  Second Ethernet cable tested: Yes / No
+
+  VDSL connection Troubleshooting:
+  Second phone cable tested: Yes / No
+  Completed Isolation test (only modem connected to phone port if applicable): Yes / No
+   
+  Customer has been provided the reply paid address and reference number to return the faulty router to?: Yes / No
+  Customer understands that they need to return all components provided with the faulty router? (listed below): Yes / No
+   - The faulty router unit
+   - All cabling, including power adapter and network/DSL cables
+   - All peripherals specific to the device (like antennae, or stands)
+  Customer understands that they need to return the router, power supply and cables to receive a full credit?: Yes / No
+  Customer understands that the router needs to be returned within 14 days or they may be charged the full cost of the replacement unit?: Yes / No
+
+  Other information of note:
+Replace - ATA: |
+  Customer has non-functioning ATA
+  ATA Model: 
+  Internet service type:  
+  Unit is a permaloan or is within warranty still?: Yes / No (If no, use '- Deploy ATA' instead)
+
+  Please send replacement ATA to:
+  AddressLine1
+  AddressLine2
+
+  VoIP Deployment RT#:
+  Type of Service: 
+  SIP Username:
+  SIP Password:
+
+  ATA connected correctly: Yes / No
+  Line registers with softphone in the office and is able to make and receive calls: Yes / No
+  Router bypassed (if present and applicable): Yes / No
+  ATA Settings correct: Yes / No
+  Factory Reset Tried: Yes / No
+  Second phone and cable tested: Yes / No
+

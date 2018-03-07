@@ -43,9 +43,9 @@ document.addEventListener("turbolinks:load", function() {
 
     $('#reminders tbody tr').each(function(){
       var lineStr = $(this).text().toLowerCase();
-      if(lineStr.indexOf(searchTerm) === -1 && searchTerm.length > 0){
+      if(lineStr.indexOf(searchTerm.trim()) === -1 && searchTerm.length > 0){
         $(this).hide();
-      } else if(lineStr.indexOf(filterTerm) !== -1 && filterTerm.length > 0) {
+      } else if(lineStr.indexOf(filterTerm.trim()) !== -1 && filterTerm.length > 0) {
         $(this).hide();
       } else {
         $(this).show();
@@ -57,7 +57,7 @@ document.addEventListener("turbolinks:load", function() {
 function PrependToEnquiryNotes(string) {
   var content = $("#"+string).val();
   var current_notes = $('#call_note_additional_notes').val();
-  var combined = current_notes + "\n" + content + "\n";
+  var combined = (current_notes + "\n" + content).trim() + "\n";
   $('#call_note_additional_notes').val(combined);
 }
 

@@ -50,8 +50,8 @@ class CallNotesController < ApplicationController
 
   # GET /call_notes/new
   def new
-    # @work_questions = YAML.load_file("#{::Rails.root}/lib/note_templates/lts/offline.yml")
-    @items = {}
+    @enquiry_items = YAML.load_file("#{::Rails.root}/lib/generator_templates/enquiry/general.yml")
+    @work_items = {}
     @work_quick_groups = work_generator_templates
     @enquiry_quick_groups = enquiry_generator_templates
     @call_note = CallNote.new
@@ -116,11 +116,11 @@ class CallNotesController < ApplicationController
     end
 
     def enquiry_generator_templates
-      Dir["#{::Rails.root}/lib/generator_templates/enquiry/*"].map {|f| File.basename(f, '.yml').upcase }
+      Dir["#{::Rails.root}/lib/generator_templates/enquiry/*"].map {|f| File.basename(f, '.yml').upcase }.sort
     end
 
     def work_generator_templates
-      Dir["#{::Rails.root}/lib/generator_templates/work/*"].map {|f| File.basename(f, '.yml').upcase }
+      Dir["#{::Rails.root}/lib/generator_templates/work/*"].map {|f| File.basename(f, '.yml').upcase }.sort
     end
 
     def notes_params_pairs(params)
