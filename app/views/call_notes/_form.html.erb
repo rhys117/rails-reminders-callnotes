@@ -50,7 +50,7 @@
     </div>
 
     <div class='form-group col-md-4 '>
-      <%= render partial: 'click_notes', locals: {groups: @enquiry_quick_groups, items: @items, type: 'enquiry'} %>
+      <%= render partial: 'click_notes', locals: {groups: @enquiry_quick_groups, items: @enquiry_items} %>
     </div>
   </div>
 
@@ -88,12 +88,12 @@
     </div>
 
     <div class='form-group col-md-4 '>
-      <%= render partial: 'work_templates', locals: {groups: @work_quick_groups, items: @items, type: 'work'} %>
+      <%= render partial: 'work_templates', locals: {groups: @work_quick_groups, items: @work_items} %>
     </div>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Generate Notes', class: 'form-control btn-primary' %>
   </div>
 <% end %>
 
