@@ -22,7 +22,6 @@
 document.addEventListener("turbolinks:load", function() {
   $(document).ready(function(){
     var clipboard = new Clipboard('.copy-text');
-    console.log(clipboard);
 
     $('#filter_out').on('keyup', search_and_filter);
     $('#search').on('keyup', search_and_filter);
@@ -30,7 +29,9 @@ document.addEventListener("turbolinks:load", function() {
     $('#filter_out').val(localStorage.getItem("filter_out"));
     $('#search').val(localStorage.getItem("search"));
 
-    search_and_filter();
+    if (document.getElementById("search") !== null) {
+      search_and_filter();
+    }
 
   });
 
