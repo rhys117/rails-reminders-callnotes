@@ -1,9 +1,0 @@
-<div class="item_box form-row row">
-  <div class='form-group'>
-    <% items.each do |key, value| %>
-      <button type="button" class='btn btn-default btn-sm btn-margin-top' onclick="PrependToNotes('<%= key.parameterize.underscore %>')"><%= key %></button>
-      <textarea class='copy-data' id="<%= key.parameterize.underscore %>"><%= value %></textarea>
-    <% end %>
-  </div>
-</div>
-

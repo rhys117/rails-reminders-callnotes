@@ -4,4 +4,7 @@ NTD lights: |
   - Status: Off/Solid/Flashing Green/Amber
   - ODU: Off/Flashing/Solid Green/Red
   - Signal Strength: Off/Green/Yellow/Red
+Loopback: |
+  Loopback Test: CODE >> RESULT
+  - MESSAGES
 Powercycle & reseat: "Powercycled CPE and reseated aerial cable"

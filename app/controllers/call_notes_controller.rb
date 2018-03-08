@@ -5,14 +5,16 @@ class CallNotesController < ApplicationController
   # GET /call_notes
   # GET /call_notes.json
   def index
+    @reminder = Reminder.new
     @enquiry_notes = ""
     @work_notes = params[:call_note][:work_notes]
+    @email_notes = params[:call_note][:email_notes]
 
     notes_params_pairs = notes_params_pairs(params)
     custom_input = {}
     params[:call_note].each do |param, additional_notes|
       if param.to_s.include?('additional') && additional_notes.length > 0
-        custom_input[param.to_sym] = "#{additional_notes} \n"
+        custom_input[param.to_sym] = "#{additional_notes.strip} \n"
       end
     end
 
@@ -48,10 +50,20 @@ class CallNotesController < ApplicationController
     end
   end
 
+  def email_templates
+    @email_quick_groups = email_generator_templates
+    @selected = YAML.load_file("#{::Rails.root}/lib/generator_templates/email/#{params[:cat_id].downcase}.yml")
+    respond_to do |format|
+      format.js
+    end
+  end
+
   # GET /call_notes/new
   def new
     @enquiry_items = YAML.load_file("#{::Rails.root}/lib/generator_templates/enquiry/general.yml")
-    @work_items = {}
+    @work_items = YAML.load_file("#{::Rails.root}/lib/generator_templates/work/general.yml")
+    @email_items = YAML.load_file("#{::Rails.root}/lib/generator_templates/email/general.yml")
+    @email_quick_groups = email_generator_templates
     @work_quick_groups = work_generator_templates
     @enquiry_quick_groups = enquiry_generator_templates
     @call_note = CallNote.new
@@ -112,7 +124,7 @@ class CallNotesController < ApplicationController
       params.require(:call_note).permit(:time, :name, :call_type, :phone_number, :call_answer,
                                         :id_check, :additional_notes, :call_conclusion, :conclusion_condition,
                                         :conclusion_agreed_contact, :conclusion_contact_date,
-                                        :conclusion_best_contact, :work_notes)
+                                        :conclusion_best_contact, :work_notes, :email_notes)
     end
 
     def enquiry_generator_templates
@@ -121,6 +133,10 @@ class CallNotesController < ApplicationController
 
     def work_generator_templates
       Dir["#{::Rails.root}/lib/generator_templates/work/*"].map {|f| File.basename(f, '.yml').upcase }.sort
+    end
+
+    def email_generator_templates
+      Dir["#{::Rails.root}/lib/generator_templates/email/*"].map {|f| File.basename(f, '.yml').upcase }.sort
     end
 
     def notes_params_pairs(params)

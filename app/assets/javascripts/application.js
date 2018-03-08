@@ -33,6 +33,8 @@ document.addEventListener("turbolinks:load", function() {
       search_and_filter();
     }
 
+    textareaResize($("#call_note_additional_notes"), $("#call_note_work_notes"));
+    textareaResize($("#call_note_work_notes"), $("#call_note_additional_notes"));
   });
 
   function search_and_filter(){
@@ -55,11 +57,54 @@ document.addEventListener("turbolinks:load", function() {
   }
 })
 
+// This fiddle shows how to simulate a resize event on a
+// textarea
+// Tested with Firefox 16-25 Linux / Windows
+// Chrome 24-30 Linux / Windows
+
+var textareaResize = function(source, dest) {
+  var resizeInt = null;
+
+  // the handler function
+  var resizeEvent = function() {
+    dest.outerWidth( source.outerWidth() );
+    dest.outerHeight(source.outerHeight());
+  };
+
+  // This provides a "real-time" (actually 15 fps)
+  // event, while resizing.
+  // Unfortunately, mousedown is not fired on Chrome when
+  // clicking on the resize area, so the real-time effect
+  // does not work under Chrome.
+  source.on("mousedown", function(e) {
+    resizeInt = setInterval(resizeEvent, 1000/15);
+  });
+
+  // The mouseup event stops the interval,
+  // then call the resize event one last time.
+  // We listen for the whole window because in some cases,
+  // the mouse pointer may be on the outside of the textarea.
+  $(window).on("mouseup", function(e) {
+    if (resizeInt !== null) {
+      clearInterval(resizeInt);
+    }
+    resizeEvent();
+  });
+};
+
+
 function PrependToEnquiryNotes(string) {
   var content = $("#"+string).val();
   var current_notes = $('#call_note_additional_notes').val();
   var combined = (current_notes + "\n" + content).trim() + "\n";
   $('#call_note_additional_notes').val(combined);
+}
+
+function PrependToEmailNotes(string) {
+  var content = $("#"+string).val();
+  var current_notes = $('#call_note_email_notes').val();
+  var combined = (current_notes + "\n" + content).trim() + "\n";
+  $('#call_note_email_notes').val(combined);
 }
 
 function PrependToWorkNotes(string) {

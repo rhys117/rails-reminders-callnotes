@@ -13,7 +13,8 @@ Exceeded data: |
   - data blocks/plan upgrades
   -- customer requested upgrade/did not wish to purchase anymore data at this time
 
-  [Confirmed customer understood and agreed to cost]
+  Requested upgrade permanently/only for the remainder of current billing cycle
+  - confirmed customer understood and agreed to cost
   >> processed
   [paste sams dialog confirmation/s here]
 Password reset: |
@@ -24,3 +25,8 @@ Password reset: |
 Setup details: |
   Customer seeking configuration details for our network
   >> supplied details
+Ran speedtest: |
+  Ran Speedtest:
+  - Down: 
+  - Up: 
+  - Ping: 
