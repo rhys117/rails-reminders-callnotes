@@ -3,4 +3,10 @@ NTD lights: |
   - NBN Status Light: Off/Solid/Flashing  White/Blue/Orange/Red
   - UNI-D Port: 1/2/3/4
   - UNI-D Port Light:Green Solid/Green Flashing/Orange Solid/Orange Flashing
+NTD Status: |
+  NTD Status: CODE >> RESULT
+  - NTD State: 
+  - NTD Current Operational State: 
+  - Time Since Registration: 
+  - LAN Link Status: 
 Powercycle & reseat: "Powercycled CPE and reseated coax cable"

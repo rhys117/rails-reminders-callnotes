@@ -1,0 +1,34 @@
+Booked: |
+  Hi NAME, 
+
+  An nbn appointment has been booked for TIME to investigate the problem you are having. Please ensure someone that is over the age of 18 is onsite. If this time does not work for you please respond to this email or call us on 1300 759 637. 
+
+  Regards, 
+  
+  SkyMesh Support
+Reserved: |
+  Hi NAME, 
+
+  nbn have deemed an appointment necessary and we have requested **ASAP|the earliest that was available|**ASAP on DATE. This appointment time is yet to be confirmed by the nbn, once the we have received a booking confirmation from nbn we'll let you know. 
+
+  Someone that is over the age of 18 will be needed onsite during the appointment time. If this time does not work for you please respond to this email or call us on 1300 759 637. 
+
+  Regards, 
+  
+  SkyMesh Support
+Field work: |
+  Hi NAME, 
+
+  nbn field work is being scheduled or is underway to isolate and resolve the reported fault. The current restoration target is anytime between now and DATE by close of business. This may involve a technician attending the premises. 
+
+  If you are still in need of assistance please respond to this email or call us on 1300 759 637. 
+
+  Regards, 
+  
+  SkyMesh Support
+SMS - booked: |
+  Hi NAME, an nbn appointment has been booked for DATEIME to investigate problem. Please ensure someone 18+ on premises during these hours. Call 1300 759 637 to reschedule. Regards, SkyMesh
+SMS - reserved: |
+  Hi NAME, nbn have deemed an appointment necessary. We've requested TIME. Once this is confirmed booked by nbn we'll let you know. If this time does not work please call 1300 759 637 or reply CALLBACK to reschedule. Regards, SkyMesh
+SMS - LTS reserved: |
+  Hi NAME, nbn deemed an appointment necessary to resolve your fault. You should be contacted by an nbn delivery partner in the coming days. If you have not heard from a delivery partner after 10 business days please contact us on 1300 759 637. Regards, SkyMesh

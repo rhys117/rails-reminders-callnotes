@@ -1,3 +1,23 @@
+Deploy router: |
+  Router Model and Cost: DLink DIR850L 
+  Internet service type: LTS 
+  VoIP account to be configured? No
+  If yes: VoIP number:
+          VoIP password:
+  Customer to be billed? Yes 
+
+  Please send router to:
+  AddressLine1
+  AddressLine2
+Deploy ATA: |
+  Internet service type: FTTH / FW / ISS / IPA / NSS
+  Customer to be billed? Yes / No
+  SIP Username:
+  SIP Password:
+
+  Please send ATA to:
+  AddressLine1
+  AddressLine2
 Replace - Dead Router: |
   Customer has a dead router
   Router Model:
