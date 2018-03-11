@@ -67,7 +67,6 @@ var textareaResize = function(source, dest) {
 
   // the handler function
   var resizeEvent = function() {
-    dest.outerWidth( source.outerWidth() );
     dest.outerHeight(source.outerHeight());
   };
 
@@ -91,6 +90,25 @@ var textareaResize = function(source, dest) {
     resizeEvent();
   });
 };
+
+function ToggleWorkNotes() {
+  if ($('#btn-hide-work').text() == 'hide') {
+    $("#work-templates").attr('class', 'hidden');
+    $("#call_note_work_notes").attr('class', 'hidden');
+    $(".enquiry-section").attr('class', 'enquiry-section form-group col-md-10');
+    $(".work-section").attr('class', 'work-section form-group col-md-2');
+    $("#call_note_additional_notes").css('width', '100%');
+    $("#call_note_additional_notes").css('width', '100%');
+    $('#btn-hide-work').text('show');
+  }
+  else {
+    $("#work-templates").attr('class', '');
+    $("#call_note_work_notes").attr('class', '');
+    $(".enquiry-section").attr('class', 'enquiry-section form-group col-md-6');
+    $(".work-section").attr('class', 'work-section form-group col-md-6');
+    $('#btn-hide-work').text('hide');
+  }
+}
 
 
 function PrependToEnquiryNotes(string) {
