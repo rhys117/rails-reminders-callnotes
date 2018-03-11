@@ -44,23 +44,23 @@
     </div>
 
   <div class='from-row row'>
-    <div class='form-group col-md-6'>
+    <div class='form-group col-md-6 enquiry-section'>
       <%= f.label :additional_notes , 'Enquiry notes' %>
       <%= f.text_area :additional_notes, class: 'form-control generate_notes' %>
     </div>
 
-    <div class='form-group col-md-6'>
-      <%= f.label :work_notes %>
+    <div class='form-group col-md-6 work-section'>
+      <%= f.label :work_notes %> <a id='btn-hide-work' onclick='ToggleWorkNotes()'>hide</a>
       <%= f.text_area :work_notes, class: 'form-control generate_notes' %>
     </div>
   </div>
 
   <div class='form-row row'>
-    <div class='form-group col-md-6 '>
+    <div class='form-group col-md-6 enquiry-section'>
       <%= render partial: 'click_notes', locals: {groups: @enquiry_quick_groups, items: @enquiry_items} %>
     </div>
 
-    <div class='form-group col-md-6 '>
+    <div class='form-group col-md-6 work-section'>
       <%= render partial: 'work_templates', locals: {groups: @work_quick_groups, items: @work_items} %>
     </div>
   </div>
