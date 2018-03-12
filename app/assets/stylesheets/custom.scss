@@ -13,8 +13,12 @@ $gray-medium-light: #eaeaea;
 
 /* universal */
 
+.no-margin {
+  margin: 0 0 0 0;
+}
+
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .d-block {
@@ -201,6 +205,10 @@ input {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+#work-form {
+  margin-left: 0px !important;
 }
 
 /* Users index */

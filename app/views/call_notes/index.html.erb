@@ -18,6 +18,8 @@
 <%= @email_notes %>
 </textarea>
 
+<div class='divider-40'></div>
 <% provide(:url, reminders_path(method: :post)) %>
 <% provide(:button_text, 'Create Reminder') %>
+<h2 class='center'>Create Reminder (all changes to notes above with be lost)</h2>
 <%= render partial: 'reminders/form' %>

@@ -1,0 +1,39 @@
+<div id='work-form'>
+  <% if defined? template %>
+    <h4><%= params[:template]%> <%= link_to '(clear)', fetch_selected_template_path(:template => 'hide', type: 'work'), :remote => true, class: '' %></h4>
+    <% count = 0 %>
+    <% parse_template(template).each do |question, answer_array| %>
+      <%= fields_for :work_template, type.to_sym do |f| %>
+        <% if count % 3 == 0 %>
+          <div class='form-row row'>
+        <% end %>
+        <% if answer_array[0] == 'formatting' %>
+          <% count = 0 %>
+          <div class='form-group col-md-12'>
+            <p><strong><%= question.to_sym %></strong></p>
+          </div>
+        <% else %>
+          <div class='form-group col-md-4'>
+            <p><%= question.to_sym %></p>
+        <% end %>
+          <% case answer_array[0] %>
+          <% when 'select' %>
+            <%= select :work_template, question.parameterize.underscore, array_to_select_options(answer_array[1]), { prompt: 'select one' }, { :class => 'form-control question', "data-question" => "#{question}"   } %>
+          <% when 'textarea' %>
+            <%= text_area :work_template, question.parameterize.underscore, class: 'form-control question', :data => {:question => "#{question}" } %>
+          <% when 'ping' %>
+            <%= text_area :work_template, question.parameterize.underscore, value: ping_test, class: 'form-control question', :data => {:question => "#{question}" } %>
+          <% when 'text' %>
+            <%= text_field :work_template, question.parameterize.underscore, { :class => 'form-control question', "data-question" => "#{question}" } %>
+          <% when 'speedtests' %>
+            <%= text_area :work_template, question.parameterize.underscore, value: speed_tests, class: 'form-control question', :data => {:question => "#{question}" } %>
+          <% end %>
+          <% if count % 3 == 0 %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+      <% count += 1 %>
+    <% end %>
+  <% end %>
+</div>

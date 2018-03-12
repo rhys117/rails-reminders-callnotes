@@ -4,49 +4,51 @@ Dead NTD: |
   Tested NTD in a different power outlet: [Yes/No]
   If unable, have you confirmed the outlet they're using works with another device?: [Yes/No]
   Tested NTD with ODU cable disconnected from wall? did NTD power light come on?: [Yes/No]
-  Did any other equipment in the property die at the same time?:
+  Did any other equipment in the property die at the same time?: Yes/No
 
   -- Customer Availability --
   If NBN were to organise a service call in the next week, what day would be best between Monday and Friday?:
   Mornings or Afternoons?:
-  What is the best contact phone number for us to pass on to NBN?
+  What is the best contact phone number for us to pass on to NBN?:
   Name of the person who will be on site:
-  What is the best way for SkyMesh get customer updates?: (sms / phone / email) [Provide + email/phone number]
+  What is the best way for SkyMesh get customer updates?: sms / phone / email
+  Provide + email/phone number:
 Standard (Offline): |
   Fault Description (summary):
 
   -------------------------------------------
   AVC-ID:
 
-  WNTD Lights:
+  WNTD Lights
   Power: OFF / GREEN SOLID
   Status: OFF / RED SOLID / AMBER FLASHING / GREEN FLASHING / GREEN SOLID
   ODU: OFF / RED FLASHING / RED SOLID / GREEN FLASHING / GREEN SOLID
   Signal Strength: RED SOLID, YELLOW SOLID, GREEN SOLID
 
-  ODU Port lights:
+  ODU Port lights
   Green: SOLID / FLASHING / OFF
   Orange: SOLID / FLASHING / OFF
 
-  UNI-D Port lights:
+  UNI-D Port lights
   Green: SOLID / FLASHING / OFF
   Orange: SOLID / FLASHING / OFF
 
   -- General Troubleshooting --
-  Customer has agreed to leave NTD and CPE powered on: 
-  Are all devices powered on and plugged in?
-  WNTD power cycled?
-  Tested WNTD in another power point (can fixed flashing status)?
+  Customer has agreed to leave NTD and CPE powered on: Yes/No
+  Are all devices powered on and plugged in?: Yes/No
+  WNTD power cycled?: Yes/No
+  Tested WNTD in another power point (can fixed flashing status)?: Yes/No
   Has the Diamond Antenna or other NBN equipment been damaged or otherwise been knocked out of alignment?: Yes / No
   If Yes, description of damage: 
 
   -- Customer Availability --
   If NBN were to organise a service call in the next week, what day would be best between Monday and Friday?:
   Mornings or Afternoons?:
-  What is the best contact phone number for us to pass on to NBN?
+  What is the best contact phone number for us to pass on to NBN?:
   Name of the person who will be on site:
-  What is the best way for SkyMesh get customer updates?: (sms / phone / email) [Provide + email/phone number]
-   
+  What is the best way for SkyMesh get customer updates?: sms / phone / email 
+  Provide + email/phone number:
+
   Intermittent issue?: Yes / No
   If Yes, when did it begin?:
   If Yes, How often does it occur (be detailed):
@@ -61,49 +63,46 @@ Standard (Offline): |
   If Router, Brand & Model Number: 
   SkyMesh Supplied?: Yes / No
 
-  Tested with the 2nd patch cable?
-  Models and MACs of devices tested:
-  DHCP Configuration verified for each device used for direct-to-NTD testing? Yes / No
-  IP Address CPE getting while directly connected: 
+  Tested with the 2nd patch cable?: Yes/No
+  Models and MACs of devices tested: textarea
+  DHCP Configuration verified for each device used for direct-to-NTD testing?: Yes / No
+  IP Address CPE getting while directly connected: textarea
   If the customer is getting a local only IP address, have you tried doing a TCP/IP reset (netsh int ip reset)?: Yes/No
-  If customer offline, list ARP Entries when directly connected to NTD(ignore OS-generated/static entries):
+  If customer offline, list ARP Entries when directly connected to NTD(ignore OS-generated/static entries): textarea
 
   *-------------STOP HERE IF THE CPE DIRECTLY CONNECTED IS NOT GETTING A SKYMESH IP OR UNI-D PORT DOES NOT DETECT CPE CONNECTED-----------------*
 
   If recent, can customer PING www.google.com? Yes / No
 
-  Ping statistics for 180.181.127.4:
-  Packets: Sent = 100, Received = n Lost = n (n% loss),
-  Approximate round trip times in milliseconds:
-  Minimum = 0ms, Maximum = 0ms, Average = 0ms
+  Ping statistics for 180.181.127.4: pingtest
 
-  Traceroute 180.181.127.4:
+  Traceroute 180.181.127.4: textarea
 
 Dropouts: |
-  (include standard template here)
+  (include standard template first)
 
   Additional information for intermittent loss of service faults
-  EU has powered off the NTD & CPE for 10min before powering back on?
-  Date and times when the outages were noticed: 
-  How long does the service disconnect for each time it drops out? 
-  Any changes to the NTD LED's during outages, if so what?
+  EU has powered off the NTD & CPE for 10min before powering back on?: Yes/No
+  Date and times when the outages were noticed: textarea
+  How long does the service disconnect for each time it drops out?:
+  Any changes to the NTD LED's during outages, if so what?:
 Speed: |
-  (include standard template here)
+  (include standard template first)
 
   -- Speed / Packet loss Issues --
-  Tested with the 2nd patch cable?
-  Models and MACs of devices tested:
+  Tested with the 2nd patch cable?: Yes/No
+  Models and MACs of devices tested: textarea
    
   Intermittent issue?: Yes / No
   If Yes, when did it begin?:
-  If Yes, How often does it occur (be detailed):
+  If Yes, How often does it occur (be detailed): textarea
 
   Customer connected Wired/Wireless?:
   Router Capable of Speed Expected?: Yes / No
 
   Security Software (include version):
   Multiple Web browsers tried: Yes /No
-  List which ones (include version):
+  List which ones (include version): textarea
   Proxies disabled: Yes / No / NA
   VPNs disabled: Yes / No / NA
   IE Reset: Yes / No
@@ -115,17 +114,14 @@ Speed: |
   Non-essential programs closed: Yes / No
   Logged into Safe-Mode w/ Networking: Yes / No / Not Windows
 
-  Speed Test Results (morning, afternoon, and evening). If not using netgauge.skymesh.net.au, specify servers used:
-  Example Day 1 (date)  Morning:   Afternoon:   Evening: 
-  Example Day 2 (date)  Morning:   Afternoon:   Evening: 
-  Example Day 2 (date)  Morning:   Afternoon:   Evening: 
+  Speed Test Results (morning, afternoon, and evening). If not using netgauge.skymesh.net.au, specify servers used: speedtests
 
   Customer experiencing Packet Loss?: Yes / No
   Customer experiencing increased latency than before?: Yes / No
 
-  Additional Diagnostics/Comments:
+  Additional Diagnostics/Comments: textarea
 VOIP: |
-  (include standard template here)
+  (include standard template first)
 
   -- VOIP (UNID) --
 

@@ -1,1 +1,1 @@
-$("#work-templates").html("<%= escape_javascript(render partial: 'work_templates', locals: { items: @selected, groups: @work_quick_groups } ) %>");
+$("#work-templates").html("<%= escape_javascript(render partial: 'work_templates', locals: { items: @selected, groups: @work_quick_groups, type: 'work' } ) %>");
