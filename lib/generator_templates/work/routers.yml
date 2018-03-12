@@ -200,11 +200,11 @@ Replace - Unable to Auth PPPoE: |
   Second phone cable tested: Yes / No
   Completed Isolation test (only modem connected to phone port if applicable): Yes / No
    
-  Customer has been provided the reply paid address and reference number to return the faulty router to?: Yes / No
-  Customer understands that they need to return all components provided with the faulty router? (listed below): Yes / No
-   - The faulty router unit
-   - All cabling, including power adapter and network/DSL cables
-   - All peripherals specific to the device (like antennae, or stands)
+   Customer has been provided the reply paid address and reference number to return the faulty router to?: Yes / No
+  Customer understands that they need to return all components provided with the faulty router?: Yes / No
+   - The faulty router unit: Yes/No
+   - All cabling, including power adapter and network/DSL cables: Yes/No
+   - All peripherals specific to the device (like antennae, or stands): Yes/No
   Customer understands that they need to return the router, power supply and cables to receive a full credit?: Yes / No
   Customer understands that the router needs to be returned within 14 days or they may be charged the full cost of the replacement unit?: Yes / No
 

@@ -1,6 +1,6 @@
 <div id='work-form'>
   <% if defined? template %>
-    <h4><%= params[:template]%> <%= link_to '(clear)', fetch_selected_template_path(:template => 'hide', type: 'work'), :remote => true, class: '' %></h4>
+    <h4><%= params[:template]%> <%= link_to '(hide)', fetch_selected_template_path(:template => 'hide', type: 'work'), :remote => true, class: '' %></h4>
     <% count = 0 %>
     <% parse_template(template).each do |question, answer_array| %>
       <%= fields_for :work_template, type.to_sym do |f| %>
