@@ -58,6 +58,21 @@ class CallNotesController < ApplicationController
     end
   end
 
+  def selected_template
+    if params[:template] == 'hide'
+      respond_to do |format|
+        format.js
+      end
+      return
+    end
+    params[:cat_id] = 'general' if params[:cat_id].length < 1
+    templates = YAML.load_file("#{::Rails.root}/lib/generator_templates/#{params[:type]}/#{params[:cat_id].downcase}.yml")
+    @selected = templates[params[:template]]
+    respond_to do |format|
+      format.js
+    end
+  end
+
   # GET /call_notes/new
   def new
     @enquiry_items = YAML.load_file("#{::Rails.root}/lib/generator_templates/enquiry/general.yml")

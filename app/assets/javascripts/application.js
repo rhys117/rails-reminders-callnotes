@@ -35,6 +35,10 @@ document.addEventListener("turbolinks:load", function() {
 
     textareaResize($("#call_note_additional_notes"), $("#call_note_work_notes"));
     textareaResize($("#call_note_work_notes"), $("#call_note_additional_notes"));
+
+    if (window.location.pathname == '/call_notes/new') {
+      BlockEnterKey();
+    }
   });
 
   function search_and_filter(){
@@ -91,9 +95,17 @@ var textareaResize = function(source, dest) {
   });
 };
 
+function BlockEnterKey() {
+  $(window).keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+}
+
 function ToggleWorkNotes() {
   if ($('#btn-hide-work').text() == 'hide') {
-    $("#work-templates").attr('class', 'hidden');
     $("#call_note_work_notes").attr('class', 'hidden');
     $(".enquiry-section").attr('class', 'enquiry-section form-group col-md-10');
     $(".work-section").attr('class', 'work-section form-group col-md-2');
@@ -102,13 +114,36 @@ function ToggleWorkNotes() {
     $('#btn-hide-work').text('show');
   }
   else {
-    $("#work-templates").attr('class', '');
-    $("#call_note_work_notes").attr('class', '');
+    $("#call_note_work_notes").attr('class', 'form-control');
     $(".enquiry-section").attr('class', 'enquiry-section form-group col-md-6');
     $(".work-section").attr('class', 'work-section form-group col-md-6');
     $('#btn-hide-work').text('hide');
   }
 }
+
+$(function() {
+  $(document).on('change', '.question', function() {
+    var question = $(this).attr('data-question').trim();
+    var answer = $(this).val();
+    var input_type = $(this)[0].type
+    var work_notes = $("#call_note_work_notes").val();
+    var lines = work_notes.split("\n").reverse();
+
+    for(var i = 0;i < lines.length;i++){
+      if (lines[i].includes(question)) {
+        if (input_type == 'textarea') {
+          lines[i] = question + ": \n" + answer + "\n";
+        } else {
+          lines[i] = question + ': ' + answer;
+        }
+        break;
+      }
+    }
+
+    var changed_notes = lines.reverse().join('\n');
+    $("#call_note_work_notes").val(changed_notes)
+  });
+});
 
 
 function PrependToEnquiryNotes(string) {
@@ -128,8 +163,9 @@ function PrependToEmailNotes(string) {
 function PrependToWorkNotes(string) {
   var content = $("#"+string).val();
   var current_notes = $('#call_note_work_notes').val();
-  var combined = current_notes + content;
-  $('#call_note_work_notes').val(combined);
+  var combined = current_notes + content + "\n";
+  var filtered = combined.replace(/textarea|pingtest/g, "");
+  $('#call_note_work_notes').val(filtered);
 }
 
 function PresetOnlineUsage(){
