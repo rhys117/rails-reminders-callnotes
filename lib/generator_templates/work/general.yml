@@ -1,17 +1,18 @@
 Assistance Required: |
+  Summary
   Detailed Summary of issue: textarea
   What troubleshooting has been done: textarea
   What is the expected behavior: textarea
   How does the troubleshooting differ from the expected behavior: textarea
 Escalation to Supervisor: |
+  Customer Contact Details
   Customer Name:
-
   Preferred Contact Method: Phone/Email
   Contact Number/Email:
   Second Contact Option (optional):
 
+  Discription of problem
   What would the customer like a Supervisor to Address/Look into?: textarea
-
   What is the outcome the customer is hoping for as a result of a Supervisor looking into this?: textarea
 PSTN: |
   -- Customer Details --
@@ -45,10 +46,9 @@ PSTN: |
   Optional questions.
   Is the issue regarding a call-based service not working as expected? If so, which?: textarea
 Complaint: |
-  Name: 
-
+  Customer Details
+  Name:
   Preferred Phone Number:
-
-  Does this Complaint have an Urgent component? YES / NO
+  Does this Complaint have an Urgent component?: YES / NO
 
   Notes: Customer is not happy about: textarea
