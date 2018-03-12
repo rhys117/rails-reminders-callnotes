@@ -73,7 +73,7 @@ Router - DSL2877AL: |
 Router - DVA2800: |
   To make the required changes on your DLink DVA2800 supplied by SkyMesh please follow these instructions. 
 
-  1. Open a web browser (e.g., Internet Explorer, Chrome, Firefox, or Safari) and enter http://192.168.0.1 into the address bar. 
+  1. Open a web browser (e.g., Internet Explorer, Chrome, Firefox, or Safari) and enter http://192.168.1.1 into the address bar. 
   2. Use the admin password to log into the router. The admin password configured on your device when we shipped it was: PASSWORD
   3. At the top of the page hover over the settings tab. When the drop down menu appears click internet.
 
