@@ -37,7 +37,15 @@ document.addEventListener("turbolinks:load", function() {
     textareaResize($("#call_note_work_notes"), $("#call_note_additional_notes"));
 
     if (window.location.pathname == '/call_notes/new') {
-      BlockEnterKey();
+      jQuery(function($) { // DOM ready
+        $(document).on("keydown", function(e) {
+          if (e.which === 13 && !$(e.target).is("textarea")) {
+            e.preventDefault();
+            console.log("ENTER PREVENTED");
+            return;
+          }
+        });
+      });
     }
   });
 
@@ -94,15 +102,6 @@ var textareaResize = function(source, dest) {
     resizeEvent();
   });
 };
-
-function BlockEnterKey() {
-  $(window).keydown(function(event){
-    if(event.keyCode == 13) {
-      event.preventDefault();
-      return false;
-    }
-  });
-}
 
 function ToggleWorkNotes() {
   if ($('#btn-hide-work').text() == 'hide') {
