@@ -36,8 +36,9 @@ document.addEventListener("turbolinks:load", function() {
     textareaResize($("#call_note_additional_notes"), $("#call_note_work_notes"));
     textareaResize($("#call_note_work_notes"), $("#call_note_additional_notes"));
 
+    // stop enter key from submitting form on notes page but allow in textareas
     if (window.location.pathname == '/call_notes/new') {
-      jQuery(function($) { // DOM ready
+      jQuery(function($) {
         $(document).on("keydown", function(e) {
           if (e.which === 13 && !$(e.target).is("textarea")) {
             e.preventDefault();
@@ -122,20 +123,36 @@ function ToggleWorkNotes() {
 
 $(function() {
   $(document).on('change', '.question', function() {
-    var question = $(this).attr('data-question').trim();
+    var question = $(this).attr('data-question').trim() + ':';
     var answer = $(this).val();
     var input_type = $(this)[0].type
     var work_notes = $("#call_note_work_notes").val();
     var lines = work_notes.split("\n").reverse();
 
     for(var i = 0;i < lines.length;i++){
-      if (lines[i].includes(question)) {
+      notes_line_question = lines[i].split(':')[0].trim() + ':';
+      console.log(notes_line_question)
+      if (notes_line_question == question) {
         if (input_type == 'textarea') {
-          lines[i] = question + ": \n" + answer + "\n";
+          var old_value = this.oldvalue;
+          if (old_value.length > 1) {
+            var notes_past_question = lines.slice(0,i).reverse().join('\n');
+
+            if (notes_past_question.includes(old_value)) {
+              var altered = notes_past_question.replace(old_value, answer);
+              var changed_notes = lines.slice(i, lines.length).reverse().join('\n') + '\n' + altered.trim();
+              $("#call_note_work_notes").val(changed_notes.trim());
+              return
+            } else {
+              lines[i] = question + " \n" + answer + "\n";
+            }
+          } else {
+            lines[i] = question + " \n" + answer + "\n";
+          }
         } else {
-          lines[i] = question + ': ' + answer;
+          lines[i] = question + ' ' + answer;
+          console.log(lines[i]);
         }
-        break;
       }
     }
 
@@ -163,7 +180,7 @@ function PrependToWorkNotes(string) {
   var content = $("#"+string).val();
   var current_notes = $('#call_note_work_notes').val();
   var combined = current_notes + content + "\n";
-  var filtered = combined.replace(/textarea|pingtest/g, "");
+  var filtered = combined.replace(/textarea|pingtest|speedtests/g, "");
   $('#call_note_work_notes').val(filtered);
 }
 

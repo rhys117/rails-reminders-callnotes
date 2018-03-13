@@ -52,6 +52,8 @@ module CallNotesHelper
             questions_and_answers[question.strip] = ['textarea']
           elsif answer.downcase.include?('pingtest')
             questions_and_answers[question.strip] = ['ping']
+          elsif answer.downcase.include?('speedtests')
+            questions_and_answers[question.strip] = ['speedtests']
           else
             questions_and_answers[question.strip] = ['text']
           end
