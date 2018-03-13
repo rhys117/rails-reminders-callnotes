@@ -1,7 +1,12 @@
 <div id="<%= type %>-form">
   <% if defined? template %>
-    <h4><%= params[:template]%> <%= link_to '(hide)', fetch_selected_template_path(:template => 'hide', type: "#{type}" ), :remote => true, class: '' %></h4>
+    <h4><%= type.capitalize %> <%= link_to '(hide)', fetch_selected_template_path(:template => 'hide', type: "#{type}" ), :remote => true, class: '' %></h4>
     <% count = 0 %>
+    <div class='form-row row'>
+      <div class='form-group col-md-12'>
+        <p><strong><%= params[:template] %></strong></p>
+      </div>
+    </div>
     <% parse_template(template).each do |question, answer_array| %>
       <%= fields_for "#{type}_template".to_sym, type.to_sym do |f| %>
         <% if count % 3 == 0 %>

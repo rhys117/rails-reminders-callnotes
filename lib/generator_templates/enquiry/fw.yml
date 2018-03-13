@@ -1,10 +1,12 @@
 NTD lights: |
   WNTD Lights:
-  - Power: Off/Green Solid
-  - Status: Off/Solid/Flashing Green/Amber
-  - ODU: Off/Flashing/Solid Green/Red
+  - Power: Off/Solid Green/Solid Red/Flashing Green/Flashing Red
+  - Status: Off/Solid Green/Solid Red/Flashing Green/Flashing Red
+  - ODU: Off/Solid Green/Solid Red/Flashing Green/Flashing Red
   - Signal Strength: Off/Green/Yellow/Red
 Loopback: |
-  Loopback Test: CODE >> RESULT
-  - MESSAGES
-Powercycle & reseat: "Powercycled CPE and reseated aerial cable"
+  Loopback Test
+  - Code:
+  - Result:
+  - Messages: textarea
+Powercycle & reseat: "Powercycled CPE and reseated aerial cable: Yes/No"

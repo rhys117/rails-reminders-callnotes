@@ -1,8 +1,8 @@
 NTD lights: |
-  NTD Lights:
-  - Power: Off/Solid/Flashing Green/Red
-  - Optical: Off/Solid/Flashing Green/Red
-  - Alarm: Off/Solid Green/Red
-  - UNI-D1/2/3/4: Off/Solid/Flashing Green/Yellow
-  - UNI-V1/2: Off/Flashing Green
-  - Update: Off/Solid Green/red
+  NTD Lights
+  - Power: Off/Solid Green/Solid Red/Flashing Green/Flashing Red
+  - Optical: Off/Solid Green/Flashing Green/Solid Red/
+  - Alarm: Off/Solid Green/Solid Red
+  - UNI-D1/2/3/4: Off/Solid Green/Flashing Green/Solid Yellow/Flashing Yellow
+  - UNI-V1/2: Off/Solid Green/Flashing Green
+  - Update: Off/Solid Green/Flashing Green/Solid Red

@@ -1,5 +1,5 @@
 <% if params[:template] == 'hide' %>
   $("#<%= params[:type] %>-form").html("");
 <% else %>
-  $("#<%= params[:type] %>-form").html("<%= escape_javascript(render partial: 'template_form', locals: { template: @selected, type: 'work' } ) %>");
+  $("#<%= params[:type] %>-form").html("<%= escape_javascript(render partial: 'template_form', locals: { template: @selected, type: params[:type] } ) %>");
 <% end %>
