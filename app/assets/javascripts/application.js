@@ -169,7 +169,8 @@ function PrependToEnquiryNotes(string) {
   var content = $("#"+string).val();
   var current_notes = $('#call_note_additional_notes').val();
   var combined = (current_notes + "\n" + content).trim() + "\n";
-  $('#call_note_additional_notes').val(combined);
+  var filtered = combined.replace(/textarea|pingtest|speedtests/g, "");
+  $('#call_note_additional_notes').val(filtered);
 }
 
 function PrependToEmailNotes(string) {
