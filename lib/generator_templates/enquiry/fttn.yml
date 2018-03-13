@@ -1,8 +1,8 @@
 Router model: |
-  Customer using ?? modem
+  Modem model and make:
   - SkyMesh Supplied: Yes/No
-  - Confirmed FTTN compatible
+  - Confirmed FTTN compatible: Yes/No
 Modem lights: |
-  Modem Lights:
-  - DSL Sync: Off/Negotiating/Solid
-  - Internet: Off/Flashing/Solid Green/Red
+  Modem Lights
+  - DSL Sync: Off/Negotiating/Sync
+  - Internet: Off/Flashing Green/Solid Green/Red

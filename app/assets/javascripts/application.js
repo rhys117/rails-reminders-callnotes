@@ -126,23 +126,26 @@ $(function() {
     var question = $(this).attr('data-question').trim() + ':';
     var answer = $(this).val();
     var input_type = $(this)[0].type;
-    var work_notes = $("#call_note_work_notes").val();
-    var lines = work_notes.split("\n").reverse();
+    var id = $(this).attr('id').split('_')[0];
+
+    if (id == 'enquiry') {
+      id = 'additional'
+    }
+
+    var notes = $("#call_note_" + id + '_notes').val();
+    var lines = notes.split("\n").reverse();
 
     for(var i = 0;i < lines.length;i++){
       notes_line_question = lines[i].split(':')[0].trim() + ':';
-      console.log(notes_line_question)
-      console.log(input_type);
       if (notes_line_question == question) {
         if (input_type == 'textarea') {
           var old_value = this.oldvalue;
           if (old_value.length > 1) {
-            console.log('double_yes');
             var notes_past_question = lines.slice(0,i).reverse().join('\n');
             if (notes_past_question.includes(old_value)) {
               var altered = notes_past_question.replace(old_value, answer);
               var changed_notes = lines.slice(i, lines.length).reverse().join('\n') + '\n' + altered.trim();
-              $("#call_note_work_notes").val(changed_notes.trim());
+              $("#call_note_" + id + '_notes').val(changed_notes.trim());
               return
             } else {
               lines[i] = question + " \n" + answer + "\n";
@@ -157,7 +160,7 @@ $(function() {
     }
 
     var changed_notes = lines.reverse().join('\n');
-    $("#call_note_work_notes").val(changed_notes)
+    $("#call_note_" + id + '_notes').val(changed_notes)
   });
 });
 

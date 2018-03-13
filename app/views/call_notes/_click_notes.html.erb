@@ -10,7 +10,7 @@
 
   <div class='form-group'>
     <% items.each do |key, value| %>
-      <button type="button" class='btn btn-default btn-sm btn-margin-top' onclick="PrependToEnquiryNotes('<%= key.parameterize.underscore %>')"><%= key %></button>
+      <%= link_to key, fetch_selected_template_path(:template => key, :type => type, :cat_id => "#{params[:cat_id]}"), :remote => true, class: 'btn btn-default btn-sm btn-margin-top', onclick: "PrependToEnquiryNotes('#{key.parameterize.underscore}')" %>
       <textarea class='copy-data' id="<%= key.parameterize.underscore %>"><%= value %></textarea>
     <% end %>
   </div>

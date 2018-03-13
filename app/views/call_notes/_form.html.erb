@@ -50,13 +50,17 @@
   <div class='form-row row'>
     <div class='form-group col-md-6'>
       <%= label :enquiry_templates , 'Enquiry Templates' %>
-      <%= render partial: 'click_notes', locals: {groups: @enquiry_quick_groups, items: @enquiry_items} %>
+      <%= render partial: 'click_notes', locals: {groups: @enquiry_quick_groups, items: @enquiry_items, type: 'enquiry'} %>
     </div>
 
     <div class='form-group col-md-6'>
       <%= label :work_templates , 'Work Templates' %>
       <%= render partial: 'work_templates', locals: {groups: @work_quick_groups, items: @work_items, type: 'work' } %>
     </div>
+  </div>
+
+  <div class='form-row row'>
+    <%= render partial: 'template_form', locals: {type:'enquiry'} %>
   </div>
 
   <div class='form-row row'>
