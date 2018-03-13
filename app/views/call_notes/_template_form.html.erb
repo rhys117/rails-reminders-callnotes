@@ -1,9 +1,9 @@
-<div id='work-form'>
+<div id="<%= type %>-form">
   <% if defined? template %>
-    <h4><%= params[:template]%> <%= link_to '(hide)', fetch_selected_template_path(:template => 'hide', type: 'work'), :remote => true, class: '' %></h4>
+    <h4><%= params[:template]%> <%= link_to '(hide)', fetch_selected_template_path(:template => 'hide', type: "#{type}" ), :remote => true, class: '' %></h4>
     <% count = 0 %>
     <% parse_template(template).each do |question, answer_array| %>
-      <%= fields_for :work_template, type.to_sym do |f| %>
+      <%= fields_for "#{type}_template".to_sym, type.to_sym do |f| %>
         <% if count % 3 == 0 %>
           <div class='form-row row'>
         <% end %>
@@ -18,15 +18,15 @@
         <% end %>
           <% case answer_array[0] %>
           <% when 'select' %>
-            <%= select :work_template, question.parameterize.underscore, array_to_select_options(answer_array[1]), { prompt: 'select one' }, { :class => 'form-control question', "data-question" => "#{question}"   } %>
+            <%= select "#{type}_template".to_sym, question.parameterize.underscore, array_to_select_options(answer_array[1]), { prompt: 'select one' }, { :class => 'form-control question', "data-question" => "#{question}"   } %>
           <% when 'textarea' %>
-            <%= text_area :work_template, question.parameterize.underscore, class: 'form-control question', :data => {:question => "#{question}" } %>
+            <%= text_area "#{type}_template".to_sym, question.parameterize.underscore, class: 'form-control question', :data => {:question => "#{question}" }, onfocus: "this.oldvalue = this.value;" %>
           <% when 'ping' %>
-            <%= text_area :work_template, question.parameterize.underscore, value: ping_test, class: 'form-control question', :data => {:question => "#{question}" } %>
+            <%= text_area "#{type}_template".to_sym, question.parameterize.underscore, value: ping_test, class: 'form-control question', :data => {:question => "#{question}" }, onfocus: "this.oldvalue = this.value;" %>
           <% when 'text' %>
-            <%= text_field :work_template, question.parameterize.underscore, { :class => 'form-control question', "data-question" => "#{question}" } %>
+            <%= text_field "#{type}_template".to_sym, question.parameterize.underscore, { :class => 'form-control question', "data-question" => "#{question}" } %>
           <% when 'speedtests' %>
-            <%= text_area :work_template, question.parameterize.underscore, value: speed_tests, class: 'form-control question', :data => {:question => "#{question}" } %>
+            <%= text_area "#{type}_template".to_sym, question.parameterize.underscore, value: speed_tests, class: 'form-control question', :data => {:question => "#{question}" }, onfocus: "this.oldvalue = this.value;" %>
           <% end %>
           <% if count % 3 == 0 %>
             </div>
