@@ -36,6 +36,23 @@ module CallNotesHelper
     EOS
   end
 
+  def sort_for_lights(answers)
+    answers.map! do |answer|
+      split_answer = answer.downcase.split(' ')
+      if (split_answer[0] == 'flashing') || (split_answer[0] == 'solid')
+        split_answer.rotate!
+      end
+      answer = split_answer.join(' ').titleize
+    end
+
+    sort_order = 'gyaroscftxmwbdeklvqnzphuji'
+    answers.sort_by do |word|
+      word.split('').map do |letter|
+        sort_order.index(letter.downcase)
+      end
+    end
+  end
+
   def parse_template(template)
     template.gsub!(/[\[\]]/, '')
 
@@ -45,6 +62,8 @@ module CallNotesHelper
       question, answer = line.split(':')
       if !answer.nil?
         split_answers = answer.split('/')
+        split_answers = sort_for_lights(split_answers)
+
         if split_answers.length > 1
           questions_and_answers[question.strip] = ['select', split_answers.map(&:strip)]
         else

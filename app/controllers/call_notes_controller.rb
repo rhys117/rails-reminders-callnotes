@@ -5,28 +5,7 @@ class CallNotesController < ApplicationController
   # GET /call_notes
   # GET /call_notes.json
   def index
-    @reminder = Reminder.new
-    @enquiry_notes = ""
-    @work_notes = params[:call_note][:work_notes]
-    @email_notes = params[:call_note][:email_notes]
-
-    notes_params_pairs = notes_params_pairs(params)
-    custom_input = {}
-    params[:call_note].each do |param, additional_notes|
-      if param.to_s.include?('additional') && additional_notes.length > 0
-        custom_input[param.to_sym] = "#{additional_notes.strip} \n"
-      end
-    end
-
-    params[:call_note].each do |key, value|
-      unless value.empty?
-        if custom_input.has_key?(key.to_sym)
-          @enquiry_notes << custom_input[key.to_sym] + "\n"
-        elsif notes_params_pairs.has_key?(key.to_sym)
-          @enquiry_notes << notes_params_pairs[key.to_sym][value] + "\n"
-        end
-      end
-    end
+    redirect_to new_call_note_path
   end
 
   # GET /call_notes/1
@@ -91,17 +70,28 @@ class CallNotesController < ApplicationController
   # POST /call_notes
   # POST /call_notes.json
   def create
-    # @call_note = CallNote.new(call_note_params)
+    @reminder = Reminder.new
+    @enquiry_notes = ""
+    @work_notes = params[:call_note][:work_notes]
+    @email_notes = params[:call_note][:email_notes]
 
-    # respond_to do |format|
-    #   if @call_note.save
-    #     format.html { redirect_to @call_note, notice: 'Call note was successfully created.' }
-    #     format.json { render :show, status: :created, location: @call_note }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @call_note.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    notes_params_pairs = notes_params_pairs(params)
+    custom_input = {}
+    params[:call_note].each do |param, additional_notes|
+      if param.to_s.include?('additional') && additional_notes.length > 0
+        custom_input[param.to_sym] = "#{additional_notes.strip} \n"
+      end
+    end
+
+    params[:call_note].each do |key, value|
+      unless value.empty?
+        if custom_input.has_key?(key.to_sym)
+          @enquiry_notes << custom_input[key.to_sym] + "\n"
+        elsif notes_params_pairs.has_key?(key.to_sym)
+          @enquiry_notes << notes_params_pairs[key.to_sym][value] + "\n"
+        end
+      end
+    end
   end
 
   # PATCH/PUT /call_notes/1

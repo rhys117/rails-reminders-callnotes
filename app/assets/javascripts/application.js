@@ -156,6 +156,7 @@ $(function() {
         } else {
           lines[i] = question + ' ' + answer;
         }
+        break
       }
     }
 
