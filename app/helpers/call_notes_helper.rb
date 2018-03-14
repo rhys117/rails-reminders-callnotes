@@ -45,10 +45,14 @@ module CallNotesHelper
       answer = split_answer.join(' ').titleize
     end
 
-    sort_order = 'gyaroscftxmwbdeklvqnzphuji'
-    answers.sort_by do |word|
-      word.split('').map do |letter|
-        sort_order.index(letter.downcase)
+    sort_order = ['green', 'blue', 'yellow', 'amber', 'orange', 'white', 'red', 'off']
+    answers.sort_by do |answer|
+      answer.split(' ').map do |word|
+        if sort_order.include?(word.downcase)
+          sort_order.index(word.downcase)
+        else
+          - 1
+        end
       end
     end
   end
@@ -60,10 +64,12 @@ module CallNotesHelper
 
     template.each_line do |line|
       question, answer = line.split(':')
-      if !answer.nil?
+      unless answer.nil?
         split_answers = answer.split('/')
         split_answers = sort_for_lights(split_answers)
 
+        split_answers.map!(&:strip)
+        split_answers.delete('')
         if split_answers.length > 1
           questions_and_answers[question.strip] = ['select', split_answers.map(&:strip)]
         else

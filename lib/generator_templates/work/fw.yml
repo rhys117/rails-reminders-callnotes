@@ -1,6 +1,6 @@
 Dead NTD: |
   Fault Description (summary):
-
+  -------------------------------------------
   Tested NTD in a different power outlet: [Yes/No]
   If unable, have you confirmed the outlet they're using works with another device?: [Yes/No]
   Tested NTD with ODU cable disconnected from wall? did NTD power light come on?: [Yes/No]
@@ -15,7 +15,6 @@ Dead NTD: |
   Provide + email/phone number:
 Standard (Offline): |
   Fault Description (summary):
-
   -------------------------------------------
   AVC-ID:
 
