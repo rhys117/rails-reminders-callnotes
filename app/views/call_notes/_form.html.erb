@@ -1,4 +1,4 @@
-<%= form_for(call_note, :url => { :action => 'index' }, html: { method: 'get' } ) do |f| %>
+<%= form_for(call_note, :url => { :action => 'index' }, html: { method: 'post' } ) do |f| %>
   <% if call_note.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(call_note.errors.count, "error") %> prohibited this call_note from being saved:</h2>

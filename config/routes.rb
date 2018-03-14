@@ -15,7 +15,9 @@ Rails.application.routes.draw do
       patch 'inverse_complete'
     end
   end
-  resources :call_notes
+  resources :call_notes do
+    post "/call_notes" => "call_notes#index", :as => 'index'
+  end
   get "/fetch_enquiry_templates" => 'call_notes#enquiry_templates', as: 'fetch_enquiry_templates'
   get "/fetch_work_templates" => "call_notes#work_templates", as: 'fetch_work_templates'
   get "/fetch_email_templates" => "call_notes#email_templates", as: 'fetch_email_templates'
