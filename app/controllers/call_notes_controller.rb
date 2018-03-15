@@ -72,7 +72,7 @@ class CallNotesController < ApplicationController
   def create
     @reminder = Reminder.new
     @enquiry_notes = ""
-    @work_notes = params[:call_note][:work_notes]
+    @work_notes = params[:call_note][:work_notes].strip!
     @email_notes = params[:call_note][:email_notes]
 
     notes_params_pairs = notes_params_pairs(params)
@@ -92,6 +92,7 @@ class CallNotesController < ApplicationController
         end
       end
     end
+    @enquiry_notes.strip!
   end
 
   # PATCH/PUT /call_notes/1
