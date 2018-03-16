@@ -45,7 +45,7 @@ module CallNotesHelper
       answer = split_answer.join(' ').titleize
     end
 
-    sort_order = ['green', 'blue', 'yellow', 'amber', 'orange', 'white', 'red', 'off']
+    sort_order = ['green', 'blue', 'yellow', 'amber', 'orange', 'white', 'red', 'off', 'yes', 'no']
     answers.sort_by do |answer|
       answer.split(' ').map do |word|
         if sort_order.include?(word.downcase)
