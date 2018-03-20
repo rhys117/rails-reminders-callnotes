@@ -72,8 +72,8 @@ class CallNotesController < ApplicationController
   def create
     @reminder = Reminder.new
     @enquiry_notes = ""
-    @work_notes = params[:call_note][:work_notes].strip!
-    @email_notes = params[:call_note][:email_notes]
+    @work_notes = params[:call_note][:work_notes]
+    @email_notes = params[:call_note][:email_notes].strip
 
     notes_params_pairs = notes_params_pairs(params)
     custom_input = {}
