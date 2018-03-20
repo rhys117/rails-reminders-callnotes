@@ -60,7 +60,7 @@ module CallNotesHelper
   def parse_template(template)
     template.gsub!(/[\[\]]/, '')
 
-    questions_and_answers = Hash.new({ text: nil })
+    questions_and_answers = {}
 
     template.each_line do |line|
       question, answer = line.split(':')
@@ -70,6 +70,11 @@ module CallNotesHelper
 
         split_answers.map!(&:strip)
         split_answers.delete('')
+
+        unless questions_and_answers[question].nil?
+          questions_and_answers["Error: Duplicate question in template #{question}. Please report me to Rhys."] = ['formatting']
+        end
+
         if split_answers.length > 1
           questions_and_answers[question.strip] = ['select', split_answers.map(&:strip)]
         else
