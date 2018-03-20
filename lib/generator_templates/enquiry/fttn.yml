@@ -18,23 +18,23 @@ No Sync: |
   - tested with alternate phone cable: yes/no
 
   LST
-  - code:
+  - LST code:
   - status:
   - service stability:
   - CPE type detected:
   - Physical profile:
 
   Port Reset
-  - code:
+  - PR code:
   - result: passed/failed
 
   SELT with CPE
-  - code: 
-  - impairments: textarea
+  - SELT CPE code:
+  - SELT CPE impairments: textarea
 
   SELT without CPE
-  - code: 
-  - impairments: textarea
+  - SELT NO CPE code:
+  - SELT NO CPE impairments: textarea
 
   Test result indications
   Bridgetap or other line impairment: yes/no
