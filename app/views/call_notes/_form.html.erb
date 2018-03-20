@@ -66,9 +66,11 @@
     </div>
   </div>
 
-  <div id='work-form' class='form-row row'>
-    <h4 id='work-template-header' class='hidden'>Work Template <a id='btn-enquiry-form' onclick="ToggleForm('work')">hide</a></h4>
-    <%= render partial: 'template_form', locals: {type: 'work'} %>
+  <div class='form-row row'>
+    <h4 id='work-template-header' class='hidden'>Work Template <a id='btn-work-form'  onclick="ToggleForm('work')">hide</a></h4>
+    <div id='work-form'>
+      <%= render partial: 'template_form', locals: {type:'work'} %>
+    </div>
   </div>
 
   <div class='from-row row'>
