@@ -104,6 +104,16 @@ var textareaResize = function(source, dest) {
   });
 };
 
+function ToggleForm(type) {
+  if ($('#btn-'+ type + '-form').text() == 'hide') {
+    $('#btn-'+ type + '-form').text('show');
+    $('#' + type + "-form").attr('class', 'hidden');
+  } else {
+    $('#btn-'+ type + '-form').text('hide');
+    $('#' + type + "-form").attr('class', '');
+  }
+}
+
 function ToggleWorkNotes() {
   if ($('#btn-hide-work').text() == 'hide') {
     $("#call_note_work_notes").attr('class', 'hidden');
@@ -172,6 +182,7 @@ function PrependToEnquiryNotes(string) {
   var combined = (current_notes + "\n\n" + content).trim() + "\n\n";
   var filtered = combined.replace(/textarea|pingtest|speedtests/g, "");
   $('#call_note_additional_notes').val(filtered);
+  $('#enquiry-template-header').attr('class', '')
 }
 
 function PrependToEmailNotes(string) {
@@ -187,6 +198,7 @@ function PrependToWorkNotes(string) {
   var combined = current_notes + content + "\n";
   var filtered = combined.replace(/textarea|pingtest|speedtests/g, "");
   $('#call_note_work_notes').val(filtered);
+  $('#work-template-header').attr('class', '')
 }
 
 function PresetOnlineUsage(){

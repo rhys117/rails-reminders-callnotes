@@ -26,6 +26,7 @@ Setup details: |
   Customer seeking help configuring setup
   - Is it a new service: Yes/No
   - Supplied customer with neccissary network settings: Yes/No
+  -- Ensured customer connected to correct ports: yes/no
   - Does customer have SkyMesh supplied router: Yes/No
   -- Walked customer through setup of router: Yes/No
 Ran speedtest: |

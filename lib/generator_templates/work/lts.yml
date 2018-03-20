@@ -35,7 +35,7 @@ Standard (Offline): |
   A placeholder date is given to NBN, they'll pick the date with the customer.
 
   What is the best contact phone number for us to pass on to NBN?:
-  What is the best contact email for us to pass on to NBN?: (Optional)
+  What is the best contact email for us to pass on to NBN? (Optional):
   Name of the person who will be on site:
   What is the best way for SkyMesh get customer updates?: sms / phone / email
   Provide + email/phone number:
@@ -74,7 +74,7 @@ Standard (Offline): |
 
   Ping statistics for 180.181.127.4: pingtest
 
-  Traceroute 180.181.127.4:
+  Traceroute 180.181.127.4: textarea
 
   Traceroute google.com: textarea
 Dropouts: |
