@@ -11,8 +11,7 @@
         <div class='form-row row'>
       <% end %>
       <% if answer_array[0] == 'formatting' %>
-        <% count = 0 %>
-        </div>
+        <% count = -1 %>
         <div class='form-group col-md-12'>
           <p><strong><%= question.to_sym %></strong></p>
         </div>
@@ -32,15 +31,11 @@
         <% when 'speedtests' %>
           <%= text_area "#{type}_template".to_sym, question.parameterize.underscore, value: speed_tests, class: 'form-control question', :data => {:question => "#{question}" }, onfocus: "this.oldvalue = this.value;" %>
         <% end %>
-        <% if count % 3 == 0 %>
-          </div>
-        <% end %>
-      </div>
+        </div>
       <% end %>
       <% count += 1 %>
+      <% if count % 3 == 0 %>
+        </div>
+      <% end %>
     <% end %>
-  </div>
-  <% unless count % 3 %>
-    </div>
-  <% end %>
 <% end %>
