@@ -2,7 +2,7 @@ NTD lights: |
   NTD Lights and Port
   - NBN Status Light: Off/Solid White/Flashing White/Solid Blue/Flashing Blue/Solid Orange/Flashing Orange/Solid Red/Flashing Red
   - UNI-D Port: 1/2/3/4
-  - UNI-D Port Light: Green Solid/Green Flashing/Orange Solid/Orange Flashing
+  - UNI-D Port Light: Green Solid/Green Flashing/Orange Solid/Orange Flashing/off
 NTD Status: |
   NTD Status (Code):
   - Result: Passed/Failed/Unable to update
@@ -10,6 +10,11 @@ NTD Status: |
   - NTD Current Operational State: 
   - Time Since Registration: 
   - LAN Link Status: 
+Loopback: |
+  Loopback (code): 
+  - Result: Pass/Fail/Cancelled
+  - CN000000 A technical error has occurred during the processing of the request.
+
 Powercycle & reseat: "Powercycled CPE and reseated coax cable: Yes/No"
 Flashing White: |
   Customer calling to report service is offline with flashing white NTD lights

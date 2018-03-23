@@ -56,7 +56,7 @@ Standard (Offline): |
   If Yes, How often does it occur (be detailed):
   Time of last DHCPACK/Time left on DHCP Lease (<time> / never):
 
-  AVC Diagnostics Performed?
+  AVC Diagnostics Performed (Status)?
   -- NTD status?: Passed/Failed
 
   *--------------STOP HERE IF THE ONLINE LIGHT IS STILL FLASHING GREEN OR OFF/NTD SN DOES NOT MATCH THE PORTAL-----------------*
@@ -73,7 +73,7 @@ Standard (Offline): |
   If the customer is getting a local only IP address, have you tried doing a TCP/IP reset (netsh int ip reset)?: Yes/No
   If customer offline, list ARP Entries when directly connected to NTD(ignore OS-generated/static entries): textarea
 
-  AVC Diagnostics Performed?:
+  AVC Diagnostics Performed (Loopback, Port Reset)?
   -- Loopback?: Passed/Failed
   -- Port reset?: Yes/No
 
