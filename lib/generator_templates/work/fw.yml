@@ -25,12 +25,12 @@ Standard (Offline): |
   Signal Strength: RED SOLID/YELLOW SOLID/GREEN SOLID
 
   ODU Port lights
-  Green: SOLID / FLASHING / OFF
-  Orange: SOLID / FLASHING / OFF
+  ODU Green: SOLID / FLASHING / OFF
+  ODU Orange: SOLID / FLASHING / OFF
 
   UNI-D Port lights
-  Green: SOLID / FLASHING / OFF
-  Orange: SOLID / FLASHING / OFF
+  UNI-D Green: SOLID / FLASHING / OFF
+  UNI-D Orange: SOLID / FLASHING / OFF
 
   -- General Troubleshooting --
   Customer has agreed to leave NTD and CPE powered on: Yes/No
@@ -52,8 +52,8 @@ Standard (Offline): |
   If Yes, when did it begin?:
   If Yes, How often does it occur (be detailed):
 
-  AVC Diagnostics Performed?:
-  -- Loopback?: Passed/Failed
+  AVC Diagnostics Performed?
+  - Loopback?: Passed/Failed
 
   *--------------STOP HERE IF THE W-NTD ODU LIGHT IS STILL OFF/RED OR LOOPBACK FAILS-----------------*
    

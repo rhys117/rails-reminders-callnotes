@@ -26,6 +26,17 @@
           <%= text_area "#{type}_template".to_sym, question.parameterize.underscore, class: 'form-control question', :data => {:question => "#{question}" }, onfocus: "this.oldvalue = this.value;" %>
         <% when 'ping' %>
           <%= text_area "#{type}_template".to_sym, question.parameterize.underscore, value: ping_test, class: 'form-control question', :data => {:question => "#{question}" }, onfocus: "this.oldvalue = this.value;" %>
+        <% when 'radio' %>
+          <div class='pad-left-15'>
+            <label class='radio-inline'>
+              <%= radio_button "#{type}_template".to_sym, question.parameterize.underscore, 'Yes', { :class => 'question', "data-question" => "#{question}" } %>
+                Yes
+            </label>
+            <label class='radio-inline'>
+              <%= radio_button "#{type}_template".to_sym, question.parameterize.underscore, 'No', { :class => 'question', "data-question" => "#{question}" } %>
+                No
+            </label>
+          </div>
         <% when 'text' %>
           <%= text_field "#{type}_template".to_sym, question.parameterize.underscore, { :class => 'form-control question', "data-question" => "#{question}" } %>
         <% when 'speedtests' %>

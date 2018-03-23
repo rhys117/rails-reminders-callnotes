@@ -13,12 +13,24 @@ Exceeded data: |
   - data blocks/plan upgrades: Yes/No
   -- Did customer request upgrade: Yes/No
 
-  If customer requested plan upgrade, is it a temporary or permanent change: Temporary/Permanent
+  If customer requested plan upgrade
+  - upgrade to start: next billing cycle/immedietely
+  - temporary or permanent change: Temporary/Permanent
   - confirmed customer understood and agreed to cost: Yes/No
   >> processed: Yes/No
   Paste sams dialog confirmation/s here: textarea
+Inbox Full: |
+  Customer is calling to report inbox is full
+
+  Customer normally what program to receive mail: thunderbird/outlook/webmail/other
+  - confirmed customers email address:
+
+  Does inbox appear to be full: yes/no
+  - discussed how to delete mail: yes/no
+  - discussed not receiving mail from time inbox was full: yes/no
 Password reset: |
   Customer is requesting a password reset
+  - confirmed email address:
   - customer has access to billing email: Yes/No
   -- customer unable to access, sent link via sms: Yes/No
   >> sent customer one time link and confirmed customer could change/login: Yes/No
