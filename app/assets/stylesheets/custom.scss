@@ -13,8 +13,9 @@ $gray-medium-light: #eaeaea;
 
 /* universal */
 
-.inline-block {
-  display: inline-block !important;
+.push-left {
+  position: relative;
+  left: 20px;
 }
 
 .pad-left-15 {
