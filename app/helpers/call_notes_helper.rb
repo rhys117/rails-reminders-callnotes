@@ -75,10 +75,10 @@ module CallNotesHelper
           questions_and_answers["Error: Duplicate question in template #{question}. Please report me to Rhys."] = ['formatting']
         end
 
-        if split_answers == ['Yes', 'No']
-            questions_and_answers[question.strip] = ['radio']
+        if split_answers.length == 2
+            questions_and_answers[question.strip] = ['radio', split_answers]
         elsif split_answers.length > 1
-          questions_and_answers[question.strip] = ['select', split_answers.map(&:strip)]
+          questions_and_answers[question.strip] = ['select', split_answers]
         elsif
           if question.downcase.include?('description') || answer.downcase.include?('textarea')
             questions_and_answers[question.strip] = ['textarea']

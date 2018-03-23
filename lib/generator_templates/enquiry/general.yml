@@ -14,7 +14,7 @@ Exceeded data: |
   -- Did customer request upgrade: Yes/No
 
   If customer requested plan upgrade
-  - upgrade to start: next billing cycle/immedietely
+  - upgrade to start: next billing cycle/immediately
   - temporary or permanent change: Temporary/Permanent
   - confirmed customer understood and agreed to cost: Yes/No
   >> processed: Yes/No
