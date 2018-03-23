@@ -29,12 +29,12 @@
         <% when 'radio' %>
           <div class='pad-left-15'>
             <label class='radio-inline'>
-              <%= radio_button "#{type}_template".to_sym, question.parameterize.underscore, answer_array[1][0], { :class => 'question inline-block', "data-question" => "#{question}" } %>
-                 <p class='inline-block'><%= "#{answer_array[1][0]}" %></p>
+              <%= radio_button "#{type}_template".to_sym, question.parameterize.underscore, answer_array[1][0], { :class => 'question push-left', "data-question" => "#{question}" } %>
+                 <%= "#{answer_array[1][0]}" %>
             </label>
             <label class='radio-inline'>
-              <%= radio_button "#{type}_template".to_sym, question.parameterize.underscore, answer_array[1][1], { :class => 'question inline-block', "data-question" => "#{question}" } %>
-                <p class='inline-block'><%= "#{answer_array[1][1]}" %></p>
+              <%= radio_button "#{type}_template".to_sym, question.parameterize.underscore, answer_array[1][1], { :class => 'question push-left', "data-question" => "#{question}" } %>
+                <%= "#{answer_array[1][1]}" %>
             </label>
           </div>
         <% when 'text' %>
