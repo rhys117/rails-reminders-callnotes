@@ -13,6 +13,10 @@ $gray-medium-light: #eaeaea;
 
 /* universal */
 
+.block {
+  display: inline-block !important;
+}
+
 .pad-left-15 {
   padding-left: 15px;
 }
