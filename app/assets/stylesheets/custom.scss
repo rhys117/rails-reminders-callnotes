@@ -13,9 +13,13 @@ $gray-medium-light: #eaeaea;
 
 /* universal */
 
-.push-left {
-  position: relative;
-  left: 20px;
+input[type="radio"]{
+  vertical-align: middle !important; 
+}
+
+.radio-label {
+  vertical-align: middle;
+}
 }
 
 .pad-left-15 {
