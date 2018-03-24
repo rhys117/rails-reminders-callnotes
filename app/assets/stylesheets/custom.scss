@@ -170,6 +170,10 @@ aside {
 
 /* forms */
 
+input[type=radio] {
+  width: auto !important;
+}
+
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
