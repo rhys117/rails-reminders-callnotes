@@ -6,6 +6,6 @@ NTD lights: |
   - Online: OFF / GREEN SOLID / GREEN FLASHING 
   - Link (at the Rear of NTD on v2 NTD): OFF / YELLOW SOLID / YELLOW FLASHING / GREEN SOLID / GREEN FLASHING
 NTD Status: |
-  NTD status (code): WRI901155241279
+  NTD status (code): 
   - Result: Pass/Fail/Timeout
 Powercycle & reseat: "Powercycled CPE and reseated coax cable: Yes/No"

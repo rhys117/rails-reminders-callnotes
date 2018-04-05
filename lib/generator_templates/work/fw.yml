@@ -22,7 +22,7 @@ Standard (Offline): |
   Power: OFF / GREEN SOLID
   Status: OFF / RED SOLID / AMBER FLASHING / GREEN FLASHING / GREEN SOLID
   ODU: OFF / RED FLASHING / RED SOLID / GREEN FLASHING / GREEN SOLID
-  Signal Strength: RED SOLID/YELLOW SOLID/GREEN SOLID
+  Signal Strength: RED SOLID/YELLOW SOLID/GREEN SOLID/OFF
 
   ODU Port lights
   ODU Green: SOLID / FLASHING / OFF
@@ -71,7 +71,7 @@ Standard (Offline): |
 
   *-------------STOP HERE IF THE CPE DIRECTLY CONNECTED IS NOT GETTING A SKYMESH IP OR UNI-D PORT DOES NOT DETECT CPE CONNECTED-----------------*
 
-  If recent, can customer PING www.google.com? Yes / No
+  If recent, can customer PING www.google.com?: Yes / No
 
   Ping statistics for 180.181.127.4: pingtest
 

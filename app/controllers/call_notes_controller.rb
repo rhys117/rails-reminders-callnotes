@@ -2,19 +2,12 @@ class CallNotesController < ApplicationController
   before_action :set_call_note, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user
 
-  # GET /call_notes
-  # GET /call_notes.json
   def index
     redirect_to new_call_note_path
   end
 
-  # GET /call_notes/1
-  # GET /call_notes/1.json
-  def show
-  end
-
   def enquiry_templates
-    @enquiry_quick_groups = enquiry_generator_templates
+    @enquiry_quick_groups = template_categories('enquiry')
     @selected = YAML.load_file("#{::Rails.root}/lib/generator_templates/enquiry/#{params[:cat_id].downcase}.yml")
     respond_to do |format|
       format.js
@@ -22,7 +15,7 @@ class CallNotesController < ApplicationController
   end
 
   def work_templates
-    @work_quick_groups = work_generator_templates
+    @work_quick_groups = template_categories('work')
     @selected = YAML.load_file("#{::Rails.root}/lib/generator_templates/work/#{params[:cat_id].downcase}.yml")
     respond_to do |format|
       format.js
@@ -30,7 +23,7 @@ class CallNotesController < ApplicationController
   end
 
   def email_templates
-    @email_quick_groups = email_generator_templates
+    @email_quick_groups = template_categories('email')
     @selected = YAML.load_file("#{::Rails.root}/lib/generator_templates/email/#{params[:cat_id].downcase}.yml")
     respond_to do |format|
       format.js
@@ -57,14 +50,10 @@ class CallNotesController < ApplicationController
     @enquiry_items = YAML.load_file("#{::Rails.root}/lib/generator_templates/enquiry/general.yml")
     @work_items = YAML.load_file("#{::Rails.root}/lib/generator_templates/work/general.yml")
     @email_items = YAML.load_file("#{::Rails.root}/lib/generator_templates/email/general.yml")
-    @email_quick_groups = email_generator_templates
-    @work_quick_groups = work_generator_templates
-    @enquiry_quick_groups = enquiry_generator_templates
+    @email_quick_groups = template_categories('email')
+    @work_quick_groups = template_categories('work')
+    @enquiry_quick_groups = template_categories('enquiry')
     @call_note = CallNote.new
-  end
-
-  # GET /call_notes/1/edit
-  def edit
   end
 
   # POST /call_notes
@@ -133,16 +122,9 @@ class CallNotesController < ApplicationController
                                         :conclusion_best_contact, :work_notes, :email_notes)
     end
 
-    def enquiry_generator_templates
-      Dir["#{::Rails.root}/lib/generator_templates/enquiry/*"].map {|f| File.basename(f, '.yml').upcase }.sort
-    end
-
-    def work_generator_templates
-      Dir["#{::Rails.root}/lib/generator_templates/work/*"].map {|f| File.basename(f, '.yml').upcase }.sort
-    end
-
-    def email_generator_templates
-      Dir["#{::Rails.root}/lib/generator_templates/email/*"].map {|f| File.basename(f, '.yml').upcase }.sort
+    def template_categories(folder)
+      directory = "#{::Rails.root}/lib/generator_templates/#{folder}/*"
+      Dir[directory].map { |f| File.basename(f, ".*").upcase }.sort
     end
 
     def notes_params_pairs(params)

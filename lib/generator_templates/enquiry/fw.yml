@@ -20,12 +20,10 @@ Red ODU: |
   - Signal Strength: Off/Green/Yellow/Red
 
   Troubleshooting performed
-  - Confirmed INC or CRQ listed aginst PRI: Yes/no
+  - Confirmed no INC or CRQ listed aginst PRI: Yes/no
   - Powercycled CPE and reseated aerial cable: Yes/no
 
   Still offline
   - Gathered work ticket info: Yes/no
 
 
-
-  Add red highlighting to caps elements in correspondence 
