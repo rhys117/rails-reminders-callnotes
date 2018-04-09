@@ -13,7 +13,7 @@ NTD Status: |
 Loopback: |
   Loopback (code): 
   - Result: Pass/Fail/Cancelled
-  - CN000000 A technical error has occurred during the processing of the request.
+  - Messages: textarea
 
 Powercycle & reseat: "Powercycled CPE and reseated coax cable: Yes/No"
 Flashing White: |
