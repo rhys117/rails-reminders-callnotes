@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       patch 'inverse_complete'
     end
   end
+  get '/auto_manage', to: 'reminders#auto_manage'
   resources :call_notes do
     post "/call_notes" => "call_notes#index", :as => 'index'
   end

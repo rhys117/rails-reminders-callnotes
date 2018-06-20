@@ -70,7 +70,18 @@ class RemindersController < ApplicationController
     end
   end
 
+  def auto_manage
+    @auto_manage = auto_manage_hash
+  end
+
   private
+
+    def auto_manage_hash
+      output = {}
+      output['two_days'] = current_reminders.select('reference').where('check_for LIKE ?', '2DayWarning')
+      output['check_contact'] = current_reminders.select('reference').where('check_for LIKE ?', 'customer contact')
+      output
+    end
 
     def current_reminders
       current_user.reminders.ordered_priority.where('date <= ?', Date.current)
