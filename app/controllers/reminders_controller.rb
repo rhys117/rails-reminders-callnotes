@@ -78,8 +78,8 @@ class RemindersController < ApplicationController
 
     def auto_manage_hash
       output = {}
-      output['two_days'] = current_reminders.select('reference').where('check_for LIKE ? AND completed = ?', '2DayWarning', false)
-      output['check_contact'] = current_reminders.select('reference').where('check_for LIKE ? AND completed = ?', 'customer contact', false)
+      output['two_days'] = current_reminders.select('reference').where('check_for LIKE ? AND complete = ?', '2DayWarning', false)
+      output['check_contact'] = current_reminders.select('reference').where('check_for LIKE ? AND complete = ?', 'customer contact', false)
       output
     end
 
