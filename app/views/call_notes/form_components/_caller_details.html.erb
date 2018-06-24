@@ -1,0 +1,34 @@
+<div class='form-row row'>
+  <div class='form-group col-md-3'>
+    <%= f.label :call, 'Call Commenced', class: 'd-block' %>
+    <%= f.datetime_select :time, { :discard_day => true, :discard_month => true, :discard_year => true },
+                          class: 'form-control datetime_select' %>
+  </div>
+</div>
+
+<div class='form-row row'>
+  <div class='form-group col-md-2'>
+    <%= f.label :call_type %>
+    <%= f.select :call_type, select_options[:call_type], { prompt: 'select one' },
+                             { class: 'form-control' } %>
+  </div>
+
+  <div class='form-group col-md-2'>
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number, class: 'form-control' %>
+  </div>
+
+  <div class='form-group col-md-2'>
+    <%= f.label :call_answer, 'Call answer' %>
+    <%= f.select :call_answer, select_options[:call_answer], { prompt: 'select one' }, { class: 'form-control' } %>
+  </div>
+  <div class="form-group col-md-2">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class='form-group col-md-2'>
+    <%= f.label :id_check %>
+    <%= f.select :id_check, select_options[:id_check], { prompt: 'select one' }, { class: 'form-control' } %>
+  </div>
+</div>

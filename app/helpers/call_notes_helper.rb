@@ -1,10 +1,48 @@
 module CallNotesHelper
-  def select_hash(answers)
-    select_hash = {}
-    answers.each do |answer|
-      select_hash[answer] = answer
+  def select_options
+    select = {}
+    select[:call_type] = { 'Incoming live call' => 'live_call', 'Outgoing call' => 'call_for',
+                            'Outgoing callback request' => 'callback' }
+    select[:call_answer] = { 'Spoke to' => 'spoke_to', 'Left VM' => 'left_vm', 'Rang Out. No VM' => 'rang_out' }
+    select[:id_check] = { 'Confirmed ID' => 'confirmed_id', 'Confirmed as technical advocate' => 'confirmed_id_tech' ,
+                          'Confirmed as authorised representative' => 'confirmed_id_auth',
+                          'Caller not on account' => 'not_on_account' }
+    select[:call_conclusion] = { 'No further query' => 'no_further_query',
+                                 'Customer will monitor for further issues' => 'customer_will_monitor',
+                                 'Customer will contact support' => 'customer_will_contact',
+                                 'Advised customer of work' => 'advised_work' }
+    select
+  end
+
+  def template_categories
+    Dir.entries("#{::Rails.root}/app/assets/templates").reject { |dir| dir.include?('.') }.map(&:upcase).sort
+  end
+
+  def template_category_options(category)
+    category = 'GENERAL' if category.nil?
+    path = "#{::Rails.root}/app/assets/templates/#{category.downcase}"
+    options = {}
+    options[:enquiry] = File.exists?("#{path}/enquiry.yml") ? YAML.load_file("#{path}/enquiry.yml") : []
+    options[:work] = File.exists?("#{path}/work.yml") ? YAML.load_file("#{path}/work.yml") : []
+    options
+  end
+
+  def template_groups
+    folder_names = %w(correspondence work enquiry)
+    groups = {}
+    folder_names.each do |folder|
+      directory = "#{::Rails.root}/lib/generator_templates/#{folder}/*"
+      groups[folder.to_sym] = Dir[directory].map { |f| File.basename(f, ".*").upcase }.sort
     end
-    select_hash
+    groups
+  end
+
+  def template_items
+    template_items = {}
+    template_items[:enquiry] = YAML.load_file("#{::Rails.root}/lib/generator_templates/enquiry/general.yml")
+    template_items[:work] = YAML.load_file("#{::Rails.root}/lib/generator_templates/work/general.yml")
+    template_items[:correspondence] = YAML.load_file("#{::Rails.root}/lib/generator_templates/correspondence/general.yml")
+    template_items
   end
 
   def active_class?(param, match_phrase)
@@ -21,18 +59,18 @@ module CallNotesHelper
 
   def ping_test
     <<~EOS
-    Packets: Sent = 100, Received = n Lost = n (n% loss),
-    Approximate round trip times in milliseconds:
-    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+      Packets: Sent = 100, Received = n Lost = n (n% loss),
+      Approximate round trip times in milliseconds:
+      Minimum = 0ms, Maximum = 0ms, Average = 0ms
     EOS
   end
 
   def speed_tests
     <<~EOS
-    Day 1(date)  Morning:    Afternoon:    Evening:
-    Day 2(date)  Morning:    Afternoon:    Evening:
-    Day 3(date)  Morning:    Afternoon:    Evening:
-    (3 days of testing is not required, but this is the format we'd like you to use to present your results, you can include more tests to show the issue)
+      Day 1(date)  Morning:    Afternoon:    Evening:
+      Day 2(date)  Morning:    Afternoon:    Evening:
+      Day 3(date)  Morning:    Afternoon:    Evening:
+      (3 days of testing is not required, but this is the format we'd like you to use to present your results, you can include more tests to show the issue)
     EOS
   end
 

@@ -1,0 +1,33 @@
+<ul class="nav nav-tabs justify-content-center">
+  <% template_categories.each do |category| %>
+    <li class="nav-item <%= 'active' if active_class?(params[:cat_id], category) %>">
+      <%= link_to category, fetch_template_categories_path(:cat_id => category),
+                  :remote => true, form_class: 'nav-link' %>
+    </li>
+  <% end %>
+</ul>
+
+<div class='form-group'>
+  <div class="row col-md-12">
+    <%= label :enquiry_templates, 'Enquiry templates' %>
+  </div>
+  <% template_category_options(params[:cat_id])[:enquiry].each do |title, content| %>
+    <%= link_to title, fetch_selected_template_path(:template => title, :type => 'enquiry', :cat_id => "#{params[:cat_id]}"),
+                :remote => true, class: 'btn btn-default btn-sm btn-margin-top',
+                onclick: "PrependToEnquiryNotes('#{title.parameterize.underscore}')" %>
+    <textarea class='copy-data' id="<%= title.parameterize.underscore %>"><%= content %></textarea>
+  <% end %>
+</div>
+
+<div class="form-group">
+  <div class="row col-md-12">
+    <%= label :work_templates, 'Work templates' %>
+  </div>
+  <% template_category_options(params[:cat_id])[:work].each do |title, content| %>
+    <%= link_to title, fetch_selected_template_path(:template => title, :type => 'work', :cat_id => "#{params[:cat_id]}"),
+                :remote => true, class: 'btn btn-default btn-sm btn-margin-top',
+                onclick: "PrependToWorkNotes('#{title.parameterize.underscore}')" %>
+    <textarea class='copy-data' id="<%= title.parameterize.underscore %>"><%= content %></textarea>
+  <% end %>
+</div>
+

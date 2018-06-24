@@ -1,16 +1,16 @@
 module ApplicationHelper
   # returns the full full title on a per-page basis
   def full_title(page_title = '')
-    base_title = "Support Tools"
+    base_title = 'Support Tools'
     if page_title.empty?
       base_title
     else
-      page_title + " | " + base_title
+      page_title + ' | ' + base_title
     end
   end
 
   def display_date(date)
-    date.strftime("%a, %e %b %Y")
+    date.strftime('%a, %e %b %Y')
   end
 
   def reference_url(reference)
@@ -26,6 +26,6 @@ module ApplicationHelper
   end
 
   def note_id(note)
-    "#{note.category}-#{note.name}".gsub(' ', '-')
+    "#{note.category}-#{note.name}".tr(' ', '-')
   end
 end
