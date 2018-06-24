@@ -1,0 +1,48 @@
+Calling to report: 'Customer is calling to report: '
+Calling for update: 'Customer calling for an update on current case: '
+Known outage: |
+  Customer reports service is offline
+  - advised customer was part of widespread outage: Yes/No
+  >> customer understood: Yes/No
+
+  Discussed advisory on website: Yes/No
+Exceeded data: |
+  Customer has exceeded data allowance
+  >> Discussed with customer: Yes/No
+  - how to control/monitor usage: Yes/No
+  - data blocks/plan upgrades: Yes/No
+  -- Did customer request upgrade: Yes/No
+
+  If customer requested plan upgrade
+  - upgrade to start: next billing cycle/immediately
+  - temporary or permanent change: Temporary/Permanent
+  - confirmed customer understood and agreed to cost: Yes/No
+  >> processed: Yes/No
+  Paste sams dialog confirmation/s here: textarea
+Inbox Full: |
+  Customer is calling to report inbox is full
+
+  Customer uses client: thunderbird/outlook/webmail/other
+  - confirmed customers email address:
+
+  Does inbox appear to be full: yes/no
+  - discussed how to delete mail: yes/no
+  - discussed not receiving mail from time inbox was full: yes/no
+Password reset: |
+  Customer is requesting a password reset
+  - confirmed email address:
+  - customer has access to billing email: Yes/No
+  -- customer unable to access, sent link via sms: Yes/No
+  >> sent customer one time link and confirmed customer could change/login: Yes/No
+Setup details: |
+  Customer seeking help configuring setup
+  - Is it a new service: Yes/No
+  - Supplied customer with neccissary network settings: Yes/No
+  -- Ensured customer connected to correct ports: yes/no
+  - Does customer have SkyMesh supplied router: Yes/No
+  -- Walked customer through setup of router: Yes/No
+Ran speedtest: |
+  Ran Speedtest
+  - Down:
+  - Up:
+  - Ping:

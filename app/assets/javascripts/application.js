@@ -139,7 +139,7 @@ $(function() {
     var id = $(this).attr('id').split('_')[0];
 
     if (id == 'enquiry') {
-      id = 'additional'
+      id = 'enquiry'
     }
 
     var notes = $("#call_note_" + id + '_notes').val();
@@ -178,10 +178,10 @@ $(function() {
 
 function PrependToEnquiryNotes(string) {
   var content = $("#"+string).val();
-  var current_notes = $('#call_note_additional_notes').val().trim();
+  var current_notes = $('#call_note_enquiry_notes').val().trim();
   var combined = (current_notes + "\n\n" + content).trim() + "\n\n";
   var filtered = combined.replace(/textarea|pingtest|speedtests/g, "");
-  $('#call_note_additional_notes').val(filtered);
+  $('#call_note_enquiry_notes').val(filtered);
   $('#enquiry-template-header').attr('class', '')
 }
 

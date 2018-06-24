@@ -1,0 +1,27 @@
+<div class="form-row row">
+  <div class="form-group col-md-12">
+    <h3>Categories</h3>
+    <div id="template-selection">
+      <%= render partial: 'call_notes/form_components/template_selection' %>
+    </div>
+  </div>
+</div>
+
+<div class='form-row row'>
+  <h3 id='enquiry-template-header' class='hidden'>
+    Enquiry Template <a id='btn-enquiry-form'  onclick="ToggleForm('enquiry')">hide</a>
+  </h3>
+  <div id='enquiry-form'>
+    <%= render partial: 'template_form', locals: { type:'enquiry' } %>
+  </div>
+</div>
+
+<div class='form-row row'>
+  <h3 id='work-template-header' class='hidden'>
+    Work Template <a id='btn-work-form'  onclick="ToggleForm('work')">hide</a>
+  </h3>
+  <div id='work-form'>
+    <%= render partial: 'template_form', locals: { type:'work' } %>
+  </div>
+</div>
+

@@ -1,0 +1,11 @@
+<div class='from-row row'>
+  <div class='form-group col-md-6 enquiry-section'>
+    <%= f.label :enquiry_notes , 'Enquiry notes' %>
+    <%= f.text_area :enquiry_notes, class: 'form-control generate_notes' %>
+  </div>
+
+  <div class='form-group col-md-6 work-section'>
+    <%= f.label :work_notes %> <a id='btn-hide-work' onclick='ToggleWorkNotes()'>hide</a>
+    <%= f.text_area :work_notes, class: 'form-control generate_notes' %>
+  </div>
+</div>

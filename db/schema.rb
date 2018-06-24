@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180129021937) do
+ActiveRecord::Schema.define(version: 20180624003504) do
 
   create_table "call_notes", force: :cascade do |t|
     t.datetime "time"
@@ -19,15 +19,6 @@ ActiveRecord::Schema.define(version: 20180129021937) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_call_notes_on_user_id"
-  end
-
-  create_table "microposts", force: :cascade do |t|
-    t.text     "content"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
-    t.index ["user_id"], name: "index_microposts_on_user_id"
   end
 
   create_table "quick_notes", force: :cascade do |t|
@@ -62,13 +53,13 @@ ActiveRecord::Schema.define(version: 20180129021937) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.string   "email"
+    t.string   "correspondence"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.string   "password_digest"
     t.string   "remember_digest"
     t.boolean  "admin",           default: false
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["correspondence"], name: "index_users_on_email", unique: true
   end
 
 end

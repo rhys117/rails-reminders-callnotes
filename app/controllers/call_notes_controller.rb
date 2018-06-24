@@ -6,25 +6,13 @@ class CallNotesController < ApplicationController
     redirect_to new_call_note_path
   end
 
-  def enquiry_templates
-    @enquiry_quick_groups = template_categories('enquiry')
-    @selected = YAML.load_file("#{::Rails.root}/lib/generator_templates/enquiry/#{params[:cat_id].downcase}.yml")
-    respond_to do |format|
-      format.js
-    end
-  end
-
-  def work_templates
-    @work_quick_groups = template_categories('work')
-    @selected = YAML.load_file("#{::Rails.root}/lib/generator_templates/work/#{params[:cat_id].downcase}.yml")
-    respond_to do |format|
-      format.js
-    end
+  def template_categories
+    respond_to { |format| format.js }
   end
 
   def email_templates
-    @email_quick_groups = template_categories('email')
-    @selected = YAML.load_file("#{::Rails.root}/lib/generator_templates/email/#{params[:cat_id].downcase}.yml")
+    @email_quick_groups = template_categories('correspondence')
+    @selected = YAML.load_file("#{::Rails.root}/lib/generator_templates/correspondence/#{params[:cat_id].downcase}.yml")
     respond_to do |format|
       format.js
     end
@@ -47,12 +35,6 @@ class CallNotesController < ApplicationController
 
   # GET /call_notes/new
   def new
-    @enquiry_items = YAML.load_file("#{::Rails.root}/lib/generator_templates/enquiry/general.yml")
-    @work_items = YAML.load_file("#{::Rails.root}/lib/generator_templates/work/general.yml")
-    @email_items = YAML.load_file("#{::Rails.root}/lib/generator_templates/email/general.yml")
-    @email_quick_groups = template_categories('email')
-    @work_quick_groups = template_categories('work')
-    @enquiry_quick_groups = template_categories('enquiry')
     @call_note = CallNote.new
   end
 
@@ -66,9 +48,9 @@ class CallNotesController < ApplicationController
 
     notes_params_pairs = notes_params_pairs(params)
     custom_input = {}
-    params[:call_note].each do |param, additional_notes|
-      if param.to_s.include?('additional') && additional_notes.length > 0
-        custom_input[param.to_sym] = "#{additional_notes.strip} \n"
+    params[:call_note].each do |param, enquiry_notes|
+      if param.to_s.include?('enquiry_notes') && enquiry_notes.length > 0
+        custom_input[param.to_sym] = "#{enquiry_notes.strip} \n"
       end
     end
 
@@ -84,81 +66,53 @@ class CallNotesController < ApplicationController
     @enquiry_notes.strip!
   end
 
-  # PATCH/PUT /call_notes/1
-  # PATCH/PUT /call_notes/1.json
-  def update
-    respond_to do |format|
-      if @call_note.update(call_note_params)
-        format.html { redirect_to @call_note, notice: 'Call note was successfully updated.' }
-        format.json { render :show, status: :ok, location: @call_note }
-      else
-        format.html { render :edit }
-        format.json { render json: @call_note.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /call_notes/1
-  # DELETE /call_notes/1.json
-  def destroy
-    @call_note.destroy
-    respond_to do |format|
-      format.html { redirect_to call_notes_url, notice: 'Call note was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_call_note
-      @call_note = CallNote.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def call_note_params
-      params.require(:call_note).permit(:time, :name, :call_type, :phone_number, :call_answer,
-                                        :id_check, :additional_notes, :call_conclusion, :conclusion_condition,
-                                        :conclusion_agreed_contact, :conclusion_contact_date,
-                                        :conclusion_best_contact, :work_notes, :email_notes)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_call_note
+    @call_note = CallNote.find(params[:id])
+  end
 
-    def template_categories(folder)
-      directory = "#{::Rails.root}/lib/generator_templates/#{folder}/*"
-      Dir[directory].map { |f| File.basename(f, ".*").upcase }.sort
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def call_note_params
+    params.require(:call_note).permit(:time, :name, :call_type, :phone_number, :call_answer,
+                                      :id_check, :enquiry_notes, :call_conclusion, :conclusion_condition,
+                                      :conclusion_agreed_contact, :conclusion_contact_date,
+                                      :conclusion_best_contact, :work_notes, :email_notes)
+  end
 
-    def notes_params_pairs(params)
-      call_answer_pairs = {
+  def notes_params_pairs(params)
+    call_answer_pairs = {
         'spoke_to' => 'spoke to',
         'left_vm' => 'left VM',
         'rang_out' => 'rang out with no option for VM'
-      }
-      call_answer = call_answer_pairs[params[:call_note]['call_answer']]
+    }
+    call_answer = call_answer_pairs[params[:call_note]['call_answer']]
 
-      conclusion_call_update_pairs = {
+    conclusion_call_update_pairs = {
         'next_update' => "next update",
         'date' => "#{params[:call_note]['conclusion_contact_date']}"
+    }
+    conclusion_call_update = conclusion_call_update_pairs[params[:call_note]['conclusion_agreed_contact']]
+    {
+      :call_type => {
+        'live_call' => "Live call from #{params[:call_note]['phone_number']} >> #{call_answer} #{params[:call_note]['name']}",
+        'call_for' => "Outbound call for #{params[:call_note]['phone_number']} >> #{call_answer} #{params[:call_note]['name']}",
+        'callback' => "Callback for #{params[:call_note]['phone_number']} >> #{call_answer} #{params[:call_note]['name']}"
+      },
+      :id_check => {
+        'confirmed_id' => "- confirmed ID \n",
+        'confirmed_id_tech' => "- confirmed ID as technical advocate \n",
+        'confirmed_id_auth' => "- confirmed ID as authorised representative \n",
+        'not_on_account' => "- caller not on account \n"
+      },
+      :call_conclusion => {
+        "advised_work" => "Advised expected timeframe for #{params[:call_note]['conclusion_condition']} and agreed to contact on #{conclusion_call_update} \n- best contact is: #{params[:call_note]['conclusion_best_contact']}",
+        "customer_will_contact" => "Customer will contact support when #{params[:call_note]['conclusion_condition']}",
+        "customer_will_monitor" => "Customer will monitor for further issues",
+        "no_further_query" => "No further query"
       }
-      conclusion_call_update = conclusion_call_update_pairs[params[:call_note]['conclusion_agreed_contact']]
-      {
-        :call_type => {
-          'live_call' => "Live call from #{params[:call_note]['phone_number']} >> #{call_answer} #{params[:call_note]['name']}",
-          'call_for' => "Outbound call for #{params[:call_note]['phone_number']} >> #{call_answer} #{params[:call_note]['name']}",
-          'callback' => "Callback for #{params[:call_note]['phone_number']} >> #{call_answer} #{params[:call_note]['name']}"
-        },
-        :id_check => {
-          'confirmed_id' => "- confirmed ID \n",
-          'confirmed_id_tech' => "- confirmed ID as technical advocate \n",
-          'confirmed_id_auth' => "- confirmed ID as authorised representative \n",
-          'not_on_account' => "- caller not on account \n"
-        },
-        :call_conclusion => {
-          "advised_work" => "Advised expected timeframe for #{params[:call_note]['conclusion_condition']} and agreed to contact on #{conclusion_call_update} \n- best contact is: #{params[:call_note]['conclusion_best_contact']}",
-          "customer_will_contact" => "Customer will contact support when #{params[:call_note]['conclusion_condition']}",
-          "customer_will_monitor" => "Customer will monitor for further issues",
-          "no_further_query" => "No further query"
-        }
-      }
-    end
+    }
+  end
 end
 

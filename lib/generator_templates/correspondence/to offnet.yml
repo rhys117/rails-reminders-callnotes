@@ -1,0 +1,58 @@
+Missed call: |
+  Hi NAME,
+
+  We tried to contact you today on NUMBER but unfortunately we were unsuccessful. 
+
+  Your service change complete and is active and ready to use however we've noticed you don't appear to have made the switch yet. Please change your router to NEW_UNIDPORT on the nbn NTD  and ensure your router is configured for PPPoE instead of Dynamic IP (DHCP). 
+
+  ***Insert Router Guide if nesccissary***
+
+  If you are experiencing any problems with the transition please let us know if we can offer any assistance by contacting us on 1300 759 637 or by replying to this email.
+
+  Regards,
+  
+  SkyMesh Support
+Snippet - UNIV: |
+  Unfortunately due to a change in your service we can no longer offer you a UNIV service however we can provide a VOIP service at the same cost, we just need to know if you'd like to go ahead with the swap. 
+
+  If you would like to make the change to VOIP we'll send you a permanent-loan ATA free of charge which you'll need to connect to your router and then connect your phone to the ATA rather than the nbn NTD. Please be aware that you'll need to return this unit if you ever terminate your connection with us to a reply-paid address (free of charge). During the changeover, if everything goes as expected, you may experience a short period (1-2 days) where your phone number will not be in service.
+
+  Please let us know if you would like to make this change by contacting us on 1300 759 637 or replying to this email.
+Router - DIR850L: |
+  To make the required changes on your DIR850L supplied by SkyMesh please follow these instructions. 
+  1. Open a web browser (e.g., Internet Explorer, Chrome, Firefox, or Safari) and enter http://192.168.0.1 into the address bar. 
+  2. Use the admin password to log into the router. The admin password configured on your device when we shipped it was: ADMIN_PASSWORD **NOT CONFIGURED left as default. If you have not configured an admin password please leave the field blank and click login. Alternatively if you are presented with a connection wizard please click 'cancel'.
+  3. At the top of the page hover over the settings tab. When the drop down menu appears click internet.
+  When you have entered internet setup please set the following settings.
+  - My Internet Connection is: PPPoE
+  - Username: PPPOE_USER
+  - Password: PPPOE_PASS
+  - Reconnect Mode: Always On 
+
+  Once complete at the top of the page you will see a save button. Please click this save button to allow the router to save your settings.
+  This is the only change you'll need to make on your D-Link DIR-850L after the migration.
+Router - EA2700: |
+  To make the required changes on your EA2700 supplied by SkyMesh please follow these instructions. 
+
+  1. Enter address http://192.168.1.1 into browser.
+  2. Click “Continue with an open and unsecured network”
+  3. Tick the Box “I understand that my network is currently open and not secure. I would like to manually configure my router's security settings.” The click continue.
+
+  Login with the details below
+
+  Username: admin
+  Password: ADMIN_PASSWORD
+
+  Click setup/basic setup. > This is the default view.
+
+  Router Setings:
+  Internet Connection Type: Automatic Configuration PPPoE
+
+  Username: PPPoE_USERNAME
+  Password: PPPoE_PASSWORD
+
+  Keep Alive should be selected.
+
+  Once you have made these changes please scrowl to the bottom and click Save Settings.
+
+  This is the only change you'll need to make on your EA2700 after the migration.
