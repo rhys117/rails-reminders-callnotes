@@ -9,7 +9,7 @@
 
 <div class='form-group'>
   <div class="row col-md-12">
-    <%= label :enquiry_templates, 'Enquiry templates' %>
+    <%= label :enquiry_templates, 'Enquiry' %>
   </div>
   <% template_category_options(params[:cat_id])[:enquiry].each do |title, content| %>
     <%= link_to title, fetch_selected_template_path(:template => title, :type => 'enquiry', :cat_id => "#{params[:cat_id]}"),
@@ -21,7 +21,7 @@
 
 <div class="form-group">
   <div class="row col-md-12">
-    <%= label :work_templates, 'Work templates' %>
+    <%= label :work_templates, 'Work' %>
   </div>
   <% template_category_options(params[:cat_id])[:work].each do |title, content| %>
     <%= link_to title, fetch_selected_template_path(:template => title, :type => 'work', :cat_id => "#{params[:cat_id]}"),

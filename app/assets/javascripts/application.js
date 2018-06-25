@@ -33,8 +33,8 @@ document.addEventListener("turbolinks:load", function() {
       search_and_filter();
     }
 
-    textareaResize($("#call_note_additional_notes"), $("#call_note_work_notes"));
-    textareaResize($("#call_note_work_notes"), $("#call_note_additional_notes"));
+    textareaResize($("#call_note_enquiry_notes"), $("#call_note_work_notes"));
+    textareaResize($("#call_note_work_notes"), $("#call_note_enquiry_notes"));
 
     // stop enter key from submitting form on notes page but allow in textareas
     if (window.location.pathname == '/call_notes/new') {

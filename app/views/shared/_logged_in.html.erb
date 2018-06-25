@@ -9,7 +9,7 @@
 
 <section class="d-inline-block">
   <%= render 'shared/reminders_search' %>
-  <h2>Current Reminders (<%= @current_reminders.count %>) <a class="btn btn-default btn-sm" href="#new-reminder">create new</a></h2>
+  <h2>Current Reminders (<%= @current_reminders.count %>)</h2>
     <div class="divider-10"></div>
     <%= render partial: 'reminders/reminder_table', locals: { reminders: @current_reminders } %>
   </div>
