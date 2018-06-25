@@ -185,11 +185,11 @@ function PrependToEnquiryNotes(string) {
   $('#enquiry-template-header').attr('class', '')
 }
 
-function PrependToEmailNotes(string) {
+function PrependToCorrespondenceNotes(string) {
   var content = $("#"+string).val();
-  var current_notes = $('#call_note_email_notes').val();
+  var current_notes = $('#call_note_correspondence_notes').val();
   var combined = (current_notes + "\n" + content).trim() + "\n";
-  $('#call_note_email_notes').val(combined);
+  $('#call_note_correspondence_notes').val(combined);
 }
 
 function PrependToWorkNotes(string) {

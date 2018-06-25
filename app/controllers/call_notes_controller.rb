@@ -6,27 +6,17 @@ class CallNotesController < ApplicationController
     redirect_to new_call_note_path
   end
 
+  def correspondence_categories
+    respond_to { |format| format.js }
+  end
+
   def template_categories
     respond_to { |format| format.js }
   end
 
-  def email_templates
-    @email_quick_groups = template_categories('correspondence')
-    @selected = YAML.load_file("#{::Rails.root}/lib/generator_templates/correspondence/#{params[:cat_id].downcase}.yml")
-    respond_to do |format|
-      format.js
-    end
-  end
-
   def selected_template
-    if params[:template] == 'hide'
-      respond_to do |format|
-        format.js
-      end
-      return
-    end
     params[:cat_id] = 'general' if params[:cat_id].length < 1
-    templates = YAML.load_file("#{::Rails.root}/lib/generator_templates/#{params[:type]}/#{params[:cat_id].downcase}.yml")
+    templates = YAML.load_file("#{::Rails.root}/app/assets/templates/#{params[:cat_id].downcase}/#{params[:type]}.yml")
     @selected = templates[params[:template]]
     respond_to do |format|
       format.js
@@ -38,11 +28,9 @@ class CallNotesController < ApplicationController
     @call_note = CallNote.new
   end
 
-  # POST /call_notes
-  # POST /call_notes.json
   def create
     @reminder = Reminder.new
-    @enquiry_notes = ""
+    @enquiry_notes = ''
     @work_notes = params[:call_note][:work_notes]
     @email_notes = params[:call_note][:email_notes].strip
 
@@ -78,7 +66,7 @@ class CallNotesController < ApplicationController
     params.require(:call_note).permit(:time, :name, :call_type, :phone_number, :call_answer,
                                       :id_check, :enquiry_notes, :call_conclusion, :conclusion_condition,
                                       :conclusion_agreed_contact, :conclusion_contact_date,
-                                      :conclusion_best_contact, :work_notes, :email_notes)
+                                      :conclusion_best_contact, :work_notes, :correspondence_notes)
   end
 
   def notes_params_pairs(params)

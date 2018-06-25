@@ -4,21 +4,11 @@
 
   <%= render partial: 'call_notes/form_components/templates', locals: { f: f } %>
 
-  <%= render partial: 'call_notes/form_components/_note_taking_areas', locals: { f: f } %>
+  <%= render partial: 'call_notes/form_components/note_taking_areas', locals: { f: f } %>
 
   <%= render partial: 'call_notes/form_components/call_conclusion', locals: { f: f } %>
 
-  <div class='form-row row'>
-    <div class='col-md-12'>
-      <%= render partial: 'email_templates', locals: { groups: template_groups[:correspondence],
-                                                       items: template_items[:correspondence] } %>
-    </div>
-    <div class='col-md-12'>
-      <%= f.label :email_notes, 'Correspondence notes (emails/sms to customer)' %>
-      <%= f.text_area :email_notes, class: 'form-control' %>
-    </div>
-  </div>
-
+  <%= render partial: 'call_notes/form_components/correspondence', locals: { f: f, } %>
   <div class="actions">
     <%= f.submit 'Generate Notes', class: 'form-control btn-primary' %>
   </div>

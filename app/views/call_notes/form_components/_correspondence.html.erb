@@ -1,0 +1,11 @@
+<div class='form-row row'>
+  <div class='col-md-12'>
+    <div id='correspondence-templates'>
+      <%= render partial: 'call_notes/form_components/correspondence_selection', locals: { f: f } %>
+    </div>
+  </div>
+  <div class='col-md-12'>
+    <%= f.label :correspondence_notes, 'Correspondence notes (emails/sms to customer)' %>
+    <%= f.text_area :correspondence_notes, class: 'form-control' %>
+  </div>
+</div>
