@@ -55,7 +55,7 @@ Modem lights: |
   - DSL Sync: Off/Negotiating/Sync
   - Internet: Off/Green Flashing/Green Solid/Red
 LST: |
-  LST (code): 
+  LST (code):
   - Operational Status: Up/Down
   - Service Stability: STABLE/Risky/Unstable
-  - CPE Type: 
+  - CPE Type:

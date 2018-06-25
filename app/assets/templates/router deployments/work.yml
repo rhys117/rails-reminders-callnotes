@@ -1,5 +1,5 @@
 Deploy router: |
-  Router Model and Cost: 
+  Router Model and Cost:
   Internet service type: FTTH / FW / LTS / FTTN / HFC / IPA / NSS
   VoIP account to be configured?: Yes/No
   - VoIP number:
@@ -53,7 +53,7 @@ Replace - Slow Speeds: |
   Bypassed Router: Yes / No
   Still having slow speeds after bypass?: Yes / No
   FR Router: Yes / No
-  Router firmware version: 
+  Router firmware version:
   Still having slow speeds after FR?: Yes / No
   Tested with a second client device?: Yes / No
 
@@ -80,13 +80,13 @@ Replace - Sync Loss: |
   Power cycle router: Yes / No
   Confirmed they are using the correct power adapter?: Yes / No
   FR and reconfigure Router: Yes / No
-  Router firmware version: 
+  Router firmware version:
   Second phone cable tested: Yes / No
   Completed Isolation test (only modem connected to phone port): Yes / No
   Tested all phone ports in house: Yes / No
 
   NBN testing shows Modem is likely cause(include tests): textarea
-   
+
   Customer has been provided the reply paid address and reference number to return the faulty router to?: Yes / No
   Customer understands that they need to return all components provided with the faulty router?: Yes / No
    - The faulty router unit: Yes/No
@@ -96,7 +96,7 @@ Replace - Sync Loss: |
   Customer understands that the router needs to be returned within 14 days or they may be charged the full cost of the replacement unit?: Yes / No
 
   Other information of note: textarea
-Replace - Internet dropouts: | 
+Replace - Internet dropouts: |
   Customers router causing internet dropouts.
   Router Model:
   Internet service type: FTTH / FW / LTS / FTTN / HFC / IPA / NSS
@@ -112,7 +112,7 @@ Replace - Internet dropouts: |
   Confirmed they are using the correct power adapter?: Yes / No
   FR Router and reconfigure: Yes / No
   Router firmware version:
-   
+
   Customer has been provided the reply paid address and reference number to return the faulty router to?: Yes / No
   Customer understands that they need to return all components provided with the faulty router?: Yes / No
    - The faulty router unit: Yes/No
@@ -122,7 +122,7 @@ Replace - Internet dropouts: |
   Customer understands that the router needs to be returned within 14 days or they may be charged the full cost of the replacement unit?: Yes / No
 
   Other information of note: textarea
-Replace - Unable to connect to router: | 
+Replace - Unable to connect to router: |
   Unable to connect to router.
   Router Model:
   Internet service type: FTTH / FW / LTS / FTTN / HFC / IPA / NSS
@@ -133,14 +133,14 @@ Replace - Unable to connect to router: |
   Customer connected to router using: Wireless / Ethernet
   Router showing as online?: Yes / No
   LAN port light: On / Off
-  CPE IP address via router: 
+  CPE IP address via router:
   Power cycle router: Yes / No
   Confirmed they are using the correct power adapter?: Yes / No
   Different Ethernet cable tried: Yes / No
   Bypass router: Yes / No
   Can the customer connect after Bypass: Yes / No
   FR Router and re-configured: Yes / No
-   
+
   Customer has been provided the reply paid address and reference number to return the faulty router to?: Yes / No
   Customer understands that they need to return all components provided with the faulty router?: Yes / No
    - The faulty router unit: Yes/No
@@ -161,14 +161,14 @@ Replace - Unable to connect to internet: |
   Customer connected to router using: Wireless / Ethernet
   Router showing as online?: Yes / No
   LAN port light: On / Off
-  CPE IP address via router: 
+  CPE IP address via router:
   Power cycle router: Yes / No
   Confirmed they are using the correct power adapter?: Yes / No
   Different Ethernet cable tried: Yes / No
   Bypass router: Yes / No
   Can the customer connect after Bypass: Yes / No
   FR Router and re-configured: Yes / No
-   
+
   Customer has been provided the reply paid address and reference number to return the faulty router to?: Yes / No
   Customer understands that they need to return all components provided with the faulty router?: Yes / No
    - The faulty router unit: Yes/No
@@ -177,8 +177,8 @@ Replace - Unable to connect to internet: |
   Customer understands that they need to return the router, power supply and cables to receive a full credit?: Yes / No
   Customer understands that the router needs to be returned within 14 days or they may be charged the full cost of the replacement unit?: Yes / No
 
-  Other information of note: textarea 
-Replace - Unable to Auth PPPoE: | 
+  Other information of note: textarea
+Replace - Unable to Auth PPPoE: |
   Unable to Authenticate PPPOE
   Router Model:
   Internet service type: FTTH / FW / LTS / FTTN / HFC / IPA / NSS
@@ -189,8 +189,8 @@ Replace - Unable to Auth PPPoE: |
   Power cycle router: Yes / No
   Confirmed they are using the correct power adapter?: Yes / No
   FR and reconfigure Router: Yes / No
-  Router firmware version: 
-  PPP Credentials Used: 
+  Router firmware version:
+  PPP Credentials Used:
 
   WAN connection Troubleshooting
   Router bypassed (direct PPP dial from PC):
@@ -199,7 +199,7 @@ Replace - Unable to Auth PPPoE: |
   VDSL connection Troubleshooting
   Second phone cable tested: Yes / No
   Completed Isolation test (only modem connected to phone port if applicable): Yes / No
-   
+
    Customer has been provided the reply paid address and reference number to return the faulty router to?: Yes / No
   Customer understands that they need to return all components provided with the faulty router?: Yes / No
    - The faulty router unit: Yes/No
@@ -211,14 +211,14 @@ Replace - Unable to Auth PPPoE: |
   Other information of note: textarea
 Replace - ATA: |
   Customer has non-functioning ATA
-  ATA Model: 
+  ATA Model:
   Internet service type: FTTH / FW / LTS / FTTN / HFC / IPA / NSS
   Unit is a permaloan or is within warranty still? (If no, use '- Deploy Router' instead): Yes/No
 
   Please send replacement ATA to: textarea
 
   VoIP Deployment RT#
-  Type of Service: 
+  Type of Service:
   SIP Username:
   SIP Password:
 

@@ -11,17 +11,20 @@
   <h3 id='enquiry-template-header' class='hidden'>
     Enquiry Template <a id='btn-enquiry-form'  onclick="ToggleForm('enquiry')">hide</a>
   </h3>
-  <div id='enquiry-form'>
-    <%= render partial: 'call_notes/form_components/template_form', locals: { type:'enquiry' } %>
-  </div>
+</div>
+
+<div id='enquiry-form'>
+  <%= render partial: 'call_notes/form_components/template_form', locals: { type:'enquiry' } %>
 </div>
 
 <div class='form-row row'>
   <h3 id='work-template-header' class='hidden'>
     Work Template <a id='btn-work-form'  onclick="ToggleForm('work')">hide</a>
   </h3>
-  <div id='work-form'>
-    <%= render partial: 'call_notes/form_components/template_form', locals: { type:'work' } %>
-  </div>
 </div>
+
+<div id='work-form'>
+  <%= render partial: 'call_notes/form_components/template_form', locals: { type:'work' } %>
+</div>
+
 

@@ -6,12 +6,12 @@ NTD lights: |
 NTD Status: |
   NTD Status (Code):
   - Result: Passed/Failed/Unable to update
-  - NTD State: 
-  - NTD Current Operational State: 
-  - Time Since Registration: 
-  - LAN Link Status: 
+  - NTD State:
+  - NTD Current Operational State:
+  - Time Since Registration:
+  - LAN Link Status:
 Loopback: |
-  Loopback (code): 
+  Loopback (code):
   - Result: Pass/Fail/Cancelled
   - Messages: textarea
 

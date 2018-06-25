@@ -1,6 +1,6 @@
 Dead NTD: |
   Fault Description (summary):
-  ------------------------------------------- 
+  -------------------------------------------
   Tested NTD in a different power outlet: [Yes/No]
   If unable, have you confirmed the outlet they're using works with another device?: [Yes/No]
   Does the modem power up with RF cable disconnected?: [Yes/No]
@@ -12,7 +12,7 @@ Dead NTD: |
   What is the best contact phone number for us to pass on to NBN?:
   What is the best contact email for us to pass on to NBN? (optional):
   Name of the person who will be on site:
-  What is the best way for SkyMesh get customer updates?: sms / phone / email 
+  What is the best way for SkyMesh get customer updates?: sms / phone / email
   Provide + email/phone number:
 
 Standard (Offline): |
@@ -23,7 +23,7 @@ Standard (Offline): |
   SN (on back of modem):
   MAC (on back of modem):
   MAC (reported by NBN in Diagnostic):
-  NTD ID (sticker on the front): 
+  NTD ID (sticker on the front):
 
   NBN Status Light: Off/Solid White/Flashing White/Solid Blue/Flashing Blue/Solid Orange/Flashing Orange/Solid Red/Flashing Red
   UNI-D Port: 1/2/3/4
@@ -52,7 +52,7 @@ Standard (Offline): |
 
   AVC Diagnostics Performed?
   -- NTD status?: Passed/Failed
-   
+
   *-------------STOP HERE IF THE S-NTD LIGHT IS STILL not Orange or Blue OR NTD LIGHT IS WHITE AND NTD TEST IS PASSING-----------------*
 
   Device left connected to UNI-D: PC / ROUTER
@@ -63,7 +63,7 @@ Standard (Offline): |
   Tested with the 2nd patch cable?: Yes/No
   Devices tested while directly connected to NTD (at the very least, obtain brand & model numbers + MAC addresses): textarea
   DHCP Configuration verified for each device used for direct-to-NTD testing?: [Yes/No]
-  IP Address CPE getting while directly connected: 
+  IP Address CPE getting while directly connected:
   If the customer is getting a local only IP address, have you tried doing a TCP/IP reset (netsh int ip reset)?: Yes/No
   If customer offline, list ARP Entries when directly connected to NTD(ignore OS-generated/static entries): textarea
 
@@ -92,14 +92,14 @@ Speed: |
   Fault Description (summary):
 
 
-  ------------------------------------------- 
+  -------------------------------------------
 
-  AVC ID: 
-  SN (on back of modem): 
+  AVC ID:
+  SN (on back of modem):
   MAC (on back of modem):
   MAC (reported by NBN in Diagnostic):
-  NTD ID (sticker on the front): 
-  IP Address: 
+  NTD ID (sticker on the front):
+  IP Address:
 
   NBN Status Light: Off/Solid White/Flashing White/Solid Blue/Flashing Blue/Solid Orange/Flashing Orange/Solid Red/Flashing Red
   UNI-D Port: 1/2/3/4
@@ -111,7 +111,7 @@ Speed: |
   What is the best contact phone number for us to pass on to NBN?:
   What is the best contact email for us to pass on to NBN? (Optional):
   Name of the person who will be on site:
-  What is the best way for SkyMesh get customer updates?: sms / phone / email 
+  What is the best way for SkyMesh get customer updates?: sms / phone / email
   Provide + email/phone number:
 
 
@@ -123,7 +123,7 @@ Speed: |
   EU has powered off the S-NTD & CPE for 20-30 min before powering back on (must try at least once)?: Yes/No
   Re-seated Satellite cable?: Yes / No
   Satellite cable secure and traced from wallplate to modem?: Yes / No
-   
+
   Router Bypassed (if installed)?: Yes/No
   Multiple CPE Tried? (List Type and MAC address): textarea
   Second Ethernet Cable tested?:
@@ -132,12 +132,12 @@ Speed: |
   Port ID:
   Physical Interface:
   DSCP Mapped: Yes/No
-  TC 4: 
+  TC 4:
   TC 1:
   C-Tag:
   Access Service ID(AVC):
   TPEP Configuration
-  Web Page Optimisation: 
+  Web Page Optimisation:
   Transport Protocol:
 
   SkyMesh Speed Test Results(if unable to access speedtest.net will suffice): speedtests

@@ -6,10 +6,10 @@ Standard (Offline): |
 
   Modem sync light indicates: sync / negotiating / off
   Modem online (internet) light indicates: online / offline
-   
+
   Modem Brand & Model Number:
-  Modem MAC Address: 
-  Modem firmware version: 
+  Modem MAC Address:
+  Modem firmware version:
   SkyMesh Supplied?: Yes / No
 
   -- Customer Availability --
@@ -18,9 +18,9 @@ Standard (Offline): |
   What is the best contact phone number for us to pass on to NBN?:
   What is the best contact email for us to pass on to NBN? (optional):
   Name of the person who will be on site?:
-  What is the best way for SkyMesh get customer updates?: sms / phone / email 
+  What is the best way for SkyMesh get customer updates?: sms / phone / email
   Provide + email/phone number:
-  
+
   Customer has agreed to leave NTD and CPE powered on?: Yes/No
 
   -----------------------------------------------------------
@@ -35,7 +35,7 @@ Standard (Offline): |
   - Does the LST result indicate that a rogue CPE is obtaining DSL sync?: Yes/No
   -- If yes, have the EU remove their CPE and run the test again.
 
-  *--------------STOP HERE IF LST IS SHOWING DIFFERENT CPE OBTAINING DSL SYNC (YOU MUST CONTINUE IF LINE STATUS IS DOWN)-----------------* 
+  *--------------STOP HERE IF LST IS SHOWING DIFFERENT CPE OBTAINING DSL SYNC (YOU MUST CONTINUE IF LINE STATUS IS DOWN)-----------------*
 
   Troubleshooting done
   - Rebooted all equipment?: Yes/No
@@ -49,7 +49,7 @@ Standard (Offline): |
   - Does the service have Voiceband Continuity enabled? (Check the order in the NBN portal): Yes/No
   -- If yes, does the voice service work correctly, and without line noise and/or interference? (If no, stop here and explain they need to raise a fault with their voiceband provider first): Yes/No
 
-  *--------------STOP HERE IF SELT TEST IS STILL INDICATING AN IMPAIRMENT IN THE LINE-----------------* 
+  *--------------STOP HERE IF SELT TEST IS STILL INDICATING AN IMPAIRMENT IN THE LINE-----------------*
 
   - Port reset attempted? (Especially useful if CPE is an Asus modem): Yes/No
   - Modem factory reset?: Yes/No
@@ -57,7 +57,7 @@ Standard (Offline): |
   -- If yes, test with alternate modem (include model & FW version):
   - With alternative CPE, is issue still present?: Yes/No
 
-  *--------------STOP HERE IF THE MODEM IS STILL INDICATING NO DSL SYNC-----------------* 
+  *--------------STOP HERE IF THE MODEM IS STILL INDICATING NO DSL SYNC-----------------*
 
   Tested with the 2nd patch cable?: Yes/No
   Devices tested while directly connected to Modem (at the very least, obtain brand & model numbers + MAC addresses): textarea
