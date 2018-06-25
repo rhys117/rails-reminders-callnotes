@@ -1,0 +1,24 @@
+<% unless params[:template].nil? %>
+  <div class='form-row row'>
+    <div class='form-group col-md-12'>
+      <p><strong><%= params[:template] %></strong></p>
+    </div>
+  </div>
+
+  <% parse_template(template).each do |form_line_array| %>
+    <%= fields_for "#{type}_template".to_sym, type.to_sym do |_| %>
+      <div class="form-row row">
+        <% form_line_array.each do |ques_and_answ| %>
+          <% if form_line_array[0][:input_type] == 'formatting' %>
+            <div class='form-group col-md-12'>
+              <p><strong><%= ques_and_answ[:question].to_sym %></strong></p>
+            </div>
+          <% else %>
+            <%= render partial: 'call_notes/form_components/template_question_and_input',
+                       locals: { ques_and_answ: ques_and_answ, type: type } %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,0 +1,17 @@
+<ul class="nav nav-tabs justify-content-center">
+  <% correspondence_categories.each do |category| %>
+    <li class="nav-item <%= 'active' if active_class?(params[:cat_id], category) %>">
+      <%= link_to category, fetch_correspondence_path(:cat_id => category), :remote => true, form_class: 'nav-link' %>
+    </li>
+  <% end %>
+</ul>
+
+<div class='form-group'>
+  <% correspondence_options(params[:cat_id]).each do |title, content| %>
+    <button type="button" class='btn btn-default btn-sm btn-margin-top'
+            onclick="PrependToCorrespondenceNotes('<%= title.parameterize.underscore %>')">
+      <%= title %>
+    </button>
+    <textarea class='copy-data' id="<%= title.parameterize.underscore %>"><%= content %></textarea>
+  <% end %>
+</div>

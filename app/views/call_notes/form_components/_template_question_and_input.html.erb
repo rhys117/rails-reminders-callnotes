@@ -1,0 +1,42 @@
+<div class="form-group col-md-4">
+  <p><%= ques_and_answ[:question] %></p>
+  <% case ques_and_answ[:input_type] %>
+  <% when 'select' %>
+    <%= select "#{type}_template".to_sym, ques_and_answ[:question].parameterize.underscore,
+               array_to_select_options(ques_and_answ[:answers]), { prompt: 'select one' },
+               { :class => 'form-control question', "data-question" => "#{ques_and_answ[:question]}" } %>
+  <% when 'textarea' %>
+    <%= text_area "#{type}_template".to_sym, ques_and_answ[:question].parameterize.underscore,
+                  class: 'form-control question', :data => {:question => "#{ques_and_answ[:question]}" },
+                  onfocus: "this.oldvalue = this.value;" %>
+  <% when 'ping' %>
+    <%= text_area "#{type}_template".to_sym, ques_and_answ[:question].parameterize.underscore,
+                  value: ping_test, class: 'form-control question',
+                  :data => {:question => "#{ques_and_answ[:question]}" },
+                  onfocus: "this.oldvalue = this.value;" %>
+  <% when 'radio' %>
+    <div class='pad-left-15'>
+      <label class='radio-inline'>
+        <%= radio_button "#{type}_template".to_sym, ques_and_answ[:question].parameterize.underscore,
+                         ques_and_answ[:answers].first, { :class => 'question',
+                                                          "data-question" => "#{ques_and_answ[:question]}" } %>
+        <%= "#{ques_and_answ[:answers].first}" %>
+      </label>
+      <label class='radio-inline'>
+        <%= radio_button "#{type}_template".to_sym, ques_and_answ[:question].parameterize.underscore,
+                         ques_and_answ[:answers].last, { :class => 'question',
+                                                         "data-question" => "#{ques_and_answ[:question]}" } %>
+        <%= "#{ques_and_answ[:answers].last}" %>
+      </label>
+    </div>
+  <% when 'text' %>
+    <%= text_field "#{type}_template".to_sym, ques_and_answ[:question].parameterize.underscore,
+                   { :class => 'form-control question',
+                     "data-question" => "#{ques_and_answ[:question]}" } %>
+  <% when 'speedtests' %>
+    <%= text_area "#{type}_template".to_sym, ques_and_answ[:question].parameterize.underscore,
+                  value: speed_tests, class: 'form-control question',
+                  :data => {:question => "#{ques_and_answ[:question]}" },
+                  onfocus: "this.oldvalue = this.value;" %>
+  <% end %>
+</div>

@@ -12,11 +12,11 @@ class RemindersController < ApplicationController
 
   def index
     if params[:search]
-      @current_reminders = current_reminders.search(params[:search].strip) #.paginate(page: params[:page], per_page: 35)
-      @future_reminders = future_reminders.search(params[:search].strip).ordered_date_completed_priority #.paginate(page: params[:page], per_page: 35)
+      @current_reminders = current_reminders.search(params[:search].strip)
+      @future_reminders = future_reminders.search(params[:search].strip).ordered_date_completed_priority
     else
-      @current_reminders = current_reminders.where('complete= ?', 'f') #.paginate(page: params[:page], per_page: 35)
-      @future_reminders = future_reminders.where('complete= ?', 'f') #.paginate(page: params[:page], per_page: 35)
+      @current_reminders = current_reminders.where('complete= ?', 'f')
+      @future_reminders = future_reminders.where('complete= ?', 'f')
     end
 
     if params[:filter_out]
@@ -86,8 +86,10 @@ class RemindersController < ApplicationController
 
   def auto_manage_hash
     output = {}
-    output['two_days'] = current_reminders.select('reference').where('check_for LIKE ? AND complete = ?', '2DayWarning', false)
-    output['check_contact'] = current_reminders.select('reference').where('check_for LIKE ? AND complete = ?', 'customer contact', false)
+    output['two_days'] = current_reminders.select('reference').where('check_for LIKE ? AND complete = ?',
+                                                                     '2DayWarning', false)
+    output['check_contact'] = current_reminders.select('reference').where('check_for LIKE ? AND complete = ?',
+                                                                          'customer contact', false)
     output
   end
 

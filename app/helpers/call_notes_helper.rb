@@ -27,22 +27,18 @@ module CallNotesHelper
     options
   end
 
-  def template_groups
-    folder_names = %w(correspondence work enquiry)
-    groups = {}
-    folder_names.each do |folder|
-      directory = "#{::Rails.root}/lib/generator_templates/#{folder}/*"
-      groups[folder.to_sym] = Dir[directory].map { |f| File.basename(f, ".*").upcase }.sort
-    end
-    groups
+  def correspondence_categories
+    Dir["#{::Rails.root}/app/assets/correspondence/*"].map { |f| File.basename(f, ".*").upcase }.sort
   end
 
-  def template_items
-    template_items = {}
-    template_items[:enquiry] = YAML.load_file("#{::Rails.root}/lib/generator_templates/enquiry/general.yml")
-    template_items[:work] = YAML.load_file("#{::Rails.root}/lib/generator_templates/work/general.yml")
-    template_items[:correspondence] = YAML.load_file("#{::Rails.root}/lib/generator_templates/correspondence/general.yml")
-    template_items
+  def correspondence_options(category)
+    category = 'GENERAL' if category.nil?
+    path = "#{::Rails.root}/app/assets/correspondence"
+    if File.exists?("#{path}/#{category.downcase}.yml")
+      YAML.load_file("#{path}/#{category.downcase}.yml")
+    else
+      []
+    end
   end
 
   def active_class?(param, match_phrase)
@@ -74,67 +70,102 @@ module CallNotesHelper
     EOS
   end
 
-  def sort_for_lights(answers)
+  def answers_order(answers)
+    # Ensures colour of light comes first
     answers.map! do |answer|
       split_answer = answer.downcase.split(' ')
-      if (split_answer[0] == 'flashing') || (split_answer[0] == 'solid')
-        split_answer.rotate!
-      end
-      answer = split_answer.join(' ').titleize
+      split_answer.rotate! if (split_answer[0] == 'flashing') || (split_answer[0] == 'solid')
+      split_answer.join(' ').titleize
     end
 
     sort_order = ['green', 'blue', 'yellow', 'amber', 'orange', 'white', 'red', 'off', 'yes', 'no']
     answers.sort_by do |answer|
       answer.split(' ').map do |word|
-        if sort_order.include?(word.downcase)
-          sort_order.index(word.downcase)
-        else
-          - 1
+        sort_order.include?(word.downcase) ? sort_order.index(word.downcase) : -1
+      end
+    end
+  end
+
+  QUESTIONS_PER_LINE = 3.freeze
+  def form_lines(questions_and_answers)
+    result = []
+    current_subset = []
+    questions_and_answers.each do |hash_data|
+      if hash_data[:input_type] == 'formatting'
+        result << current_subset unless current_subset.empty?
+        result << [hash_data]
+        current_subset = []
+      else
+        current_subset << hash_data
+        if current_subset.length == QUESTIONS_PER_LINE
+          result << current_subset
+          current_subset = []
         end
       end
+    end
+    result << current_subset
+    result
+  end
+
+  def answer_input_type(question, split_answers)
+    return 'text' if split_answers.empty?
+    if split_answers.length == 2
+      'radio'
+    elsif split_answers.length > 2
+      'select'
+    elsif question.downcase.include?('description') || split_answers[0].downcase.include?('textarea')
+      'textarea'
+    elsif split_answers[0].downcase == 'pingtest'
+      'pingtest'
+    elsif split_answers[0].downcase == 'speedtests'
+      'speedtests'
+    else
+      'text'
     end
   end
 
   def parse_template(template)
     template.gsub!(/[\[\]]/, '')
 
-    questions_and_answers = {}
+    questions_and_answers = []
+    seen_questions = []
 
     template.each_line do |line|
-      question, answer = line.split(':')
-      unless answer.nil?
-        split_answers = answer.split('/')
-        split_answers = sort_for_lights(split_answers)
+      line_result = {}
 
-        split_answers.map!(&:strip)
-        split_answers.delete('')
-
-        unless questions_and_answers[question].nil?
-          questions_and_answers["Error: Duplicate question in template #{question}. Please report me to Rhys."] = ['formatting']
+      # if not identified as question include line as formatting
+      unless line.include?(':')
+        line.strip!
+        if line.length > 0
+          line_result[:question] = line
+          line_result[:input_type] = 'formatting'
+          questions_and_answers << line_result
         end
-
-        if split_answers.length == 2
-            questions_and_answers[question.strip] = ['radio', split_answers]
-        elsif split_answers.length > 1
-          questions_and_answers[question.strip] = ['select', split_answers]
-        elsif
-          if question.downcase.include?('description') || answer.downcase.include?('textarea')
-            questions_and_answers[question.strip] = ['textarea']
-          elsif answer.downcase.include?('pingtest')
-            questions_and_answers[question.strip] = ['ping']
-          elsif answer.downcase.include?('speedtests')
-            questions_and_answers[question.strip] = ['speedtests']
-          else
-            questions_and_answers[question.strip] = ['text']
-          end
-        end
-      else
-        question.strip!
-        if question.length > 0
-          questions_and_answers[question] = ['formatting']
-        end
+        next
       end
+
+      # split line into question and answers and sort split answers
+      question, answer = line.split(':')
+      split_answers = answers_order(answer.split('/'))
+
+      # delete blank space in answers
+      split_answers.map!(&:strip)
+      split_answers.delete('')
+
+      # if duplicate question include in template as error formatting line
+      if seen_questions.include?(question)
+        line_result[:question] = "Error: Duplicate question - #{question}"
+        line_result[:input_type] = 'formatting'
+        line_result[:answers] = split_answers
+        next
+      end
+
+      line_result[:question] =  question
+      line_result[:input_type] = answer_input_type(question, split_answers)
+      line_result[:answers] = split_answers
+      questions_and_answers << line_result
     end
-    questions_and_answers
+
+    form_lines(questions_and_answers)
   end
 end

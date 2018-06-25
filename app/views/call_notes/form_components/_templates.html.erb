@@ -12,7 +12,7 @@
     Enquiry Template <a id='btn-enquiry-form'  onclick="ToggleForm('enquiry')">hide</a>
   </h3>
   <div id='enquiry-form'>
-    <%= render partial: 'template_form', locals: { type:'enquiry' } %>
+    <%= render partial: 'call_notes/form_components/template_form', locals: { type:'enquiry' } %>
   </div>
 </div>
 
@@ -21,7 +21,7 @@
     Work Template <a id='btn-work-form'  onclick="ToggleForm('work')">hide</a>
   </h3>
   <div id='work-form'>
-    <%= render partial: 'template_form', locals: { type:'work' } %>
+    <%= render partial: 'call_notes/form_components/template_form', locals: { type:'work' } %>
   </div>
 </div>
 
