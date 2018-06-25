@@ -2,43 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8808697-3dec-45a1-8425-349853eed193" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/assets/templates/fttn/enquiry.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/templates/fttn/work.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/templates/fw/enquiry.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/templates/fw/work.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/templates/hfc/enquiry.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/templates/hfc/work.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/templates/lts/enquiry.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/templates/lts/work.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/templates/offnet/enquiry.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/templates/onnet/enquiry.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/templates/router deployments/work.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/call_notes_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/call_notes_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/call_notes/create.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/call_notes/create.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/call_notes/form_components/_correspondence.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/call_notes/form_components/_correspondence.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/call_notes/form_components/_template_selection.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/call_notes/form_components/_template_selection.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/call_notes/form_components/_templates.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/call_notes/form_components/_templates.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/call_notes/selected_template.js.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/call_notes/selected_template.js.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generator_templates/correspondence/appointment.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generator_templates/correspondence/general.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generator_templates/correspondence/resolved.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generator_templates/correspondence/snippet.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generator_templates/correspondence/to offnet.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generator_templates/correspondence/to onnet.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generator_templates/enquiry/fttn.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generator_templates/enquiry/fttp.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generator_templates/enquiry/fw.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generator_templates/enquiry/general.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generator_templates/enquiry/hfc.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generator_templates/enquiry/lts.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generator_templates/enquiry/to offnet.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generator_templates/enquiry/to onnet.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generator_templates/work/fttn.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generator_templates/work/fttp.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generator_templates/work/fw.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generator_templates/work/general.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generator_templates/work/hfc.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generator_templates/work/lts.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generator_templates/work/routers.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/sessions/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/sessions/new.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/shared/_logged_in.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shared/_logged_in.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/users/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/_form.html.erb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -69,38 +43,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="work.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/templates/router deployments/work.yml">
+      <file leaf-file-name="_correspondence.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/call_notes/form_components/_correspondence.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="218" lean-forward="true" selection-start-line="218" selection-end-line="218" />
+            <state relative-caret-position="90">
+              <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="selected_template.js.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/call_notes/selected_template.js.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="29" lean-forward="true" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_template_form.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/call_notes/form_components/_template_form.html.erb">
+      <file leaf-file-name="_template_selection.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/call_notes/form_components/_template_selection.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+              <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_templates.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_templates.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/call_notes/form_components/_templates.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+            <state relative-caret-position="30">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="36" column="68" selection-start-line="36" selection-start-column="68" selection-end-line="36" selection-end-column="68" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -116,6 +93,9 @@
       <find>fetch_selected_template_path</find>
       <find>prepend</find>
       <find>speedtests</find>
+      <find>call</find>
+      <find>corres</find>
+      <find>correspo</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -154,9 +134,6 @@
         <option value="$PROJECT_DIR$/app/views/call_notes/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/call_notes/correspondence_categories.js.erb" />
         <option value="$PROJECT_DIR$/app/helpers/call_notes_helper.rb" />
-        <option value="$PROJECT_DIR$/app/views/call_notes/form_components/_template_selection.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-        <option value="$PROJECT_DIR$/app/views/call_notes/form_components/_correspondence.html.erb" />
         <option value="$PROJECT_DIR$/app/models/call_note.rb" />
         <option value="$PROJECT_DIR$/app/views/call_notes/form_components/_correspondence_selection.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/call_notes_controller.rb" />
@@ -173,7 +150,17 @@
         <option value="$PROJECT_DIR$/app/assets/templates/onnet/enquiry.yml" />
         <option value="$PROJECT_DIR$/app/assets/templates/router deployments/work.yml" />
         <option value="$PROJECT_DIR$/app/views/call_notes/selected_template.js.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/shared/_logged_in.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/users/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/app/views/sessions/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/call_notes/form_components/_template_selection.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/call_notes/form_components/_correspondence.html.erb" />
         <option value="$PROJECT_DIR$/app/views/call_notes/form_components/_templates.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
       </list>
     </option>
   </component>
@@ -220,6 +207,13 @@
               <item name="sky-reminders" type="b2602c69:ProjectViewProjectNode" />
               <item name="sky-reminders" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="javascripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sky-reminders" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sky-reminders" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -244,7 +238,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="fetch_selected_template&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value=":correspondence&#9;null&#9;null&#10;fetch_selected_template&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -381,12 +375,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529800661945</updated>
-      <workItem from="1529800663308" duration="40405000" />
+      <workItem from="1529800663308" duration="42099000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40405000" />
+    <option name="totallyTimeSpent" value="42099000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="877" extended-state="0" />
@@ -448,92 +442,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/call_notes/enquiry_templates.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="63" selection-end-line="1" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/call_notes/form_components/_call_conclusion.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="6" lean-forward="true" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/call_notes/form_components/_note_taking_areas.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/templates/ftth/work.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="137" column="126" lean-forward="true" selection-start-line="137" selection-start-column="126" selection-end-line="137" selection-end-column="126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/templates/general/work.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="53" column="47" lean-forward="true" selection-start-line="53" selection-start-column="47" selection-end-line="53" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/sessions_controller.rb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/reminders_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1830">
-          <caret line="122" column="5" lean-forward="true" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/call_notes/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/call_notes/form_components/_template_question_and_input.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/call_notes/_click_notes.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" lean-forward="true" selection-start-column="28" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/call_notes/_email_templates.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/call_notes/_work_templates.html.erb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/call_notes/email_templates.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="30" selection-end-column="159" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/call_notes/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="83" selection-start-line="10" selection-start-column="83" selection-end-line="10" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/call_notes/correspondence_categories.js.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -551,13 +459,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/call_notes/form_buttons.js.erb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/call_notes/form_components/_template_selection.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -569,23 +470,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="76" selection-start-line="3" selection-start-column="76" selection-end-line="3" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="187" column="37" selection-start-line="187" selection-start-column="9" selection-end-line="187" selection-end-column="37" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/call_notes/form_components/_correspondence.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="37" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -764,20 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/templates/router deployments/work.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="218" lean-forward="true" selection-start-line="218" selection-end-line="218" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/call_notes/selected_template.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="29" lean-forward="true" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/call_notes/form_components/_template_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -785,10 +655,115 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/call_notes/selected_template.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/templates/router deployments/work.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="218" lean-forward="true" selection-start-line="218" selection-end-line="218" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reminders/home.html.erb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reminders/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-264">
+          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shared/_logged_in.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/users_helper.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="53" column="48" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/sessions/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/sessions_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/sessions_helper.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/_user.html.erb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/call_notes/form_components/_correspondence.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/call_notes/form_components/_template_selection.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/call_notes/form_components/_templates.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        <state relative-caret-position="30">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="36" column="68" selection-start-line="36" selection-start-column="68" selection-end-line="36" selection-end-column="68" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
