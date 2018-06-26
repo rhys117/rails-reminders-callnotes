@@ -108,12 +108,15 @@ module CallNotesHelper
   end
 
   def answer_input_type(question, split_answers)
-    return 'text' if split_answers.empty?
     if split_answers.length == 2
       'radio'
     elsif split_answers.length > 2
       'select'
-    elsif question.downcase.include?('description') || split_answers[0].downcase.include?('textarea')
+    elsif question.downcase.include?('description')
+      'textarea'
+    elsif split_answers.empty?
+      'text'
+    elsif split_answers[0].downcase.include?('textarea')
       'textarea'
     elsif split_answers[0].downcase == 'pingtest'
       'pingtest'
