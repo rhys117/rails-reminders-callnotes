@@ -50,31 +50,31 @@ class UsersController < ApplicationController
 
   private
 
-    def user_params
-      params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :sign_up_secret)
-    end
+  def user_params
+    params.require(:user).permit(:name, :email, :password,
+                                 :password_confirmation, :sign_up_secret)
+  end
 
-    def current_reminders
-      @user.reminders.ordered_priority.where('date <= ?', Date.current)
-    end
+  def current_reminders
+    @user.reminders.ordered_priority.where('date <= ?', Date.current)
+  end
 
-    def future_reminders
-      @user.reminders.where('date > ?', Date.current).ordered_date_completed_priority
-    end
+  def future_reminders
+    @user.reminders.where('date > ?', Date.current).ordered_date_completed_priority
+  end
 
-    def quick_notes
-      @user.quick_notes.all
-    end
+  def quick_notes
+    @user.quick_notes.all
+  end
 
-    # Before filters
+  # Before filters
 
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
-    end
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless current_user?(@user)
+  end
 
-    def admin_user
-      redirect_to(root_url) unless current_user.admin?
-    end
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
+  end
 end

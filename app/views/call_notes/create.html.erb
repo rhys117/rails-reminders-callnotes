@@ -5,17 +5,17 @@
 <p><b>Enquiry</b></p>
 <textarea class='generate_notes form-control'>
 # <%= params[:call_note]['time(4i)'] %>:<%= params[:call_note]['time(5i)'] %>
-<%= @enquiry_notes %>
+<%= generated_enquiry_notes(params) %>
 </textarea>
 
 <p><b>Work</b></p>
 <textarea class='generate_notes form-control'>
-<%= @work_notes %>
+<%= params[:call_note][:work_notes] %>
 </textarea>
 
 <p><b>Correspondence</b></p>
 <textarea class='generate_notes form-control'>
-<%= @correspondence_notes %>
+<%= params[:call_note][:correspondence_notes].strip %>
 </textarea>
 
 <div class='divider-40'></div>

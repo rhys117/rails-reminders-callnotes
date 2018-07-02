@@ -1,1 +1,5 @@
-Nothing: Text
+Requested router/ata: |
+  Caller requested to purchase: DLink DIR853/DLink DVA2800/Netcomm NF18ACV/SPA 112
+  - cost:
+  - caller understood and agreed to cost: Yes/No
+  - made deploy router ticket: Yes/No
