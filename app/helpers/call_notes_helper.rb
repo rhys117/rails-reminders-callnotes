@@ -199,7 +199,7 @@ module CallNotesHelper
       },
       :call_conclusion => {
         'advised_work' => "Advised expected timeframe for #{params[:call_note]['conclusion_condition']} and agreed to contact on #{conclusion_call_update} \n- best contact is: #{params[:call_note]['conclusion_best_contact']}",
-        'customer_will_contact' => "Customer will contact support when #{params[:call_note]['conclusion_condition']}",
+        'customer_will_contact' => "Customer will contact support #{params[:call_note]['conclusion_condition']}",
         'customer_will_monitor' => "Customer will monitor for further issues",
         'no_further_query' => "No further query"
       }

@@ -1,3 +1,48 @@
+New caller: |
+  New caller calling to enquire about a service
+  Caller details
+  - Name:
+  - DOB:
+  - Address: textarea
+
+  Callers service type
+  - service class available:
+  - service type: lts/fw/ftth/hfc/fttn/none available
+  >> Discussed availability with caller: Yes/No
+
+  Service plans available
+  - discussed skymesh available plans: Yes/No
+  -- benefits of different speed tiers: yes/no
+  - flexibility of plans (upgrade at anytime): yes/no
+  -- If needed, discussed custom plans: Yes/No
+  - discussed alternate services available (VOIP, PSTN): Yes/No
+  -- if caller requested include details: textarea
+
+  Caller decided on plan
+  - requested size (on/off):
+  - agreed cost:
+  -- is this a custom plan: yes/no
+
+  Router offerings
+  - discussed benefits of SkyMesh router: Yes/No
+  - Did caller request router: Yes/No
+  -- If yes, what model: DLink DIR853/DLink DVA2800/Netcomm NF18ACV/SPA 112
+  -- Agreed cost:
+  -- Made deployments ticket: Yes/no
+
+  Discussed with caller
+  - On/off peak times and bonus data meaning: yes/no
+  - Fair use policy: Yes/No
+  - MSM and usages (track data usage): Yes/no
+  - Uploads counting towards usage: Yes/no
+  - Advised of shaping and consequences: Yes/no
+  - if LTS, discussed latency: Yes/no/not applicable
+  - Installation timeframe: Yes/no
+  - Installation cost (or free): Yes/No
+  - 30 day notice: Yes/no
+  - Payment methods available: Yes/no
+  -- Payment through MSM: Yes/no
+
 Requested router/ata: |
   Caller requested to purchase: DLink DIR853/DLink DVA2800/Netcomm NF18ACV/SPA 112
   - cost:
