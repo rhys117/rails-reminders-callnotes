@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8808697-3dec-45a1-8425-349853eed193" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/_readable.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/call_notes.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/custom.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/notes.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/quick_notes.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/sessions.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/static_pages.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/users.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/templates/lts/work.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/templates/lts/work.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/templates/sales/enquiry.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/templates/sales/enquiry.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/templates/sales/work.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/templates/sales/work.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/correspondence/appointment.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/correspondence/appointment.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/correspondence/general.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/correspondence/general.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/correspondence/resolved.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/correspondence/resolved.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/correspondence/to offnet.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/correspondence/to offnet.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/helpers/call_notes_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/call_notes_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -51,8 +40,8 @@
       <file leaf-file-name="call_notes_helper.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/helpers/call_notes_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="202" column="78" lean-forward="true" selection-start-line="202" selection-start-column="78" selection-end-line="202" selection-end-column="78" />
+            <state relative-caret-position="423">
+              <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -75,6 +64,7 @@
       <find>text</find>
       <find>textarea</find>
       <find>text_area</find>
+      <find>correspond</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -89,10 +79,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/templates/ftth/enquiry.yml" />
-        <option value="$PROJECT_DIR$/lib/generator_templates/work/fttp.yml" />
-        <option value="$PROJECT_DIR$/app/assets/templates/ftth/work.yml" />
-        <option value="$PROJECT_DIR$/app/assets/templates/general/enquiry.yml" />
         <option value="$PROJECT_DIR$/app/views/call_notes/fetch_template_categories.js.erb" />
         <option value="$PROJECT_DIR$/app/views/call_notes/template_categories.js.erb" />
         <option value="$PROJECT_DIR$/app/assets/templates/general/work.yml" />
@@ -139,6 +125,10 @@
         <option value="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/templates/sales/work.yml" />
         <option value="$PROJECT_DIR$/app/assets/templates/sales/enquiry.yml" />
+        <option value="$PROJECT_DIR$/app/assets/correspondence/general.yml" />
+        <option value="$PROJECT_DIR$/app/assets/correspondence/appointment.yml" />
+        <option value="$PROJECT_DIR$/app/assets/correspondence/resolved.yml" />
+        <option value="$PROJECT_DIR$/app/assets/correspondence/to offnet.yml" />
         <option value="$PROJECT_DIR$/app/helpers/call_notes_helper.rb" />
       </list>
     </option>
@@ -179,13 +169,20 @@
               <item name="sky-reminders" type="b2602c69:ProjectViewProjectNode" />
               <item name="sky-reminders" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="helpers" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sky-reminders" type="b2602c69:ProjectViewProjectNode" />
               <item name="sky-reminders" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="correspondence" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sky-reminders" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sky-reminders" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sky-reminders" type="b2602c69:ProjectViewProjectNode" />
@@ -342,12 +339,12 @@
       <workItem from="1530168498352" duration="1185000" />
       <workItem from="1530513437131" duration="1910000" />
       <workItem from="1530688417596" duration="6192000" />
-      <workItem from="1530703597761" duration="78000" />
+      <workItem from="1530703597761" duration="1547000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54286000" />
+    <option name="totallyTimeSpent" value="55755000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="877" extended-state="0" />
@@ -409,21 +406,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/generator_templates/enquiry/to onnet.yml" />
-    <entry file="file://$PROJECT_DIR$/lib/generator_templates/work/routers.yml" />
-    <entry file="file://$PROJECT_DIR$/app/views/call_notes/selected_template.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/reminders/home.html.erb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/reminders/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/shared/_logged_in.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -656,10 +638,41 @@
     <entry file="file://$PROJECT_DIR$/app/helpers/static_pages_helper.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/correspondence/general.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="673">
+          <caret line="110" column="9" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/correspondence/resolved.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/correspondence/snippet.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/correspondence/to offnet.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/correspondence/appointment.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/call_notes_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="202" column="78" lean-forward="true" selection-start-line="202" selection-start-column="78" selection-end-line="202" selection-end-column="78" />
+        <state relative-caret-position="423">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
         </state>
       </provider>
     </entry>

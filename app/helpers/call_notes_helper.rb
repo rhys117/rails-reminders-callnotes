@@ -34,11 +34,13 @@ module CallNotesHelper
   def correspondence_options(category)
     category = 'GENERAL' if category.nil?
     path = "#{::Rails.root}/app/assets/correspondence"
-    if File.exists?("#{path}/#{category.downcase}.yml")
-      YAML.load_file("#{path}/#{category.downcase}.yml")
-    else
-      []
-    end
+    options = if File.exists?("#{path}/#{category.downcase}.yml")
+                YAML.load_file("#{path}/#{category.downcase}.yml")
+              else
+                {}
+              end
+    # replace agent with current users name
+    options.each { |_, message| message.gsub!('{AGENT}', current_user.name) }
   end
 
   def active_class?(param, match_phrase)
