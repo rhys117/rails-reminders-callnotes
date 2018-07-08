@@ -241,4 +241,8 @@ module CallNotesHelper
   def component_link(title)
     title.gsub('COMPONENT - ', '').strip
   end
+
+  def can_delete_question?(input_type)
+    !(input_type == 'formatting' || input_type == 'components')
+  end
 end

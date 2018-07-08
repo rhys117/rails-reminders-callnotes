@@ -82,6 +82,13 @@ p {
   line-height: 1.7em;
 }
 
+.cursor {
+  color: red;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 /* header */
 
 #logo {
