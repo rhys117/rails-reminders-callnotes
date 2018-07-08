@@ -1,5 +1,10 @@
 <div class="form-group col-md-4">
-  <p><%= ques_and_answ[:question] %></p>
+  <p>
+    <%= ques_and_answ[:question] %>
+    <% unless ques_and_answ[:input_type] == 'formatting' %>
+      <a onclick="DeleteLine('<%= ques_and_answ[:question] %>', '<%= type %>')">del</a>
+    <% end %>
+  </p>
   <% case ques_and_answ[:input_type] %>
   <% when 'select' %>
     <%= select "#{type}_template".to_sym, ques_and_answ[:question].parameterize.underscore,
@@ -38,5 +43,12 @@
                   value: speed_tests, class: 'form-control question',
                   :data => {:question => "#{ques_and_answ[:question]}" },
                   onfocus: "this.oldvalue = this.value;" %>
+  <% when 'components' %>
+    <% ques_and_answ[:answers].each do |title| %>
+      <%= link_to component_link(title), fetch_selected_template_path(:template => title, :type => 'enquiry', :cat_id => "#{params[:cat_id]}"),
+                  :remote => true, class: 'btn btn-default btn-sm btn-margin-top',
+                  onclick: "PrependToEnquiryNotes('#{title.parameterize.underscore}')" %>
+
+    <% end %>
   <% end %>
 </div>

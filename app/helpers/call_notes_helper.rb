@@ -93,8 +93,8 @@ module CallNotesHelper
     result = []
     current_subset = []
     questions_and_answers.each do |hash_data|
-      if hash_data[:input_type] == 'formatting'
-        result << current_subset unless current_subset.empty?
+      if hash_data[:input_type] == 'formatting' || hash_data[:input_type] == 'components'
+          result << current_subset unless current_subset.empty?
         result << [hash_data]
         current_subset = []
       else
@@ -141,7 +141,15 @@ module CallNotesHelper
       # if not identified as question include line as formatting
       unless line.include?(':')
         line.strip!
-        if line.length > 0
+        # search for components
+        components = line.match(/(?<={)[^}]*/)
+        if components
+          split_components = components.to_s.split(',').map(&:strip)
+          split_components.map! { |str| "COMPONENT - #{str}" }
+          line_result[:input_type] = 'components'
+          line_result[:answers] = split_components
+          questions_and_answers << line_result
+        else
           line_result[:question] = line
           line_result[:input_type] = 'formatting'
           questions_and_answers << line_result
@@ -228,5 +236,9 @@ module CallNotesHelper
       end
     end
     enquiry_notes.strip
+  end
+
+  def component_link(title)
+    title.gsub('COMPONENT - ', '').strip
   end
 end
