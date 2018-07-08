@@ -177,10 +177,10 @@ $(function() {
 
 function DeleteLine(line, type) {
   var regex = new RegExp("(?=" + line + ").*\n?", 'm');
-  console.log(regex);
   var current_notes = $('#call_note_' + type + '_notes').val();
   var removed_line_notes = current_notes.replace(regex, '');
   $('#call_note_' + type + '_notes').val(removed_line_notes);
+  // $('*[data-question=line]').disabled = true;
 }
 
 function PrependToEnquiryNotes(string) {
