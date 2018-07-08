@@ -1,24 +1,12 @@
-NTD lights: |
+Offline: |
+  Customer calling to report service is offline.
+
   NTD Lights and Port
   - NBN Status Light: Off/Solid White/Flashing White/Solid Blue/Flashing Blue/Solid Orange/Flashing Orange/Solid Red/Flashing Red
   - UNI-D Port: 1/2/3/4
   - UNI-D Port Light: Green Solid/Green Flashing/Orange Solid/Orange Flashing/off
-NTD Status: |
-  NTD Status (Code):
-  - Result: Passed/Failed/Unable to update
-  - NTD State:
-  - NTD Current Operational State:
-  - Time Since Registration:
-  - LAN Link Status:
-Loopback: |
-  Loopback (code):
-  - Result: Pass/Fail/Cancelled
-  - Messages: textarea
-
-Powercycle & reseat: "Powercycled CPE and reseated coax cable: Yes/No"
-Flashing White: |
-  Customer calling to report service is offline with flashing white NTD lights
-
+  { White Flashing, Orange/Blue }
+COMPONENT - White Flashing: |
   Customer reports recent weather has been: clear/cloudy/rain/storms
 
   NTD Status (Code):
@@ -30,3 +18,55 @@ Flashing White: |
   - has customer performed a 20min powercycle: Yes/No
 
   Gathered work ticket info: Yes/No
+COMPONENT - Orange/Blue: |
+  NTD Status (Code):
+  - Result: Passed/Failed/Unable to update
+  - NTD State: Pending/Online
+  - NTD Current Operational State:
+  - Time Since Registration:
+  - LAN Link Status: Up/Down
+
+  Does customer have active lease: Yes/No
+
+  Loopback (code):
+  - Result: Pass/Fail/Cancelled
+  - Messages: textarea
+
+  Powercycled CPE and reseated coax cable: Yes/No
+  - ensured coax cable secure in wallplate: Yes/No
+
+  Tested 2nd CPE: Yes/No
+  - ensured CPE configured for DHCP: Yes/No
+  CPE details (MAC and models): textarea
+
+  Customer has completed 20min powercycle: Yes/No
+  { Is getting SkyMesh IP, Is not getting SkyMesh IP }
+COMPONENT - Is getting SkyMesh IP: |
+  Ping statistics for 180.181.127.4: pingtest
+  Traceroute 180.181.127.4: textarea
+  Traceroute google.com: textarea
+
+  Gathered work ticket info: Yes/No
+COMPONENT - Is not getting SkyMesh IP: |
+  IP Address customer is receiving:
+  - self-assigned only: Yes/No
+
+  Gathered work ticket info: Yes/No
+NTD lights: |
+  NTD Lights and Port
+  - NBN Status Light: Off/Solid White/Flashing White/Solid Blue/Flashing Blue/Solid Orange/Flashing Orange/Solid Red/Flashing Red
+  - UNI-D Port: 1/2/3/4
+  - UNI-D Port Light: Green Solid/Green Flashing/Orange Solid/Orange Flashing/off
+NTD Status: |
+  NTD Status (Code):
+  - Result: Passed/Failed/Unable to update
+  - NTD State: Pending/Online
+  - NTD Current Operational State:
+  - Time Since Registration:
+  - LAN Link Status: Up/Down
+Loopback: |
+  Loopback (code):
+  - Result: Pass/Fail/Cancelled
+  - Messages: textarea
+Powercycle & reseat: "Powercycled CPE and reseated coax cable: Yes/No"
+

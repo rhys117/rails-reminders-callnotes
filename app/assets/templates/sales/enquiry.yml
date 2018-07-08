@@ -48,3 +48,10 @@ Requested router/ata: |
   - cost:
   - caller understood and agreed to cost: Yes/No
   - made deploy router ticket: Yes/No
+Plan upgrade: |
+  Customer requested plan upgrade
+  - upgrade to start: next billing cycle/immediately
+  - temporary or permanent change: Temporary/Permanent
+  - confirmed customer understood and agreed to cost: Yes/No
+  >> processed: Yes/No
+  Pasted sams dialog confirmation/s: textarea

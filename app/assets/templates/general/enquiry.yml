@@ -12,17 +12,23 @@ Exceeded data: |
   - how to control/monitor usage: Yes/No
   - data blocks/plan upgrades: Yes/No
   -- Did customer request upgrade: Yes/No
-
-  If customer requested plan upgrade
+  { Plan upgrade, Data block }
+COMPONENT - Plan upgrade: |
+  Customer requested plan upgrade
   - upgrade to start: next billing cycle/immediately
   - temporary or permanent change: Temporary/Permanent
   - confirmed customer understood and agreed to cost: Yes/No
   >> processed: Yes/No
-  Paste sams dialog confirmation/s here: textarea
+  Pasted sams dialog confirmation/s: textarea
+COMPONENT - Data block: |
+  Customer requested data block
+  - confirmed customer understood and agreed to cost: Yes/No
+  >> processed: Yes/No
+  Pasted sams dialog confirmation: textarea
 Inbox Full: |
   Customer is calling to report inbox is full
 
-  Customer uses client: thunderbird/outlook/webmail/other
+  Customer uses client: thunderbird/outlook/live mail/webmail/other
   - confirmed customers email address:
 
   Does inbox appear to be full: yes/no

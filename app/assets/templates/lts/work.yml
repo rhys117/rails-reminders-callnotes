@@ -14,9 +14,9 @@ Dead NTD: |
   Contact email (optional):
 
   Secondary contact (Optional)
-  Contact name:
-  Contact number:
-  Contact email (optional):
+  Contact name - secondary:
+  Contact number - secondary:
+  Contact email - secondary (optional):
 
   What is the customers preferred method of contact if SkyMesh needs to follow up?: sms/phone/email
   Customer is aware that a delivery partner technician will be in contact within 10 business days to arrange a site visit?: yes/no
@@ -36,7 +36,6 @@ Standard (Offline): |
   UNI-D Port Light: Green Solid/Green Flashing/Orange Solid/Orange Flashing
   Customer has agreed to leave NTD and CPE powered on: [Yes/No]
 
-
   -- Customer Availability --
   End-user contact details
   Primary contact
@@ -45,9 +44,9 @@ Standard (Offline): |
   Contact email (optional):
 
   Secondary contact (Optional)
-  Contact name:
-  Contact number:
-  Contact email (optional):
+  Contact name - secondary:
+  Contact number - secondary:
+  Contact email - secondary (optional):
 
   What is the customers preferred method of contact if SkyMesh needs to follow up?: sms/phone/email
   Customer is aware that a delivery partner technician will be in contact within 10 business days to arrange a site visit?: yes/no
@@ -119,15 +118,21 @@ Speed: |
   UNI-D Port Light: Green Solid/Green Flashing/Orange Solid/Orange Flashing
 
   -- Customer Availability --
-  A placeholder date is given to NBN, they'll pick the date with the customer.
+  End-user contact details
+  Primary contact
+  Contact name:
+  Contact number:
+  Contact email (optional):
 
-  What is the best contact phone number for us to pass on to NBN?:
-  What is the best contact email for us to pass on to NBN? (Optional):
-  Name of the person who will be on site:
-  What is the best way for SkyMesh get customer updates?: sms / phone / email
-  Provide + email/phone number:
+  Secondary contact (Optional)
+  Contact name - secondary:
+  Contact number - secondary:
+  Contact email - secondary (optional):
 
+  What is the customers preferred method of contact if SkyMesh needs to follow up?: sms/phone/email
+  Customer is aware that a delivery partner technician will be in contact within 10 business days to arrange a site visit?: yes/no
 
+  -- Troubleshooting --
   Have there been any changes made to the site since installation?:
   Any damage to NBN equipment visible?: No/Yes (provide details)
   Line of sight reported clear? Yes / No

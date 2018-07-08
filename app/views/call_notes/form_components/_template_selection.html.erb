@@ -12,9 +12,12 @@
     <%= label :enquiry_templates, 'Enquiry' %>
   </div>
   <% template_category_options(params[:cat_id])[:enquiry].each do |title, content| %>
-    <%= link_to title, fetch_selected_template_path(:template => title, :type => 'enquiry', :cat_id => "#{params[:cat_id]}"),
+    <% unless title.include?('COMPONENT') %>
+      <%= link_to title, fetch_selected_template_path(:template => title, :type => 'enquiry',
+                                                      :cat_id => "#{params[:cat_id]}"),
                 :remote => true, class: 'btn btn-default btn-sm btn-margin-top',
                 onclick: "PrependToEnquiryNotes('#{title.parameterize.underscore}')" %>
+    <% end %>
     <textarea class='copy-data' id="<%= title.parameterize.underscore %>" disable><%= content %></textarea>
   <% end %>
 </div>

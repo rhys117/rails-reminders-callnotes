@@ -175,9 +175,16 @@ $(function() {
   });
 });
 
+function DeleteLine(line, type) {
+  var regex = new RegExp("(?=" + line + ").*\n?", 'm');
+  console.log(regex);
+  var current_notes = $('#call_note_' + type + '_notes').val();
+  var removed_line_notes = current_notes.replace(regex, '');
+  $('#call_note_' + type + '_notes').val(removed_line_notes);
+}
 
 function PrependToEnquiryNotes(string) {
-  var content = $("#"+string).val();
+  var content = $("#"+string).val().replace(/(?={)[^}]*./, '');
   var current_notes = $('#call_note_enquiry_notes').val().trim();
   var combined = (current_notes + "\n\n" + content).trim() + "\n\n";
   var filtered = combined.replace(/textarea|pingtest|speedtests/g, "");
