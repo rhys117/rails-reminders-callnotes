@@ -83,7 +83,7 @@ p {
 }
 
 .cursor {
-  color: red;
+  color: red !important;
   &:hover {
     cursor: pointer;
   }

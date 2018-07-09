@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   resources :quick_notes
   resources :reminders do
     member do
-      patch 'inverse_complete'
+      patch 'mark_complete'
+      put   'mark_incomplete'
     end
   end
 

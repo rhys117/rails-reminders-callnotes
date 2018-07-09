@@ -40,11 +40,18 @@ class RemindersController < ApplicationController
     end
   end
 
-  def inverse_complete
+  def mark_complete
     reminder = Reminder.find(params[:id])
-    reminder.complete = !reminder.complete
+    reminder.complete = true
     reminder.save
     flash[:success] = "Reminder marked complete #{reminder.reference}" if reminder.complete
+    redirect_back(fallback_location: root_path)
+  end
+
+  def mark_incomplete
+    reminder = Reminder.find(params[:id])
+    reminder.complete = false
+    reminder.save
     flash[:warning] = "Reminder marked incomplete #{reminder.reference}" unless reminder.complete
     redirect_back(fallback_location: root_path)
   end
