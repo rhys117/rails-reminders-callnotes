@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f8808697-3dec-45a1-8425-349853eed193" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/call_notes/form_components/_template_delete_question.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/complete.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/delete.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/edit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/incomplete.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/templates/lts/enquiry.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/templates/lts/enquiry.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/templates/lts/work.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/templates/lts/work.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/call_notes_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/call_notes_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/call_notes/form_components/_template_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/call_notes/form_components/_template_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/call_notes/form_components/_template_question_and_input.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/call_notes/form_components/_template_question_and_input.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/call_notes/form_components/_template_selection.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/call_notes/form_components/_template_selection.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/reminders.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/reminders.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/reminders/_reminder.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/reminders/_reminder.html.erb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -46,11 +36,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="enquiry.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="enquiry.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/templates/lts/enquiry.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="930">
-              <caret line="62" column="14" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
+            <state relative-caret-position="225">
+              <caret line="15" column="51" lean-forward="true" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reminders.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/reminders.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" selection-start-line="14" selection-end-line="16" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_header.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_reminder.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/reminders/_reminder.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="87" selection-start-line="20" selection-start-column="87" selection-end-line="20" selection-end-column="87" />
             </state>
           </provider>
         </entry>
@@ -120,7 +137,6 @@
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/readable.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/templates/sales/work.yml" />
         <option value="$PROJECT_DIR$/app/assets/correspondence/general.yml" />
@@ -133,9 +149,7 @@
         <option value="$PROJECT_DIR$/app/assets/templates/general/enquiry.yml" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/reminders_controller.rb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/reminders.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/custom.scss" />
-        <option value="$PROJECT_DIR$/app/views/reminders/_reminder.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/templates/lts/work.yml" />
         <option value="$PROJECT_DIR$/app/views/call_notes/form_components/_template_selection.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
@@ -145,6 +159,9 @@
         <option value="$PROJECT_DIR$/app/views/call_notes/form_components/_template_question_and_input.html.erb" />
         <option value="$PROJECT_DIR$/app/helpers/call_notes_helper.rb" />
         <option value="$PROJECT_DIR$/app/assets/templates/lts/enquiry.yml" />
+        <option value="$PROJECT_DIR$/app/views/reminders/_reminder.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/reminders.scss" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
       </list>
     </option>
   </component>
@@ -202,6 +219,16 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="lts" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="sky-reminders" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sky-reminders" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sky-reminders" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sky-reminders" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -209,6 +236,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
     <property name="SearchEverywhereHistoryKey" value=":correspondence&#9;null&#9;null&#10;fetch_selected_template&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -352,12 +380,12 @@
       <workItem from="1530513437131" duration="1910000" />
       <workItem from="1530688417596" duration="6192000" />
       <workItem from="1530703597761" duration="2227000" />
-      <workItem from="1531009478144" duration="25734000" />
+      <workItem from="1531009478144" duration="27756000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82169000" />
+    <option name="totallyTimeSpent" value="84191000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="1417" extended-state="0" />
@@ -440,9 +468,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/favicon.ico">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/call_notes/create.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -506,13 +531,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="53" selection-start-column="53" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -594,13 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/reminders.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/custom.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="746">
@@ -626,13 +637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/reminders/_reminder.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -702,10 +706,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reminders/_reminder.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="87" selection-start-line="20" selection-start-column="87" selection-end-line="20" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/reminders.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="16" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/templates/lts/enquiry.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="62" column="14" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
+        <state relative-caret-position="225">
+          <caret line="15" column="51" lean-forward="true" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/favicon.ico">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
         </state>
       </provider>
     </entry>

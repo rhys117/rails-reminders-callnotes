@@ -8,7 +8,7 @@
   <td class="col-md-6 text-left">
     <%= combined_notes(reminder) %>
   </td>
-  <td>
+  <td align="center">
     <% unless reminder.complete %>
       <%= link_to '', mark_complete_reminder_path(reminder.id), :method=> :patch, class: 'glyphicon glyphicon-ok',
                                                                                   title: 'mark complete' %>
@@ -17,7 +17,7 @@
                                                                                   title: 'mark incomplete' %>
     <% end %>
   </td>
-  <td>
-    <%= link_to '', edit_reminder_path(reminder.id), class: 'glyphicon glyphicon-wrench', title: 'edit' %>
+  <td align="center">
+    <%= link_to '', edit_reminder_path(reminder.id), class: 'glyphicon glyphicon-pencil', title: 'edit' %>
   </td>
 </tr>
