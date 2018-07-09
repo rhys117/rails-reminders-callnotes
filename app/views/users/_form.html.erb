@@ -13,8 +13,10 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-  <%= f.label :sign_up_secret %>
-  <%= f.text_field :sign_up_secret, class: 'form-control' %>
+  <% unless logged_in? %>
+    <%= f.label :sign_up_secret %>
+    <%= f.password_field :sign_up_secret, class: 'form-control' %>
+  <% end %>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
