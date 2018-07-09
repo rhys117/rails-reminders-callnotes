@@ -1,8 +1,9 @@
 User.create!(name:  "Example User",
-             correspondence: "example@example.org",
+             email: "example@example.org",
              password:              "foobar",
              password_confirmation: "foobar",
-             admin: true)
+             admin: true,
+             sign_up_secret: SIGN_UP['secret'])
 
 y = 0
 5.times do |n|

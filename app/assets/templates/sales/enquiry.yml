@@ -55,3 +55,8 @@ Plan upgrade: |
   - confirmed customer understood and agreed to cost: Yes/No
   >> processed: Yes/No
   Pasted sams dialog confirmation/s: textarea
+Data block: |
+  Customer requested data block
+  - confirmed customer understood and agreed to cost: Yes/No
+  >> processed: Yes/No
+  Pasted sams dialog confirmation: textarea

@@ -38,15 +38,38 @@ Password reset: |
   Customer is requesting a password reset
   - confirmed email address:
   - customer has access to billing email: Yes/No
-  -- customer unable to access, sent link via sms: Yes/No
-  >> sent customer one time link and confirmed customer could change/login: Yes/No
+  { Sent Successfully, Unsuccessful - Remote Support }
+COMPONENT - Sent Successfully: |
+  Sent customer one time link: Yes/No
+  - confirmed customer could access and change password: Yes/Np
+COMPONENT - Unsuccessful - Remote Support: |
+  Customer unable to access email sent to billing account
+  - was due to one time link expiring: Yes/No
+
+  Starting Remote Support
+  - pasted link in: Yes/No
+  - confirmed customer could access and change password: Yes/No
+  Ending Remote Support
 Setup details: |
   Customer seeking help configuring setup
   - Is it a new service: Yes/No
-  - Supplied customer with neccissary network settings: Yes/No
-  -- Ensured customer connected to correct ports: yes/no
-  - Does customer have SkyMesh supplied router: Yes/No
-  -- Walked customer through setup of router: Yes/No
+  - Ensured customer connected to correct ports: yes/no
+  - Supplied customer with necessary network settings: Yes/No
+  { SkyMesh Supplied Router, 3rd Party Router }
+COMPONENT - SkyMesh Supplied Router: |
+  Customer has SkyMesh supplied router
+  - Walked customer through setup of router: Yes/No
+  >> ensured customer connected: Yes/No
+COMPONENT - 3rd Party Router: |
+  Customer has 3rd party router
+  - discussed limitations of 3rd party product support: Yes/No
+  - discussed alternate support available (eg manufacturer): Yes/No
+  { Requested SkyMesh Router }
+COMPONENT - Requested SkyMesh Router: |
+  Customer requested to purchase: DLink DIR853/DLink DVA2800/Netcomm NF18ACV/SPA 112
+  - cost:
+  - caller understood and agreed to cost: Yes/No
+  - made deploy router ticket: Yes/No
 Ran speedtest: |
   Ran Speedtest
   - Down:
