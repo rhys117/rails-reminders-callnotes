@@ -175,12 +175,16 @@ $(function() {
   });
 });
 
+function escapeRegExp(text) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+}
+
 function DeleteLine(line, type) {
-  var regex = new RegExp("(?=" + line + ").*\n?", 'm');
+  var regex = new RegExp("(?=" + escapeRegExp(line) + ").*\n?", 'm');
   var current_notes = $('#call_note_' + type + '_notes').val();
   var removed_line_notes = current_notes.replace(regex, '');
   $('#call_note_' + type + '_notes').val(removed_line_notes);
-  // $('*[data-question=line]').disabled = true;
+  $("[data-question='" + line + "']").remove(); //.closest('.div').remove();
 }
 
 function PrependToEnquiryNotes(string) {

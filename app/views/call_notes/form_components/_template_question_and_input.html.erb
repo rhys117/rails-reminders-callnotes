@@ -2,8 +2,8 @@
   <p>
     <%= ques_and_answ[:question] %>
     <% if can_delete_question?(ques_and_answ[:input_type]) %>
-      <a onclick="DeleteLine('<%= ques_and_answ[:question] %>', '<%= type %>')">
-        <small><span class="glyphicon glyphicon-remove cursor" aria-hidden="true"></span></small>
+      <a title='remove line' onclick="DeleteLine('<%= ques_and_answ[:question] %>', '<%= type %>')">
+        <super><span class="glyphicon glyphicon-remove cursor" aria-hidden="true"></span></super>
       </a>
     <% end %>
   </p>

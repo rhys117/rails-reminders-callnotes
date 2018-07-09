@@ -9,12 +9,15 @@
     <%= combined_notes(reminder) %>
   </td>
   <td>
-    <%= link_to image_tag("#{inverse_complete_value(reminder)}.png", alt: inverse_complete_value(reminder), class: 'btn-reminder'), inverse_complete_reminder_path(reminder.id), :method=> :patch, class: "btn btn-default btn-xs" %>
+    <% unless reminder.complete %>
+      <%= link_to '', mark_complete_reminder_path(reminder.id), :method=> :patch, class: 'glyphicon glyphicon-ok',
+                                                                                  title: 'mark complete' %>
+    <% else %>
+      <%= link_to '', mark_incomplete_reminder_path(reminder.id), :method=> :put, class: 'glyphicon glyphicon-remove',
+                                                                                  title: 'mark incomplete' %> %>
+    <% end %>
   </td>
   <td>
-    <%= link_to image_tag('delete.png', alt: 'Delete', class: 'btn-reminder'), reminder, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-xs" %>
-  </td>
-  <td>
-    <%= link_to image_tag('edit.png', alt: 'Edit', class: 'btn-reminder'), edit_reminder_path(reminder.id), class: 'btn btn-default btn-xs' %>
+    <%= link_to '', edit_reminder_path(reminder.id), class: 'glyphicon glyphicon-wrench', title: 'edit' %>
   </td>
 </tr>
