@@ -66,7 +66,8 @@ Standard (Offline): |
   -- NTD status?: Passed/Failed
 
   *-------------STOP HERE IF THE S-NTD LIGHT IS STILL not Orange or Blue OR NTD LIGHT IS WHITE AND NTD TEST IS PASSING-----------------*
-
+  { Light Not Blue/Orange }
+COMPONENT - Light Not Blue/Orange: |
   Device left connected to UNI-D: PC / ROUTER
   MAC Address:
   If Router, Brand & Model Number:
@@ -83,7 +84,8 @@ Standard (Offline): |
   -- Loopback?: Passed/Failed
 
   *-------------STOP HERE IF THE CPE DIRECTLY CONNECTED IS NOT GETTING A SKYMESH IP OR NOT DETECTING CPE CONNECTED-----------------*
-
+  { Getting SkyMesh IP}
+COMPONENT - Getting SkyMesh IP: |
   Ping statistics for 180.181.127.4: pingtest
 
   Traceroute 180.181.127.4: textarea

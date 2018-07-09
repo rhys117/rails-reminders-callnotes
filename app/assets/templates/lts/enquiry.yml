@@ -60,7 +60,7 @@ NTD lights: |
 NTD Status: |
   NTD Status (Code):
   - Result: Passed/Failed/Unable to update
-  - NTD State: Pending/Online
+  - NTD State:
   - NTD Current Operational State:
   - Time Since Registration:
   - LAN Link Status: Up/Down

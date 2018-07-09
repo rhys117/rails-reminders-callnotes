@@ -7,30 +7,19 @@
   <% end %>
 </ul>
 
-<div class='form-group'>
-  <div class="row col-md-12">
-    <%= label :enquiry_templates, 'Enquiry' %>
-  </div>
-  <% template_category_options(params[:cat_id])[:enquiry].each do |title, content| %>
-    <% unless title.include?('COMPONENT') %>
-      <%= link_to title, fetch_selected_template_path(:template => title, :type => 'enquiry',
-                                                      :cat_id => "#{params[:cat_id]}"),
-                :remote => true, class: 'btn btn-default btn-sm btn-margin-top',
-                onclick: "PrependToEnquiryNotes('#{title.parameterize.underscore}')" %>
+<% ['enquiry', 'work'].each do |type| %>
+  <div class='form-group'>
+    <div class="row col-md-12">
+      <%= label "#{type}_templates".to_sym, type.capitalize %>
+    </div>
+    <% template_category_options(params[:cat_id])[type.to_sym].each do |title, content| %>
+      <% unless title.include?('COMPONENT') %>
+        <%= link_to title, fetch_selected_template_path(:template => title, :type => type,
+                                                        :cat_id => "#{params[:cat_id]}"),
+                  :remote => true, class: 'btn btn-default btn-sm btn-margin-top',
+                  onclick: "PrependTo#{type.capitalize}Notes('#{title.parameterize.underscore}')" %>
+      <% end %>
+      <textarea class='copy-data' id="<%= title.parameterize.underscore %>" disabled><%= content %></textarea>
     <% end %>
-    <textarea class='copy-data' id="<%= title.parameterize.underscore %>" disable><%= content %></textarea>
-  <% end %>
-</div>
-
-<div class="form-group">
-  <div class="row col-md-12">
-    <%= label :work_templates, 'Work' %>
   </div>
-  <% template_category_options(params[:cat_id])[:work].each do |title, content| %>
-    <%= link_to title, fetch_selected_template_path(:template => title, :type => 'work', :cat_id => "#{params[:cat_id]}"),
-                :remote => true, class: 'btn btn-default btn-sm btn-margin-top',
-                onclick: "PrependToWorkNotes('#{title.parameterize.underscore}')" %>
-    <textarea class='copy-data' id="<%= title.parameterize.underscore %>" disable><%= content %></textarea>
-  <% end %>
-</div>
-
+<% end %>
