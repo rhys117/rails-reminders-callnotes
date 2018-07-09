@@ -11,7 +11,10 @@
         <% form_line_array.each do |ques_and_answ| %>
           <% if form_line_array[0][:input_type] == 'formatting' %>
             <div class='form-group col-md-12'>
-              <p><strong><%= ques_and_answ[:question].to_sym %></strong></p>
+              <p><strong><%= ques_and_answ[:question].to_sym %></strong>
+                <%= render partial: 'call_notes/form_components/template_delete_question',
+                           locals: { ques_and_answ: ques_and_answ, type: type }  %>
+              </p>
             </div>
           <% else %>
             <%= render partial: 'call_notes/form_components/template_question_and_input',

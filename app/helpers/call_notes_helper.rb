@@ -242,7 +242,7 @@ module CallNotesHelper
     title.gsub('COMPONENT - ', '').strip
   end
 
-  def can_delete_question?(input_type)
-    !(input_type == 'formatting' || input_type == 'components')
+  def can_delete_question?(input_type, question)
+    !((input_type == 'formatting' && question.length < 1) || input_type == 'components')
   end
 end

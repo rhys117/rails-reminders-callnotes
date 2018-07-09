@@ -184,7 +184,7 @@ function DeleteLine(line, type) {
   var current_notes = $('#call_note_' + type + '_notes').val();
   var removed_line_notes = current_notes.replace(regex, '');
   $('#call_note_' + type + '_notes').val(removed_line_notes);
-  $("[data-question='" + line + "']").remove(); //.closest('.div').remove();
+  $("[data-question='" + line + "']").remove() //.closest('.div').remove();
 }
 
 function PrependToEnquiryNotes(string) {
@@ -204,7 +204,7 @@ function PrependToCorrespondenceNotes(string) {
 }
 
 function PrependToWorkNotes(string) {
-  var content = $("#"+string).val();
+  var content = $("#"+string).val().replace(/(?={)[^}]*./, '');
   var current_notes = $('#call_note_work_notes').val();
   var combined = current_notes + content + "\n";
   var filtered = combined.replace(/textarea|pingtest|speedtests/g, "");
