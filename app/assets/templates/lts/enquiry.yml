@@ -1,11 +1,19 @@
-Offline: |
-  Customer calling to report service is offline.
+Offline/Dropouts: |
+  Note - If dropouts, troubleshooting should reflect state of service during dropout when offline
+  Customer calling to report service is: offline/suffering from drop outs
 
   NTD Lights and Port
   - NBN Status Light: Off/Solid White/Flashing White/Solid Blue/Flashing Blue/Solid Orange/Flashing Orange/Solid Red/Flashing Red
   - UNI-D Port: 1/2/3/4
   - UNI-D Port Light: Green Solid/Green Flashing/Orange Solid/Orange Flashing/off
-  { White Flashing, Orange/Blue }
+  { White Flashing, Orange/Blue, No Light }
+COMPONENT - No Light: |
+  Troubleshoot with customer
+  - powercycled CPE and reseated coax cable: Yes/No
+  - does NTD power up without coax cable connected: Yes/No
+  - ensured coax cable securely in wallplate: Yes/No
+
+  Gathered work ticket info: Yes/No
 COMPONENT - White Flashing: |
   Customer reports recent weather has been: clear/cloudy/rain/storms
 
@@ -17,6 +25,7 @@ COMPONENT - White Flashing: |
   - ensured coax cable securely in wallplate: Yes/No
   - has customer performed a 20min powercycle: Yes/No
 
+  { Dropping Out }
   Gathered work ticket info: Yes/No
 COMPONENT - Orange/Blue: |
   NTD Status (Code):
@@ -52,6 +61,90 @@ COMPONENT - Is not getting SkyMesh IP: |
   - self-assigned only: Yes/No
 
   Gathered work ticket info: Yes/No
+COMPONENT - Dropping Out: |
+  Recorded dropouts, format - [date] [time] - [NTD light colour]
+  - 1:
+  - 2:
+  - 3:
+
+  If more, please include: textarea
+
+  Gathered work ticket info: Yes/No
+Speed: |
+  Note - There is currently an issue with speedtest.net and upload speeds. Ensure testing with speedof.me for true upload results.
+
+  Customer is calling to report slow service speeds.
+  - Plan Speed: 12-1/25-5
+
+  What speeds is customer reporting
+  - Down:
+  - Up:
+  - Ping:
+
+  Powercycled CPE and reseated coax cable: Yes/No
+  - traced coax back to wallplate and is secure: Yes/No
+
+  Tested directly connected to NTD (bypass router): Yes/No
+  - tested 2nd cable: Yes/No
+  - performed 20min powercycle (is nbn requirement): Yes/No
+  - tested 2nd CPE: Yes/No
+
+  { Able To Test 2nd CPE, Unable To Test 2nd CPE }
+COMPONENT - Unable To Test 2nd CPE: |
+  Customer unable to test to 2nd CPE at time of call
+  Discussed
+  - importance of testing 2nd CPE: Yes/No
+  - why required by nbn: Yes/No
+  - suitable 2nd CPE to test: Yes/No
+COMPONENT - Able To Test 2nd CPE: |
+  Speedtest on live call
+  - Down:
+  - Up:
+  - Ping:
+  - Source:
+
+  CPE Tested (Models and MAC addresses): textarea
+
+  Customer has required speedtests: Yes/No
+  { Has Speedtests, Does Not Have Speedtests }
+COMPONENT - Has Speedtests: |
+  Speedtests recorded
+  - 1st Result (date/time):
+  - (1) Down:
+  - (1) Up:
+  - (1) Ping:
+  - (1) Source:
+
+  - 2nd Result (date/time):
+  - (2) Down:
+  - (2) Up:
+  - (2) Ping:
+  - (2) Source:
+
+  - 3rd Result (date/time):
+  - (3) Down:
+  - (3) Up:
+  - (3) Ping:
+  - (3) Source:
+
+  - 4th Result (date/time):
+  - (4) Down:
+  - (4) Up:
+  - (4) Ping:
+  - (4) Source:
+
+  If more, please include: textarea
+
+  Gathered work ticket info: Yes/No
+COMPONENT - Does Not Have Speedtests: |
+  Customer does not have required speedtest results
+
+  Discussed
+  - why needed: Yes/No
+  - how to record speedtest results: Yes/No
+  - discussed needing to be directly connected for NTD for testing: Yes/No
+
+  Sent customer email discussed above: Yes/No
 NTD lights: |
   NTD Lights and Port
   - NBN Status Light: Off/Solid White/Flashing White/Solid Blue/Flashing Blue/Solid Orange/Flashing Orange/Solid Red/Flashing Red

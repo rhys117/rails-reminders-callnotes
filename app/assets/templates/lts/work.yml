@@ -21,7 +21,7 @@ Dead NTD: |
   What is the customers preferred method of contact if SkyMesh needs to follow up?: sms/phone/email
   Customer is aware that a delivery partner technician will be in contact within 10 business days to arrange a site visit?: yes/no
 
-Standard (Offline): |
+Offline/Dropouts: |
   Fault Description (summary):
   -------------------------------------------
 
@@ -66,7 +66,7 @@ Standard (Offline): |
   -- NTD status?: Passed/Failed
 
   *-------------STOP HERE IF THE S-NTD LIGHT IS STILL not Orange or Blue OR NTD LIGHT IS WHITE AND NTD TEST IS PASSING-----------------*
-  { Light Not Blue/Orange }
+  { Light Not Blue/Orange, Stop Here Met - Dropping Out }
 COMPONENT - Light Not Blue/Orange: |
   Device left connected to UNI-D: PC / ROUTER
   MAC Address:
@@ -84,18 +84,17 @@ COMPONENT - Light Not Blue/Orange: |
   -- Loopback?: Passed/Failed
 
   *-------------STOP HERE IF THE CPE DIRECTLY CONNECTED IS NOT GETTING A SKYMESH IP OR NOT DETECTING CPE CONNECTED-----------------*
-  { Getting SkyMesh IP}
+  { Getting SkyMesh IP, Stop Here Met - Dropping Out}
 COMPONENT - Getting SkyMesh IP: |
   Ping statistics for 180.181.127.4: pingtest
 
   Traceroute 180.181.127.4: textarea
 
   Traceroute google.com: textarea
-Dropouts: |
-  Dropouts (include standard LTS offline first)
-  Additional information for intermittent loss of service faults
-  Remember to consider if the customer's reported dropouts relate to an NBN fault or maintenance: http://cachet.skymesh.net.au/
-  EU has powered off the S-NTD & CPE for 10 - 15min before powering back on (must try at least once)?: Yes/No
+
+  { Stop Here Met - Dropping Out }
+COMPONENT - Stop Here Met - Dropping Out: |
+  Note - Remember to consider nbn fault or maintenance, check cachet
   Date and times when the outages were noticed: textarea
   How long does the service disconnect for each time it drops out?:
   Has the S-NTD been switched off since the drops were first noticed?:
@@ -104,8 +103,6 @@ Dropouts: |
   If the user is still offline during the call, what is the current status and duration of their DHCP lease?:
 Speed: |
   Fault Description (summary):
-
-
   -------------------------------------------
 
   AVC ID:
@@ -135,8 +132,10 @@ Speed: |
   Customer is aware that a delivery partner technician will be in contact within 10 business days to arrange a site visit?: yes/no
 
   -- Troubleshooting --
-  Have there been any changes made to the site since installation?:
+  Have there been any changes made to the site since installation?: Yes/No
+  - Details if changes: textarea
   Any damage to NBN equipment visible?: No/Yes (provide details)
+  - Details if damage: textarea
   Line of sight reported clear? Yes / No
   Recent Weather:
   Power-cycled equipment?: Yes / No
