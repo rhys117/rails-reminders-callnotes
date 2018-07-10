@@ -243,6 +243,7 @@ module CallNotesHelper
   end
 
   def can_delete_question?(input_type, question)
-    !((input_type == 'formatting' && question.length < 1) || input_type == 'components')
+    !((input_type == 'formatting' && question.length < 1) || input_type == 'components' ||
+        question[0..5] == 'Note -')
   end
 end

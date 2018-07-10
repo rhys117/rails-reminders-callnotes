@@ -19,7 +19,7 @@
                   :remote => true, class: 'btn btn-default btn-sm btn-margin-top',
                   onclick: "PrependTo#{type.capitalize}Notes('#{title.parameterize.underscore}')" %>
       <% end %>
-      <textarea class='copy-data' id="<%= title.parameterize.underscore %>" disabled><%= content %></textarea>
+      <textarea class='copy-data' id="<%= "#{type}_#{title.parameterize.underscore}" %>" disabled><%= content %></textarea>
     <% end %>
   </div>
 <% end %>

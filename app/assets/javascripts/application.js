@@ -188,7 +188,8 @@ function DeleteLine(line, type) {
 }
 
 function PrependToEnquiryNotes(string) {
-  var content = $("#"+string).val().replace(/(?={)[^}]*./, '');
+  var content = $("#enquiry_"+string).val().replace(/(?={)[^}]*./, '');
+  content = content.replace(/^Note -.*$/m, '');
   var current_notes = $('#call_note_enquiry_notes').val().trim();
   var combined = (current_notes + "\n\n" + content).trim() + "\n\n";
   var filtered = combined.replace(/textarea|pingtest|speedtests/g, "");
@@ -204,7 +205,7 @@ function PrependToCorrespondenceNotes(string) {
 }
 
 function PrependToWorkNotes(string) {
-  var content = $("#"+string).val().replace(/(?={)[^}]*./, '');
+  var content = $("#work_"+string).val().replace(/(?={)[^}]*./, '');
   var current_notes = $('#call_note_work_notes').val();
   var combined = current_notes + content + "\n";
   var filtered = combined.replace(/textarea|pingtest|speedtests/g, "");
