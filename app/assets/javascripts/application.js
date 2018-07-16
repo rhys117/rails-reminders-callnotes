@@ -210,23 +210,28 @@ function escapeRegExp(text) {
 function DeleteLine(line, type) {
   // Deletes line and also blank line afterwards if one
   // searching in reverse so it's always last instance in notes
-  var regex = new RegExp("(?=" + escapeRegExp(line) + ").*\n?", 'm');
-  var id = '#call_note_' + type + '_notes';
-  var notes = $(id).val();
-  var lines = notes.split("\n").reverse();
+    var regex = new RegExp("(?=" + escapeRegExp(line ) + ").*\n?", 'm');
+    var id = '#call_note_' + type + '_notes';
+    var notes = $(id).val();
+    var lines = notes.split("\n").reverse();
 
-  var index_of_line = lines.findIndex(value => regex.test(value));
-  var next_line_blank_space = lines[index_of_line - 1] === "\n";
+    var index_of_line = lines.findIndex(value => regex.test(value));
 
-  // remove deleted line and also next line if white space
-  if (next_line_blank_space === true) {
-    lines.splice(index_of_line - 1, 2);
-  } else {
-    lines.splice(index_of_line, 1);
-  }
+    if (index_of_line === -1) {
+        return;
+    }
 
-  var removed_line_notes = lines.reverse().join('\n');
-  $(id).val(removed_line_notes);
+    var next_line_blank_space = lines[index_of_line - 1] === "\n";
+
+    // remove deleted line and also next line if white space
+    if (next_line_blank_space === true) {
+      lines.splice(index_of_line - 1, 2);
+    } else {
+        lines.splice(index_of_line, 1);
+    }
+
+    var removed_line_notes = lines.reverse().join('\n');
+    $(id).val(removed_line_notes);
 }
 
 function PrependToCorrespondenceNotes(string) {
