@@ -8,45 +8,50 @@
   <% when 'select' %>
     <%= select "#{type}_template".to_sym, ques_and_answ[:question].parameterize.underscore,
                array_to_select_options(ques_and_answ[:answers]), { prompt: 'select one' },
-               { :class => 'form-control question', "data-question" => "#{ques_and_answ[:question]}" } %>
+               { class: 'form-control question', data: { question: ques_and_answ[:question],
+                                                         heading:  ques_and_answ[:heading] } } %>
   <% when 'textarea' %>
     <%= text_area "#{type}_template".to_sym, ques_and_answ[:question].parameterize.underscore,
-                  class: 'form-control question', :data => {:question => "#{ques_and_answ[:question]}" },
+                  class: 'form-control question', data: { question: ques_and_answ[:question],
+                                                          heading:  ques_and_answ[:heading]},
                   onfocus: "this.oldvalue = this.value;" %>
   <% when 'pingtest' %>
     <%= text_area "#{type}_template".to_sym, ques_and_answ[:question].parameterize.underscore,
                   value: ping_test, class: 'form-control question',
-                  :data => {:question => "#{ques_and_answ[:question]}" },
+                  data: { question: ques_and_answ[:question],
+                          heading:  ques_and_answ[:heading] } ,
                   onfocus: "this.oldvalue = this.value;" %>
   <% when 'radio' %>
     <div class='pad-left-15'>
       <label class='radio-inline'>
         <%= radio_button "#{type}_template".to_sym, ques_and_answ[:question].parameterize.underscore,
-                         ques_and_answ[:answers].first, { :class => 'question',
-                                                          "data-question" => "#{ques_and_answ[:question]}" } %>
+                         ques_and_answ[:answers].first, { class: 'question',
+                                                          data: { question: ques_and_answ[:question],
+                                                                  heading:  ques_and_answ[:heading] } } %>
         <%= "#{ques_and_answ[:answers].first}" %>
       </label>
       <label class='radio-inline'>
         <%= radio_button "#{type}_template".to_sym, ques_and_answ[:question].parameterize.underscore,
-                         ques_and_answ[:answers].last, { :class => 'question',
-                                                         "data-question" => "#{ques_and_answ[:question]}" } %>
+                         ques_and_answ[:answers].last, { class: 'question',
+                                                         data: { question: ques_and_answ[:question],
+                                                                 heading:  ques_and_answ[:heading] } } %>
         <%= "#{ques_and_answ[:answers].last}" %>
       </label>
     </div>
   <% when 'text' %>
     <%= text_field "#{type}_template".to_sym, ques_and_answ[:question].parameterize.underscore,
-                   { :class => 'form-control question',
-                     "data-question" => "#{ques_and_answ[:question]}" } %>
+                   { class: 'form-control question',
+                     data: { question: ques_and_answ[:question], heading: ques_and_answ[:heading] } } %>
   <% when 'speedtests' %>
     <%= text_area "#{type}_template".to_sym, ques_and_answ[:question].parameterize.underscore,
                   value: speed_tests, class: 'form-control question',
-                  :data => {:question => "#{ques_and_answ[:question]}" },
+                  data: { question: ques_and_answ[:question], heading: ques_and_answ[:heading] },
                   onfocus: "this.oldvalue = this.value;" %>
   <% when 'components' %>
     <% ques_and_answ[:answers].each do |title| %>
-      <%= link_to component_link(title), fetch_selected_template_path(:template => title, :type => type, :cat_id => "#{params[:cat_id]}"),
-                  :remote => true, class: 'btn btn-default btn-sm btn-margin-top',
-                  onclick: "PrependTo#{type.capitalize}Notes('#{title.parameterize.underscore}')" %>
+      <%= link_to component_link(title), fetch_selected_template_path(template: title, type: type, cat_id: params[:cat_id]),
+                  remote: true, class: 'btn btn-default btn-sm btn-margin-top',
+                  onclick: "PrependToNotes('#{title.parameterize.underscore}', '#{type}')" %>
 
     <% end %>
   <% end %>

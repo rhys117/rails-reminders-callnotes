@@ -17,7 +17,7 @@
         <%= link_to title, fetch_selected_template_path(:template => title, :type => type,
                                                         :cat_id => "#{params[:cat_id]}"),
                   :remote => true, class: 'btn btn-default btn-sm btn-margin-top',
-                  onclick: "PrependTo#{type.capitalize}Notes('#{title.parameterize.underscore}')" %>
+                  onclick: "PrependToNotes('#{title.parameterize.underscore}', '#{type}')" %>
       <% end %>
       <textarea class='copy-data' id="<%= "#{type}_#{title.parameterize.underscore}" %>" disabled><%= content %></textarea>
     <% end %>

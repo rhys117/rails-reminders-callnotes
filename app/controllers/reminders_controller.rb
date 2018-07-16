@@ -12,15 +12,11 @@ class RemindersController < ApplicationController
 
   def index
     if params[:search]
-      @current_reminders = current_reminders.search(params[:search].strip)
+      @current_reminders = current_reminders.search(params[:search].strip).ordered_date_completed_priority
       @future_reminders = future_reminders.search(params[:search].strip).ordered_date_completed_priority
     else
-      @current_reminders = current_reminders.where('complete= ?', 'f')
-      @future_reminders = future_reminders.where('complete= ?', 'f')
-    end
-
-    if params[:filter_out]
-      # code for filtering all
+      @current_reminders = current_reminders.ordered_date_completed_priority
+      @future_reminders = future_reminders.ordered_date_completed_priority
     end
   end
 

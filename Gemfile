@@ -15,6 +15,7 @@ gem 'clipboard-rails'
 gem 'jquery-turbolinks'
 gem 'whenever', require: false
 gem 'pry'
+gem 'multi_logger'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.6'
