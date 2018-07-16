@@ -1,0 +1,87 @@
+Missed call: |
+  Hi NAME,
+
+  We tried to contact you today on NUMBER but unfortunately we were unsuccessful. 
+
+  It is now becoming compulsory to migrate your service to remain on our network. Your onnet service is active and ready to use however we've noticed you don't appear to have made the switch yet. Please change your router to UNIDPORT on the nbn NTD  and ensure your router is configured for DHCP (Dynamic IP) instead of PPPoE. 
+
+  If you are experiencing any problems with the transition please let us know if we can offer any assistance by contacting us on 1300 759 637 or by replying to this email.
+
+  Regards,
+  
+  SkyMesh Support
+Online: |
+  Hi NAME,
+
+  We tried to contact you today on NUMBER but unfortunately we were unsuccessful. 
+
+  We've noticed that you have usage on your new onnet and service and seem to have been successfully migrated, we just wanted to check in and ensure you weren't experiencing any problems since the transition.
+
+  If you have had any difficulties or require assistance please contact us by replying to this email or calling us on 1300 759 637.
+
+  Regards,
+  
+  SkyMesh Support
+Router - DIR850L: |
+  To make the required changes on your DIR850L supplied by SkyMesh please follow these instructions. 
+
+  1. Open a web browser (e.g., Internet Explorer, Chrome, Firefox, or Safari) and enter http://192.168.0.1 into the address bar. 
+  2. Use the admin password to log into the router. The admin password configured on your device when we shipped it was: PASSWORD
+  3. At the top of the page hover over the settings tab. When the drop down menu appears click internet.
+
+  When you have entered internet setup please set the following settings.
+
+  - My Internet Connection is: Dynamic IP
+
+  Once complete at the top of the page you will see a save button. Please click this save button to allow the router to save your settings.
+
+  This is the only change you'll need to make on your D-Link DIR-850L after the migration.
+Router - DSL2877AL: |
+  To completed the changes to your DSL-2877AL, please follow these instructions once your migration has complete.
+
+  1. Open a web browser (e.g., Internet Explorer, Chrome, Firefox, or Safari) and navigate to http://192.168.1.1 
+  2. Login with the details below
+  Username: admin
+  Password: rmmh7wrw
+  3. Click Setup
+  4. Click Internet Setup
+
+  When in internet setup please set the following settings.
+
+  Internet Connection Type: VDSL
+  Service Number: 0
+  Enable Virtual Circuit: Ticked
+  Country: Select 'Australia' from the dropdown menu.
+  ISP: Select 'SkyMesh' from the dropdown menu.
+  802.1q: Deactivated
+
+  IP version: IPv4
+
+  WAN Settings: Dynamic IP
+
+  MTU: 1500
+  Default route: Ticked 
+  NAT Enabled: Ticked 
+  Enable PPPoE Passthrough: Unticked 
+  IGMP Proxy: Unticked 
+
+  5. Click the Apply/Save Button
+
+  Please allow 1-3 minutes for your router to reset.
+
+  These are the only changes you'll need to make on your Dlink DSL-2877AL.
+Router - DVA2800: |
+  To make the required changes on your DLink DVA2800 supplied by SkyMesh please follow these instructions. 
+
+  1. Open a web browser (e.g., Internet Explorer, Chrome, Firefox, or Safari) and enter http://192.168.1.1 into the address bar. 
+  2. Use the admin password to log into the router. The admin password configured on your device when we shipped it was: PASSWORD
+  3. At the top of the page hover over the settings tab. When the drop down menu appears click internet.
+
+  When you have entered internet setup please set the following settings.
+
+  - WAN Access Type: Residential Gateway, VDSL
+  - My Internet Connection is: Dynamic IP
+
+  Once complete at the top of the page you will see a save button. Please click this save button to allow the router to save your settings.
+
+  This is the only change you'll need to make on your D-Link DVA2800 after the migration.
