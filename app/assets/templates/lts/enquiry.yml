@@ -109,29 +109,30 @@ COMPONENT - Able To Test 2nd CPE: |
   { Has Speedtests, Does Not Have Speedtests }
 COMPONENT - Has Speedtests: |
   Speedtests recorded
-  - 1st Result (date/time):
-  - (1) Down:
-  - (1) Up:
-  - (1) Ping:
-  - (1) Source:
 
-  - 2nd Result (date/time):
-  - (2) Down:
-  - (2) Up:
-  - (2) Ping:
-  - (2) Source:
+  1st Result (date/time):
+  - Down:
+  - Up:
+  - Ping:
+  - Source:
 
-  - 3rd Result (date/time):
-  - (3) Down:
-  - (3) Up:
-  - (3) Ping:
-  - (3) Source:
+  2nd Result (date/time):
+  - Down:
+  - Up:
+  - Ping:
+  - Source:
 
-  - 4th Result (date/time):
-  - (4) Down:
-  - (4) Up:
-  - (4) Ping:
-  - (4) Source:
+  3rd Result (date/time):
+  - Down:
+  - Up:
+  - Ping:
+  - Source:
+
+  4th Result (date/time):
+  - Down:
+  - Up:
+  - Ping:
+  - Source:
 
   If more, please include: textarea
 

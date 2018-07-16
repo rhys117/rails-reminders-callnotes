@@ -50,6 +50,7 @@ document.addEventListener("turbolinks:load", function() {
     }
   });
 
+  // search and filter on reminder pages
   function search_and_filter(){
     var searchTerm = $('#search').val().toLowerCase();
     var filterTerm = $('#filter_out').val().toLowerCase();
@@ -70,32 +71,18 @@ document.addEventListener("turbolinks:load", function() {
   }
 })
 
-// This fiddle shows how to simulate a resize event on a
-// textarea
-// Tested with Firefox 16-25 Linux / Windows
-// Chrome 24-30 Linux / Windows
-
+// resize work notes to match enquiry notes size at all times
 var textareaResize = function(source, dest) {
   var resizeInt = null;
 
-  // the handler function
   var resizeEvent = function() {
     dest.outerHeight(source.outerHeight());
   };
 
-  // This provides a "real-time" (actually 15 fps)
-  // event, while resizing.
-  // Unfortunately, mousedown is not fired on Chrome when
-  // clicking on the resize area, so the real-time effect
-  // does not work under Chrome.
   source.on("mousedown", function(e) {
     resizeInt = setInterval(resizeEvent, 1000/15);
   });
 
-  // The mouseup event stops the interval,
-  // then call the resize event one last time.
-  // We listen for the whole window because in some cases,
-  // the mouse pointer may be on the outside of the textarea.
   $(window).on("mouseup", function(e) {
     if (resizeInt !== null) {
       clearInterval(resizeInt);
@@ -104,6 +91,7 @@ var textareaResize = function(source, dest) {
   });
 };
 
+// show/hide enquiry or work form for call notes
 function ToggleForm(type) {
   if ($('#btn-'+ type + '-form').text() == 'hide') {
     $('#btn-'+ type + '-form').text('show');
@@ -114,6 +102,7 @@ function ToggleForm(type) {
   }
 }
 
+// show/hide work notes
 function ToggleWorkNotes() {
   if ($('#btn-hide-work').text() == 'hide') {
     $("#call_note_work_notes").attr('class', 'hidden');
@@ -131,47 +120,86 @@ function ToggleWorkNotes() {
   }
 }
 
+function ReplaceNextLine(object, lines, question, input_type, answer) {
+    for(var i = 0; i < lines.length; i++) {
+        current_line = lines[i].split(':')[0].trim() + ':';
+        if (current_line === question) {
+            // if textarea
+            if (input_type === 'textarea') {
+                var old_value = object.oldvalue.trim();
+                // if value already set for textarea
+                if (old_value.length > 1) {
+                    var notes_past_question = lines.slice(0, i).reverse().join('\n');
+                    // if can find old value find and set changed notes
+                    if (notes_past_question.includes(old_value)) {
+                        var altered = notes_past_question.replace(old_value, answer);
+                        var changed_notes = lines.slice(i).reverse().join('\n') + '\n'.trim() + altered.trim();
+                        return changed_notes.split('\n').reverse();
+                        // if can't match old value
+                    } else {
+                        lines[i] = question + '\n' + answer + '\n';
+                    }
+                } else {
+                    lines[i] = question + '\n' + answer + '\n';
+                }
+                // if not textarea
+            } else {
+                lines[i] = question + ' ' + answer;
+            }
+            // break so it only changes one line
+            break
+        }
+    }
+    return lines
+}
+
+// Dynamically change textarea based on selection of question
 $(function() {
   $(document).on('change', '.question', function() {
     var question = $(this).attr('data-question').trim() + ':';
+    var heading_line = $(this).attr('data-heading').trim();
     var answer = $(this).val();
     var input_type = $(this)[0].type;
-    var id = $(this).attr('id').split('_')[0];
+    var type = $(this).attr('id').split('_')[0];
+    var id = "#call_note_" + type + '_notes';
 
-    if (id == 'enquiry') {
-      id = 'enquiry'
-    }
 
-    var notes = $("#call_note_" + id + '_notes').val();
+    var notes = $(id).val();
+
+    // reverse so we search for the last instance of the question
     var lines = notes.split("\n").reverse();
+    var before = [];
+    var after = [];
 
-    for(var i = 0;i < lines.length;i++){
-      notes_line_question = lines[i].split(':')[0].trim() + ':';
-      if (notes_line_question == question) {
-        if (input_type == 'textarea') {
-          var old_value = this.oldvalue;
-          if (old_value.length > 1) {
-            var notes_past_question = lines.slice(0,i).reverse().join('\n');
-            if (notes_past_question.includes(old_value)) {
-              var altered = notes_past_question.replace(old_value, answer);
-              var changed_notes = lines.slice(i, lines.length).reverse().join('\n') + '\n' + altered.trim();
-              $("#call_note_" + id + '_notes').val(changed_notes.trim());
-              return
-            } else {
-              lines[i] = question + " \n" + answer + "\n";
+    for(var i = 0; i < lines.length; i++) {
+        current_line = lines[i].split(':')[0].trim();
+        // find question heading if exists
+        if (current_line === heading_line) {
+            var reversed_index = i;
+            var unreversed = lines.reverse();
+
+            var normal_index = unreversed.length - reversed_index - 1;
+            before = unreversed.slice(0, normal_index);
+            var after_heading = unreversed.slice(normal_index);
+            var next_line_break = after_heading.findIndex(line => line.length === 0);
+            // possibility no more line breaks
+            if (next_line_break === -1) {
+                next_line_break = after_heading.length
             }
-          } else {
-            lines[i] = question + " \n" + answer + "\n";
-          }
-        } else {
-          lines[i] = question + ' ' + answer;
-        }
-        break
-      }
-    }
 
-    var changed_notes = lines.reverse().join('\n');
-    $("#call_note_" + id + '_notes').val(changed_notes)
+            lines = after_heading.slice(0, next_line_break);
+            after = unreversed.slice(normal_index + next_line_break);
+
+            before.reverse();
+            lines.reverse();
+            after.reverse();
+        }
+    }
+    lines = ReplaceNextLine(this, lines, question, input_type, answer);
+    lines = before.reverse().concat(lines.reverse(), after.reverse())
+
+    var changed_notes = lines.join('\n');
+    $(id).val(changed_notes.trim())
   });
 });
 
@@ -180,21 +208,25 @@ function escapeRegExp(text) {
 }
 
 function DeleteLine(line, type) {
+  // Deletes line and also blank line afterwards if one
+  // searching in reverse so it's always last instance in notes
   var regex = new RegExp("(?=" + escapeRegExp(line) + ").*\n?", 'm');
-  var current_notes = $('#call_note_' + type + '_notes').val();
-  var removed_line_notes = current_notes.replace(regex, '');
-  $('#call_note_' + type + '_notes').val(removed_line_notes);
-  $("[data-question='" + line + "']").remove() //.closest('.div').remove();
-}
+  var id = '#call_note_' + type + '_notes';
+  var notes = $(id).val();
+  var lines = notes.split("\n").reverse();
 
-function PrependToEnquiryNotes(string) {
-  var content = $("#enquiry_"+string).val().replace(/(?={)[^}]*./, '');
-  content = content.replace(/^Note -.*$/m, '');
-  var current_notes = $('#call_note_enquiry_notes').val().trim();
-  var combined = (current_notes + "\n\n" + content).trim() + "\n\n";
-  var filtered = combined.replace(/textarea|pingtest|speedtests/g, "");
-  $('#call_note_enquiry_notes').val(filtered);
-  $('#enquiry-template-header').attr('class', '')
+  var index_of_line = lines.findIndex(value => regex.test(value));
+  var next_line_blank_space = lines[index_of_line - 1] === "\n";
+
+  // remove deleted line and also next line if white space
+  if (next_line_blank_space === true) {
+    lines.splice(index_of_line - 1, 2);
+  } else {
+    lines.splice(index_of_line, 1);
+  }
+
+  var removed_line_notes = lines.reverse().join('\n');
+  $(id).val(removed_line_notes);
 }
 
 function PrependToCorrespondenceNotes(string) {
@@ -204,15 +236,20 @@ function PrependToCorrespondenceNotes(string) {
   $('#call_note_correspondence_notes').val(combined);
 }
 
-function PrependToWorkNotes(string) {
-  var content = $("#work_"+string).val().replace(/(?={)[^}]*./, '');
-  var current_notes = $('#call_note_work_notes').val();
-  var combined = current_notes + content + "\n";
-  var filtered = combined.replace(/textarea|pingtest|speedtests/g, "");
-  $('#call_note_work_notes').val(filtered);
-  $('#work-template-header').attr('class', '')
+function PrependToNotes(selection, type) {
+    var content = $("#" + type + '_' + selection).val().replace(/(?={)[^}]*./, '').replace(/^Note -.*$/m,"").trim();
+    var current_notes = $('#call_note_' + type + '_notes').val();
+    // remove trailing line breaks except one
+    if (current_notes.length > 1) {
+      current_notes = current_notes.trim() + "\n\n";
+    }
+    var combined = current_notes + content + "\n";
+    var filtered = combined.replace(/textarea|pingtest|speedtests/g, "");
+    $('#call_note_' + type + '_notes').val(filtered);
+    $('#' + type + '-template-header').attr('class', '')
 }
 
+// Presets for reminder create
 function PresetOnlineUsage(){
   $('#reminder_check_for').val('online/usage')
   $('#reminder_priority').val('2')

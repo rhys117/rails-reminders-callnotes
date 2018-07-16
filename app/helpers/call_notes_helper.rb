@@ -80,7 +80,7 @@ module CallNotesHelper
       split_answer.join(' ').titleize
     end
 
-    sort_order = ['green', 'blue', 'yellow', 'amber', 'orange', 'white', 'red', 'off', 'yes', 'no']
+    sort_order = %w(green blue yellow amber orange white red off yes no)
     answers.sort_by do |answer|
       answer.split(' ').map do |word|
         sort_order.include?(word.downcase) ? sort_order.index(word.downcase) : -1
@@ -135,29 +135,32 @@ module CallNotesHelper
     questions_and_answers = []
     seen_questions = []
 
+    current_heading = nil
     template.each_line do |line|
       line_result = {}
 
       # if not identified as question include line as formatting
       unless line.include?(':')
         line.strip!
-        # search for components
+        # search for component indicators from template
         components = line.match(/(?<={)[^}]*/)
         if components
           split_components = components.to_s.split(',').map(&:strip)
           split_components.map! { |str| "COMPONENT - #{str}" }
           line_result[:input_type] = 'components'
           line_result[:answers] = split_components
-          questions_and_answers << line_result
         else
           line_result[:question] = line
           line_result[:input_type] = 'formatting'
-          questions_and_answers << line_result
         end
+        line_result[:haeding] = nil
+        current_heading = line
+        questions_and_answers << line_result
         next
       end
 
       # split line into question and answers and sort split answers
+      next if line.nil?
       question, answer = line.split(':')
       split_answers = answers_order(answer.split('/'))
 
@@ -165,17 +168,24 @@ module CallNotesHelper
       split_answers.map!(&:strip)
       split_answers.delete('')
 
+      # set question heading - used to correctly identify line with javascript when multiple instances of same line
+      unless question[0] == '-' || question[0] == '>'
+        current_heading = question
+      end
+
       # if duplicate question include in template as error formatting line
       if seen_questions.include?(question)
+        logger.call_notes.debug({ template: template, question: question })
         line_result[:question] = "Error: Duplicate question - #{question}"
         line_result[:input_type] = 'formatting'
         line_result[:answers] = split_answers
-        next
+      else
+        line_result[:question] =  question
+        line_result[:input_type] = answer_input_type(question, split_answers)
+        line_result[:answers] = split_answers
       end
-
-      line_result[:question] =  question
-      line_result[:input_type] = answer_input_type(question, split_answers)
-      line_result[:answers] = split_answers
+      line_result[:heading] = current_heading
+      seen_questions << "#{current_heading}: #{question}"
       questions_and_answers << line_result
     end
 

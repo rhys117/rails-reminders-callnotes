@@ -98,6 +98,8 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
+    multi_logger (0.1.0)
+      railties
     nio4r (2.3.1)
     nokogiri (1.8.3)
       mini_portile2 (~> 2.3.0)
@@ -203,6 +205,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   listen (~> 3.0.5)
+  multi_logger
   pg (= 0.20.0)
   pry
   puma (~> 3.0)
@@ -220,4 +223,4 @@ DEPENDENCIES
   will_paginate (= 3.1.5)
 
 BUNDLED WITH
-   1.16.1
+   1.16.2
