@@ -20,3 +20,10 @@
 # Ignore Byebug command history file.
 .byebug_history
 
+# ignore template
+app/assets/templates
+
+# ignore sensitive config
+config/sign_up.yml
+config/urls.yml
+

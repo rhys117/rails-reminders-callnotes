@@ -1,0 +1,243 @@
+Dead NTD: |
+  Fault Description (summary):
+  ---------------------------
+  Tested NTD in a different power outlet: [Yes/No]
+  If unable, have you confirmed the outlet they're using works with another device?: [Yes/No]
+  Disconnected Battery Backup unit from NTD, did BBU light up?: [Yes/No]
+  Did any other equipment in the property die at the same time?: [Yes/No]
+
+  -- Customer Availability --
+  If NBN were to organise a service call in the next week, what day would be best between Monday and Friday?:
+  Mornings or Afternoons?:
+  What is the best contact phone number for us to pass on to NBN?:
+  Name of the person who will be on site:
+  What is the best way for SkyMesh get customer updates?: sms / phone / email
+  Provide + email/phone number:
+Standard (Offline): |
+  Ensure NTD has been left powered on prior to lodgement
+
+  Fault Description (summary):
+
+  -------------------------------------------
+  AVC-ID:
+
+   -- NTD Lights --
+  Power: OFF / RED SOLID / GREEN SOLID / GREEN FLASHING
+  Optical: OFF / RED SOLID / GREEN SOLID / GREEN FLASHING
+  Alarm: OFF / RED SOLID / GREEN SOLID
+  UNI-D1: OFF / YELLOW SOLID / YELLOW FLASHING / GREEN SOLID / GREEN FLASHING
+  UNI-D2: OFF / YELLOW SOLID / YELLOW FLASHING / GREEN SOLID / GREEN FLASHING
+  UNI-D3: OFF / YELLOW SOLID / YELLOW FLASHING / GREEN SOLID / GREEN FLASHING
+  UNI-D4: OFF / YELLOW SOLID / YELLOW FLASHING / GREEN SOLID / GREEN FLASHING
+  UNI-V1/2: OFF / GREEN SOLID / GREEN FLASHING
+  Update: OFF / RED SOLID/ GREEN SOLID
+
+  -- Battery Pack Lights --
+  Installed : YES / NO
+  System Status: GREEN SOLID / GREEN FLASHING / OFF
+  Battery Power: GREEN SOLID / GREEN FLASHING / OFF
+  Replace Battery: RED SOLID / RED FLASHING / OFF
+  Alarm Silence: YELLOW SOLID / YELLOW FLASHING / OFF
+
+  -- Customer Availability --
+  If NBN were to organise a service call in the next week, what day would be best between Monday and Friday?:
+  Mornings or Afternoons?:
+  What is the best contact phone number for us to pass on to NBN?:
+  Name of the person who will be on site:
+  What is the best way for SkyMesh get customer updates?: sms / phone / email
+  Provide email/phone number:
+  Customer has agreed to leave NTD and CPE powered on: [Yes/No]
+
+  -- General Troubleshooting --
+  NTD, PSU, Cables and power points and own equipment are all powered on and cables are all secure?: Yes / No
+  PSU tested in alternative power source:
+  Factory Reset NTD?: Yes / No
+  Any known damage to equipment or cabling?: Yes / No
+  Any damage to visible to outdoor cabling?: Yes / No
+  If Yes, Description of damage:
+
+  Is this a new service that has never worked?: Yes/No
+  -- If yes, have you confirmed that the order has completed in the NBN portal?: Yes/No
+
+  Intermittent issue?: Yes / No
+  -- If yes, fill out and include the dropouts template below
+  Time of last DHCPACK/Time left on DHCP Lease:
+
+  AVC Diagnostics Performed?:
+  -- NTD status?: Passed/Failed
+  -- If optical light red but status passed, check the SN on the EU's NTD
+  -- If optical light green but status failed, check the SN on the EU's NTD
+
+  Does this match what the portal reports the SN to be?: Yes/No
+  -- If the NTD SN does not match, have the EU provide POD
+
+  *--------------STOP HERE IF THE OPTICAL LIGHT IS STILL OFF/RED OR NTD SN DOESN'T MATCH PORTAL RESULT-----------------*
+
+  Device left connected to UNI-D: PC / ROUTER
+  MAC Address:
+  If Router, Brand & Model Number:
+  SkyMesh Supplied?: Yes / No
+
+  Tested with the 2nd patch cable?:
+  Models and MACs of devices tested:
+  DHCP Configuration verified for each device used for direct-to-NTD testing?: Yes / No
+  IP Address CPE getting while directly connected:
+  If the customer is getting a local only IP address, have you tried doing a TCP/IP reset (netsh int ip reset)?: Yes/No
+  If customer offline, list ARP Entries when directly connected to NTD(ignore OS-generated/static entries):
+
+  AVC Diagnostics Performed?
+  -- UNID status?: Passed/Failed
+  -- Loopback?: Passed/Failed
+  -- Port reset?: Yes/No
+
+  Have you confirmed that the customers interface has been provisioned in our CCR (if it's a new service or has recently been migrated from another CVC)?: Yes/No
+
+  *-------------STOP HERE IF THE CPE DIRECTLY CONNECTED IS NOT GETTING A SKYMESH IP OR UNI-D PORT DOES NOT WORK-----------------*
+
+  If recent, can customer PING www.google.com?: Yes / No
+
+  Ping statistics for 180.181.127.4: pingtest
+
+  Traceroute 180.181.127.4: textarea
+
+Dropouts: |
+  (include standard template first)
+
+  Additional information for intermittent loss of service faults
+  Remember to consider if the customer's reported dropouts relate to an NBN fault or maintenance: http://cachet.skymesh.net.au/
+  EU has powered off the NTD & CPE for 10 - 15min before powering back on (must try at least once)?:
+  Date and times when the outages were noticed: textarea
+  How long does the service disconnect for each time it drops out?:
+  Has the NTD been switched off since the drops were first noticed?:
+  Any noticed LED changes on the NTD during outages?:
+  If the user is still offline during the call, what is the current status and duration of their DHCP lease?:
+Speed/Packet Loss: |
+  (include standard template here)
+
+  -- Speed / Packet loss Issues --
+
+  Customer connected via Wired/Wireless?:
+  Router Capable of Speed Expected?: Yes / No
+  Security Software (include version):
+  Multiple Web browsers tried?: Yes /No
+  List which ones (include version): textarea
+  Proxies disabled?: Yes / No / NA
+  VPNs disabled?: Yes / No / NA
+  Internet options reset?: Yes / No
+
+  Reset Winsock (netsh winsock reset)?: Yes / No / Not Windows
+  Reset TCP/IP (netsh int ip reset resetlog.txt)?: Yes / No / Not Windows
+  Network adapters restarted?: Yes / No
+
+  Non-essential programs closed?: Yes / No
+  Tried Safe mode with Networking?: Yes / No
+
+  Customer experiencing Packet Loss?: Yes / No
+  Customer experiencing increased latency than before?: Yes / No
+
+  Speed Test Results (morning, afternoon, and evening). If not using netgauge.skymesh.net.au, specify servers used: speedtests
+
+  Additional Diagnostics/Comments:
+UNIV: |
+  Fault Description (summary):
+
+  -------------------------------------------
+  AVC-ID:
+
+
+  -- NTD Lights --
+  Power: OFF / RED SOLID / GREEN SOLID / GREEN FLASHING
+  Optical: OFF / RED SOLID / GREEN SOLID / GREEN FLASHING
+  Alarm: OFF / RED SOLID / GREEN SOLID
+  UNI-D1: OFF / YELLOW SOLID / YELLOW FLASHING / GREEN SOLID / GREEN FLASHING
+  UNI-D2: OFF / YELLOW SOLID / YELLOW FLASHING / GREEN SOLID / GREEN FLASHING
+  UNI-D3: OFF / YELLOW SOLID / YELLOW FLASHING / GREEN SOLID / GREEN FLASHING
+  UNI-D4: OFF / YELLOW SOLID / YELLOW FLASHING / GREEN SOLID / GREEN FLASHING
+  UNI-V1/2: OFF / GREEN SOLID / GREEN FLASHING
+  Update: OFF / RED SOLID/ GREEN SOLID
+
+  -- Battery Pack Lights --
+  Installed: YES / NO
+  System Status: GREEN SOLID / GREEN FLASHING / OFF
+  Battery Power: GREEN SOLID / GREEN FLASHING / OFF
+  Replace Battery: RED SOLID / RED FLASHING / OFF
+  Alarm Silence: YELLOW SOLID / YELLOW FLASHING / OFF
+
+  -- Customer Availability --
+  If NBN were to organise a service call in the next week, what day would be best between Monday and Friday?:
+  Mornings or Afternoons?:
+  What is the best contact phone number for us to pass on to NBN?:
+  Name of the person who will be on site:
+  What is the best way for SkyMesh get customer updates?: sms / phone / email
+  Provide + email/phone number:
+  Customer has agreed to leave NTD and CPE powered on: [Yes/No]
+
+  -- General Troubleshooting --
+  NTD, PSU, Cables and power points and own equipment are all powered on and cables are all secure?: Yes / No
+  PSU tested in alternative power source:
+  Factory Reset NTD?: Yes / No
+  Any known damage to equipment or cabling?: Yes / No
+  Any damage to visible to outdoor cabling?: Yes / No
+  If Yes, Description of damage:
+
+  AVC Diagnostics Performed?:
+  -- NTD status?: Passed/Failed
+  -- If optical light red but status passed, check the SN on the EU's NTD: ALCLF
+  -- If optical light green but status failed, check the SN on the EU's NTD: ALCLF
+
+  Does this match what the portal reports the SN to be?: Yes/No
+  -- If the NTD SN does not match, have the EU provide POD
+
+  *--------------STOP HERE IF THE OPTICAL LIGHT IS STILL OFF/RED OR NTD SN DOESN'T MATCH PORTAL RESULT AND RAISE AS OFFLINE FAULT-----------------*
+
+  -- VOIP (UNIV) --
+  UNI-V Server (Found in SAMS):
+  UNIV AVC ID:
+  UNIV CVC ID:
+  Active UNIV port: UNI-V 1 / UNI-V 2
+
+  Intermittent Service?: Yes / No
+  If Yes, When did they notice?:
+  If Yes, How often does it occur (be detailed):
+  UNI-V port shows active in SAMS: Yes /No
+
+  --SIP CONFIG --
+  REGSECONDS?:
+  Name?:
+
+  --UNI-V Provisioning Data--
+  avc_id:
+  cvc_id:
+  Port_id:
+  status: ACTIVE / INACTIVE
+  linked:
+
+   AVC Diagnostics Performed?:
+  -- UNIV status?: Passed/Failed
+  -- Loopback?: Passed/Failed
+  -- Port reset?: Yes/No
+
+  When dialing the service number, does the call fail before it reaches the voicemail?: Yes/No
+  When dialing out, does the customer not receive a dial tone or an engaged tone?: Yes/No
+
+  *--------------IF BOTH ARE ANSWERED YES, STOP HERE-----------------*
+
+  -- Layer 3 --
+  Ping statistics:
+
+  -- ACS Request --
+  notification:
+
+  --UNI-V lights--
+  What Does Uni-V light do:
+  - When handset on hook?:
+  - When handset off hook?:
+  - When service called?:
+
+  Customers phone connected directly to UNI-V port: Yes / No
+  Customer tried with 2nd handset: Yes / No
+  Customer tried with different phone cable: Yes / No / Unable
+
+  If the customer is experiencing issues when only dialing certain numbers, please provide the numbers below with a timestamp that the call was attempted: textarea
+
+  If the customer is unable to receive calls only from certain numbers, please provide the numbers below with a timestamp that the call was attempted: textarea

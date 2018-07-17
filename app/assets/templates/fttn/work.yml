@@ -1,0 +1,104 @@
+Standard (Offline): |
+  IF THIS IS A VOCUS SERVICE, THE DIAGNOSTIC INFORMATION NEEDS TO BE REQUESTED FROM VOCUS BEFORE ESCALATING THE FAULT - IF YOU'RE UNSURE HOW TO DO THIS SPEAK TO YOUR FRIENDLY GK
+
+  Fault Description (summary):
+  -----------------------------------------------------------
+
+  Modem sync light indicates: sync / negotiating / off
+  Modem online (internet) light indicates: online / offline
+
+  Modem Brand & Model Number:
+  Modem MAC Address:
+  Modem firmware version:
+  SkyMesh Supplied?: Yes / No
+
+  -- Customer Availability --
+  If NBN were to organise a service call in the next week, what day would be best between Monday and Friday?:
+  Mornings or Afternoons?:
+  What is the best contact phone number for us to pass on to NBN?:
+  What is the best contact email for us to pass on to NBN? (optional):
+  Name of the person who will be on site?:
+  What is the best way for SkyMesh get customer updates?: sms / phone / email
+  Provide + email/phone number:
+
+  Customer has agreed to leave NTD and CPE powered on?: Yes/No
+
+  -----------------------------------------------------------
+
+  Has service ever worked?: Yes/No
+
+  LST result (include Test ID):
+  - status:
+  - service stability:
+  - CPE type detected:
+  - Physical profile:
+  - Does the LST result indicate that a rogue CPE is obtaining DSL sync?: Yes/No
+  -- If yes, have the EU remove their CPE and run the test again.
+
+  *--------------STOP HERE IF LST IS SHOWING DIFFERENT CPE OBTAINING DSL SYNC (YOU MUST CONTINUE IF LINE STATUS IS DOWN)-----------------*
+
+  Troubleshooting done
+  - Rebooted all equipment?: Yes/No
+  - Alternate phone/VDSL line cable tested?: Yes/No
+  - Confirmed that there are no in-line filters installed?: Yes/No
+  - Is there a central splitter installed at the EU's premises? (Check the PRI in the NBN portal): Yes/No
+  - When performing a SELT test, does it indicate any impairments in the line (ie. an open circuit or bridge tap)?: Yes/No
+  -- If yes, try removing the CPE from the DSL port and test again. Does it indicate the same result (If no, this is a possible CPE or cabling issue)?: Yes/No
+  - Number of phone sockets?:
+  - Is the CPE connected to the first Telecommunications Outlet (TO) in the EU's premises (Usually closest to the garage or entry point into the premises)?: Yes/No
+  - Does the service have Voiceband Continuity enabled? (Check the order in the NBN portal): Yes/No
+  -- If yes, does the voice service work correctly, and without line noise and/or interference? (If no, stop here and explain they need to raise a fault with their voiceband provider first): Yes/No
+
+  *--------------STOP HERE IF SELT TEST IS STILL INDICATING AN IMPAIRMENT IN THE LINE-----------------*
+
+  - Port reset attempted? (Especially useful if CPE is an Asus modem): Yes/No
+  - Modem factory reset?: Yes/No
+  - Does SELT test indicate that the CPE is detected as powered up but unable to obtain DSL sync due to compatibility issue?: Yes/No
+  -- If yes, test with alternate modem (include model & FW version):
+  - With alternative CPE, is issue still present?: Yes/No
+
+  *--------------STOP HERE IF THE MODEM IS STILL INDICATING NO DSL SYNC-----------------*
+
+  Tested with the 2nd patch cable?: Yes/No
+  Devices tested while directly connected to Modem (at the very least, obtain brand & model numbers + MAC addresses): textarea
+
+  Ping statistics for 180.181.127.4: pingtest
+
+Dropouts: |
+  (include standard template first)
+
+  Additional information for intermittent loss of service faults
+  Remember to consider if the customer's reported dropouts relate to an NBN fault or maintenance: http://cachet.skymesh.net.au/
+  EU has powered off the modem for 10 - 15min before powering back on (must try at least once)?:
+  Date and times when the outages were noticed: textarea
+  How long does the service disconnect for each time it drops out?:
+  Has the modem been switched off since the drops were first noticed?:
+  Any noticed LED changes on the modem during outages?:
+  If the user is still offline during the call, what is the current status and duration of their DHCP lease?:
+Speed/Packet Loss: |
+  (include standard template first)
+
+  -- Speed / Packet loss Issues --
+
+  Customer connected via Wired/Wireless?:
+  Router Capable of Speed Expected?: Yes / No
+  Security Software (include version):
+  Multiple Web browsers tried?: Yes /No
+  List which ones (include version):
+  Proxies disabled?: Yes / No / NA
+  VPNs disabled?: Yes / No / NA
+  Internet options reset?: Yes / No
+
+  Reset Winsock (netsh winsock reset)?: Yes / No / Not Windows
+  Reset TCP/IP (netsh int ip reset resetlog.txt)?: Yes / No / Not Windows
+  Network adapters restarted?: Yes / No
+
+  Non-essential programs closed?: Yes / No
+  Tried Safe mode with Networking?: Yes / No
+
+  Customer experiencing Packet Loss?: Yes / No
+  Customer experiencing increased latency than before?: Yes / No
+
+  Speed Test Results (morning, afternoon, and evening). If not using netgauge.skymesh.net.au, specify servers used: speedtests
+
+  Additional Diagnostics/Comments: textarea
