@@ -230,8 +230,11 @@ function DeleteLine(line, type) {
         lines.splice(index_of_line, 1);
     }
 
+    $("[data-question='" + line + "']").remove();
+
     var removed_line_notes = lines.reverse().join('\n');
-    $(line).val(removed_line_notes);
+
+    $(id).val(removed_line_notes);
 }
 
 function PrependToCorrespondenceNotes(string) {

@@ -1,0 +1,154 @@
+Dead NTD: |
+  Fault Description (summary):
+
+  NTD Serial number:
+  NTD Type: D 3.0 / D 3.1
+
+  Tested NTD in a different power outlet: [Yes/No]
+  If unable, have you confirmed the outlet they're using works with another device?: [Yes/No]
+  Tested NTD with Coaxial cable disconnected, Did NTD power on?:[Yes/No]
+  Did any other equipment in the property die at the same time?: [Yes/No]
+
+  -- Customer Availability --
+  If NBN were to organise a service call in the next week, what day would be best between Monday and Friday?:
+  Mornings or Afternoons?:
+  What is the best contact phone number for us to pass on to NBN?:
+  Name of the person who will be on site:
+  What is the best way for SkyMesh get customer updates?: sms / phone / email
+  Provide + email/phone number:
+Standard (Offline): |
+  Ensure NTD has been left powered on prior to lodgement
+  Fault Description (summary):
+  -------------------------------------------
+
+  AVC-ID:
+  NTD Serial number:
+  NTD Type: D 3.0 / D 3.1
+
+  -- NTD Lights --
+  Power: OFF / GREEN SOLID / GREEN FLASHING
+  DS: OFF / YELLOW SOLID / YELLOW FLASHING / GREEN SOLID / GREEN FLASHING
+  US: OFF / YELLOW SOLID / YELLOW FLASHING / GREEN SOLID / GREEN FLASHING
+  Online: OFF / GREEN SOLID / GREEN FLASHING
+  Link (at the Rear of NTD on v2 NTD): OFF / YELLOW SOLID / YELLOW FLASHING / GREEN SOLID / GREEN FLASHING
+
+  -- General Troubleshooting --
+  Customer has agreed to leave NTD and CPE powered on: Yes/No
+  NTD, PSU, Cables and power points and own equipment are all powered on and cables are all secure?: Yes / No
+  PSU tested in alternative power source:
+  Reseated Coaxial cable?: Yes / No
+  Does the customer have cable TV?: Yes / No
+  Any known damage to equipment or cabling?: Yes / No
+  Any damage to visible to outdoor cabling?: Yes / No
+  If Yes, Description of damage:
+
+  -- Customer Availability --
+  If NBN were to organise a service call in the next week, what day would be best between Monday and Friday?:
+  Mornings or Afternoons?:
+  What is the best contact phone number for us to pass on to NBN?:
+  What is the best contact email for us to pass on to NBN? (optional):
+  Name of the person who will be on site:
+  What is the best way for SkyMesh get customer updates?: sms / phone / email
+  Provide email/phone number:
+
+  Intermittent issue?: Yes / No
+  If Yes, when did it begin?:
+  If Yes, How often does it occur (be detailed):
+  Time of last DHCPACK/Time left on DHCP Lease (<time> / never):
+
+  AVC Diagnostics Performed (Status)?
+  -- NTD status?: Passed/Failed
+
+  *--------------STOP HERE IF THE ONLINE LIGHT IS STILL FLASHING GREEN OR OFF/NTD SN DOES NOT MATCH THE PORTAL-----------------*
+
+  Device left connected to UNI-D: PC / ROUTER
+  MAC Address:
+  If Router, Brand & Model Number:
+  SkyMesh Supplied?: Yes / No
+
+  Tested with the 2nd patch cable?: Yes/No
+  Models and MACs of devices tested: textarea
+  DHCP Configuration verified for each device used for direct-to-NTD testing?: Yes / No
+  IP Address CPE getting while directly connected:
+  If the customer is getting a local only IP address, have you tried doing a TCP/IP reset (netsh int ip reset)?: Yes/No
+  If customer offline, list ARP Entries when directly connected to NTD(ignore OS-generated/static entries): textarea
+
+  AVC Diagnostics Performed (Loopback, Port Reset)?
+  -- Loopback?: Passed/Failed
+  -- Port reset?: Yes/No
+
+  *-------------STOP HERE IF THE CPE DIRECTLY CONNECTED IS NOT GETTING A SKYMESH IP OR LAN LINK DOESN'T DETECT AS UP-----------------*
+
+  If recent, can customer PING www.google.com?: Yes / No
+
+  Ping statistics for 180.181.127.4: pingtest
+
+  Traceroute 180.181.127.4: textarea
+Dropouts: |
+  (include standard template first)
+
+  Additional information for intermittent loss of service faults
+  Remember to consider if the customer's reported dropouts relate to an NBN fault or maintenance: http://cachet.skymesh.net.au/
+  EU has powered off the NTD & CPE for 10 - 15min before powering back on (must try at least once)?: Yes/No
+  Date and times when the outages were noticed: textarea
+  How long does the service disconnect for each time it drops out?:
+  Has the NTD been switched off since the drops were first noticed?:
+  Any noticed LED changes on the NTD during outages?:
+  If the user is still offline during the call, what is the current status and duration of their DHCP lease?:
+Speed/Packet Loss: |
+  (include standard template first)
+
+  -- Speed / Packet loss Issues --
+
+  Customer connected via Wired/Wireless?:
+  Router Capable of Speed Expected?: Yes / No
+  Security Software (include version):
+  Multiple Web browsers tried?: Yes /No
+  List which ones (include version):
+  Proxies disabled?: Yes / No / NA
+  VPNs disabled?: Yes / No / NA
+  Internet options reset?: Yes / No
+
+  Reset Winsock (netsh winsock reset)?: Yes / No / Not Windows
+  Reset TCP/IP (netsh int ip reset resetlog.txt)?: Yes / No / Not Windows
+  Network adapters restarted?: Yes / No
+
+  Non-essential programs closed?: Yes / No
+  Tried Safe mode with Networking?: Yes / No
+
+  Customer experiencing Packet Loss?: Yes / No
+  Customer experiencing increased latency than before?: Yes / No
+
+  Speed Test Results (morning, afternoon, and evening). If not using netgauge.skymesh.net.au, specify servers used: speedtests
+
+  Additional Diagnostics/Comments: textarea
+VOIP: |
+  (include standard template first)
+
+  -- VOIP (UNID) --
+  Intermittent Service?: Yes / No
+  If Yes, When did they notice?:
+  If Yes, How often does it occur (be detailed):
+
+  VOIP can register successfully in the office: Yes / No
+  Customer tried with 2nd handset: Yes / No
+  Customer tried with different phone cable: Yes / No / Unable
+
+  ATA Model:
+  Power cycled ATA: Yes / No
+  ATA Connected correctly: Yes / No
+  ATA is registered: Yes / No
+  ATA Provisioning rule set correctly: Yes / No
+  ATA RTP Packet size set to 0.020: Yes / No
+  ATA SIP ToS/DiffServ Value set to 0xb8: Yes / No
+  ATA Inbound Proxy set to sip.skymesh.net.au: Yes / No
+  ATA Outbound Proxy set to sip.skymesh.net.au: Yes / No
+  ATA Use Outbound Proxy set to Yes: Yes / No
+  ATA SIP Username re-entered: Yes / No
+  ATA SIP Display name re-entered: Yes / No
+  ATA SIP Password re-entered: Yes / No
+  ATA Codecs set to G711u: Yes / No
+  ATA Dial Plan re-entered: Yes / No
+  ATA Factory Reset and reconfigured: Yes / No
+  Tried configuring ATA Phone Phone Port 2 (if available): Yes / No
+

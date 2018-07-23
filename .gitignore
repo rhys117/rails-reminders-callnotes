@@ -26,4 +26,3 @@ app/assets/templates
 # ignore sensitive config
 config/sign_up.yml
 config/urls.yml
-

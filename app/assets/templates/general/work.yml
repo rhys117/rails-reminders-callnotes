@@ -1,0 +1,54 @@
+Assistance Required: |
+  Summary
+  Detailed Summary of issue: textarea
+  What troubleshooting has been done: textarea
+  What is the expected behavior: textarea
+  How does the troubleshooting differ from the expected behavior: textarea
+Escalation to Supervisor: |
+  Customer Contact Details
+  Customer Name:
+  Preferred Contact Method: Phone/Email
+  Contact Number/Email:
+  Second Contact Option (optional):
+
+  Discription of problem
+  What would the customer like a Supervisor to Address/Look into?: textarea
+  What is the outcome the customer is hoping for as a result of a Supervisor looking into this?: textarea
+PSTN: |
+  -- Customer Details --
+  Customer Name:
+  Customer Address:
+  PSTN Number:
+  Fault Description: textarea
+
+  -- Troubleshooting --
+  1.  Does the Customer have a DIAL TONE?: YES / NO
+  2.  Can the Customer hear TONES / PULSES (for older handsets) when they DIAL?: YES / NO
+  3.  Can the Customer RECEIVE phone calls?: YES / NO
+  4.  Can the Customer MAKE phone calls?: YES / NO
+  5.  When the customer is using the phone, do they hear an automated voice message?: YES / NO
+  - If so, what does it say?:
+  6.  Has the customer tested the phone line connection with another handset?: YES / NO
+  7.  Has the customer tested with different Phone Socket?: YES / NO / NOT PRESENT
+  8.  Has the customer tested with different Phone Cable?: YES / NO
+  9.  Is the customer aware of any neighbours having the same issue?: YES / NO
+  10. Is the customer aware of any power surges and/or lightning strikes recently?: YES / NO
+  11. Does the customer have anything (eg. multiple handsets, modem, eftpos, alarm, etc.) connected to other phone sockets (if present)?: YES / NO
+  12. What alternative (e.g. MOBILE) contact number, can be passed onto Telstra in case of a site visit?:
+  13. Does the customer want this (problematic) number diverted (to some other number) until the problem is resolved knowing that they will have to pay the cost of the call diversion?: YES / NO
+  14. What is the best 4 HOUR period during the day (8am - 5pm) for a Telstra technician to attend the address, if necessary?:
+  15. Customer is aware of the SkyMesh Phone “Conditions of Service” (available online ). In particular section 8.3(b) which states “If we investigate a fault and determine that the fault is attributable to a fault in your equipment, we may charge you for any costs we incurred in investigating and repairing the fault, including any costs incurred by requiring a technician to visit your premises”: YES / NO
+  16. Best method to contact customer of progress updates?: sms/ email/ phone
+  - provide detail:
+  17. Does the customer have any extra features attached to their PSTN service (check TINA, List)?: textarea
+
+
+  Optional questions.
+  Is the issue regarding a call-based service not working as expected? If so, which?: textarea
+Complaint: |
+  Customer Details
+  Name:
+  Preferred Phone Number:
+  Does this Complaint have an Urgent component?: YES / NO
+
+  Notes (Customer is not happy about): textarea
