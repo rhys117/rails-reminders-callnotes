@@ -231,7 +231,7 @@ function DeleteLine(line, type) {
     }
 
     var removed_line_notes = lines.reverse().join('\n');
-    $(id).val(removed_line_notes);
+    $(line).val(removed_line_notes);
 }
 
 function PrependToCorrespondenceNotes(string) {
