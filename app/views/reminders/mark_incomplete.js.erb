@@ -1,0 +1,2 @@
+$("#reminder-<%= params[:id] %>").replaceWith
+("<%= escape_javascript(render partial: 'reminder', locals: { reminder: @reminder }) %>");

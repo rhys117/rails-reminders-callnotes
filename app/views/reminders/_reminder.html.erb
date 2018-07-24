@@ -2,7 +2,7 @@
   <td class="col-md-1 text-left">
     <%= link_to reminder.reference, reference_url(reminder.reference), :target => "_blank" %>
   </td>
-  <td class="col-md-3 text-right">
+  <td class="col-md-2 text-right">
     <%= render partial: 'reminders/service_type', locals: {reminder: reminder} %>
   </td>
   <td class="col-md-6 text-left">
@@ -10,11 +10,13 @@
   </td>
   <td align="center">
     <% unless reminder.complete %>
-      <%= link_to '', mark_complete_reminder_path(reminder.id), :method=> :patch, class: 'glyphicon glyphicon-ok',
-                                                                                  title: 'mark complete' %>
+      <%= link_to '', mark_complete_reminder_path(reminder.id), remote: true, method: :patch,
+                  class: 'glyphicon glyphicon-ok',
+                  title: 'mark complete' %>
     <% else %>
-      <%= link_to '', mark_incomplete_reminder_path(reminder.id), :method=> :put, class: 'glyphicon glyphicon-remove',
-                                                                                  title: 'mark incomplete' %>
+      <%= link_to '', mark_incomplete_reminder_path(reminder.id), remote: true,
+                  method: :put, class: 'glyphicon glyphicon-remove',
+                  title: 'mark incomplete' %>
     <% end %>
   </td>
   <td align="center">

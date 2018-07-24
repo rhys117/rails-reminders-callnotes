@@ -37,19 +37,29 @@ class RemindersController < ApplicationController
   end
 
   def mark_complete
-    reminder = Reminder.find(params[:id])
-    reminder.complete = true
-    reminder.save
-    flash[:success] = "Reminder marked complete #{reminder.reference}" if reminder.complete
-    redirect_back(fallback_location: root_path)
+    @reminder = Reminder.find(params[:id])
+    @reminder.complete = true
+    @reminder.save
+    respond_to do |format|
+      format.html do
+        flash[:success] = "Reminder marked complete #{@reminder.reference}" if @reminder.complete
+        redirect_back(fallback_location: root_path)
+      end
+      format.js
+    end
   end
 
   def mark_incomplete
-    reminder = Reminder.find(params[:id])
-    reminder.complete = false
-    reminder.save
-    flash[:warning] = "Reminder marked incomplete #{reminder.reference}" unless reminder.complete
-    redirect_back(fallback_location: root_path)
+    @reminder = Reminder.find(params[:id])
+    @reminder.complete = false
+    @reminder.save
+    respond_to do |format|
+      format.html do
+        flash[:warning] = "Reminder marked incomplete #{@reminder.reference}" unless @reminder.complete
+        redirect_back(fallback_location: root_path)
+      end
+      format.js
+    end
   end
 
   def edit
@@ -121,7 +131,6 @@ class RemindersController < ApplicationController
     combined << "#{reminder.fault_type.upcase} | " unless reminder.fault_type.nil?
     combined << "#{reminder.notes} " unless reminder.notes.nil?
     combined << "#{reminder.check_for}?" unless reminder.check_for.nil?
-    combined
-    "#{reminder.service_type} #{combined}"
+    "##{reminder.priority} | {reminder.service_type} #{combined}"
   end
 end
