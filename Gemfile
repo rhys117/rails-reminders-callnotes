@@ -17,6 +17,8 @@ gem 'whenever', require: false
 gem 'pry'
 gem 'multi_logger'
 
+gem "font-awesome-rails"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.6'
 gem 'bcrypt', '3.1.11'

@@ -45,7 +45,7 @@ class RemindersController < ApplicationController
         flash[:success] = "Reminder marked complete #{@reminder.reference}" if @reminder.complete
         redirect_back(fallback_location: root_path)
       end
-      format.js
+      format.js { render template: 'reminders/_update_reminder' }
     end
   end
 
@@ -58,7 +58,7 @@ class RemindersController < ApplicationController
         flash[:warning] = "Reminder marked incomplete #{@reminder.reference}" unless @reminder.complete
         redirect_back(fallback_location: root_path)
       end
-      format.js
+      format.js { render template: 'reminders/_update_reminder' }
     end
   end
 
@@ -131,6 +131,6 @@ class RemindersController < ApplicationController
     combined << "#{reminder.fault_type.upcase} | " unless reminder.fault_type.nil?
     combined << "#{reminder.notes} " unless reminder.notes.nil?
     combined << "#{reminder.check_for}?" unless reminder.check_for.nil?
-    "##{reminder.priority} | {reminder.service_type} #{combined}"
+    "#{reminder.priority} - #{reminder.service_type} #{combined}"
   end
 end

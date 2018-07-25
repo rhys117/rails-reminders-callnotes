@@ -1,4 +1,7 @@
-<tr id="reminder-<%= reminder.id %>" class="priority-<%= reminder.priority %> <%= "complete" if reminder.complete %>">
+<tr id="reminder-<%= reminder.id %>" class="reminder-item <%= "complete" if reminder.complete %>">
+  <td class="col-md-1 text-right priority-<%= reminder.priority %>">
+    <%= reminder.priority %>
+  </td>
   <td class="col-md-1 text-left">
     <%= link_to reminder.reference, reference_url(reminder.reference), :target => "_blank" %>
   </td>
