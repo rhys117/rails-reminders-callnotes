@@ -25,4 +25,12 @@ module RemindersHelper
     end
     hash_of_objects
   end
+
+  def reminder_priority(reminder)
+    if reminder.complete
+      'complete'
+    else
+      reminder.priority
+    end
+  end
 end
