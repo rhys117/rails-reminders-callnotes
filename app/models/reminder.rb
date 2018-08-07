@@ -8,7 +8,8 @@ class Reminder < ApplicationRecord
   scope :ordered_date_completed_priority, -> { order(date: :ASC, complete: :ASC, priority: :DESC, id: :ASC) }
   scope :ordered_priority, -> { order(priority: :DESC, id: :ASC) }
   validates :user_id, presence: true
-  validates :reference, presence: true
+  validates :reference, presence: true, numericality: { only_integer: true }
+  validates :vocus_ticket, numericality: { allow_blank: true, only_integer: true }
   validates :notes, presence: true, unless: -> (reminder){reminder.check_for.present?}
   validates :date, presence: true, unless: -> (reminder){reminder.select_date.present?}
   validates :service_type, presence: true

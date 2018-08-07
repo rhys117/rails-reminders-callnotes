@@ -1,0 +1,37 @@
+---
+call_info:
+	questions:  
+    - call_type: 
+        q: Call type
+        type: 'select'
+        options: 
+        - ans: Incoming live call 
+          disabled:
+        - ans: Outgoing call
+          disabled:
+        - ans: Outgoing callback request
+          disabled:
+        tooltip: Specify if this is a incoming, or outgoing call, and if it is a callback or not
+        size: 2
+    - phone_number:
+    	  q: Phone Number
+        type: 'text'
+        tooptip: Specify the phone number or if the number was private
+    - call_answer:
+        q: Call answer
+        type: select
+        options:
+        - ans: Spoke to
+          disabled:
+        - ans: Left VM
+          disabled: 
+          - call_type:
+            - Outgoing call
+            - Outgoing callback request
+        - ans: Rang out, no VM
+          disabled:
+          - call_type:
+            - Outgoing call
+            - Outgoing callback request
+        tooltip: Specify if you spoke to customer of if you left VM if there was no answer
+        size: 2

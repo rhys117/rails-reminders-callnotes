@@ -40,12 +40,18 @@ Standard (Offline): |
   Alarm Silence: YELLOW SOLID / YELLOW FLASHING / OFF
 
   -- Customer Availability --
-  If NBN were to organise a service call in the next week, what day would be best between Monday and Friday?:
-  Mornings or Afternoons?:
-  What is the best contact phone number for us to pass on to NBN?:
-  Name of the person who will be on site:
-  What is the best way for SkyMesh get customer updates?: sms / phone / email
-  Provide email/phone number:
+  End-user contact details
+  Primary contact
+  Contact name:
+  Contact number:
+  Contact email (optional):
+
+  Secondary contact (Optional)
+  Contact name - secondary:
+  Contact number - secondary:
+  Contact email - secondary (optional):
+
+  What is the customers preferred method of contact if SkyMesh needs to follow up?: sms/phone/email
   Customer has agreed to leave NTD and CPE powered on: [Yes/No]
 
   -- General Troubleshooting --
@@ -164,12 +170,18 @@ UNIV: |
   Alarm Silence: YELLOW SOLID / YELLOW FLASHING / OFF
 
   -- Customer Availability --
-  If NBN were to organise a service call in the next week, what day would be best between Monday and Friday?:
-  Mornings or Afternoons?:
-  What is the best contact phone number for us to pass on to NBN?:
-  Name of the person who will be on site:
-  What is the best way for SkyMesh get customer updates?: sms / phone / email
-  Provide + email/phone number:
+  End-user contact details
+  Primary contact
+  Contact name:
+  Contact number:
+  Contact email (optional):
+
+  Secondary contact (Optional)
+  Contact name - secondary:
+  Contact number - secondary:
+  Contact email - secondary (optional):
+
+  What is the customers preferred method of contact if SkyMesh needs to follow up?: sms/phone/email
   Customer has agreed to leave NTD and CPE powered on: [Yes/No]
 
   -- General Troubleshooting --

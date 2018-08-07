@@ -32,6 +32,9 @@ class CallNotesController < ApplicationController
     @reminder = Reminder.new
   end
 
+  def version_two
+
+  end
   private
 
   # Never trust parameters from the scary internet, only allow the white list through.

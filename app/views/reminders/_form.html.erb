@@ -6,11 +6,11 @@
   <div class="form-row row">
     <div class="form-group col-md-2">
       <%= f.label :reference %>
-      <%= f.number_field :reference, class: 'form-control input-sm' %>
+      <%= f.text_field :reference, class: 'form-control input-sm', required: true %>
     </div>
     <div class="form-group col-md-2">
       <%= f.label :vocus_ticket %>
-      <%= f.number_field :vocus_ticket, class: 'form-control input-sm' %>
+      <%= f.text_field :vocus_ticket, class: 'form-control input-sm' %>
     </div>
 
     <div class="form-group col-md-3">
@@ -20,7 +20,9 @@
 
     <div class="form-group col-md-2">
       <%= f.label :select_date, 'Remind me in' %>
-      <%= f.select :select_date, {"Today" => 0, "Tomorrow" => 1, "Two days" => 2, "Three days" => 3, "Five days" => 5, "Seven days" => 7}, { prompt: 'select one', selected: @reminder.select_date }, { :class => 'form-control input-sm' } %>
+      <%= f.select :select_date, {"Today" => 0, "Tomorrow" => 1, "Two days" => 2, "Three days" => 3, "Five days" => 5,
+                                  "Seven days" => 7}, { prompt: 'select one', selected: @reminder.select_date },
+                                                      { :class => 'form-control input-sm' } %>
     </div>
 
     <div class="form-group col-md-3">
@@ -42,12 +44,15 @@
 
     <div class="form-group col-md-2">
       <%= f.label :service_type %>
-      <%= f.select :service_type, ["FTTN/B", "FTTP", "HFC", "LTS", "FW", "VOIP/UNIV", "PSTN", "LEGACY SERVICE"], { prompt: 'select one', selected: @reminder.service_type }, class: 'form-control input-sm' %>
+      <%= f.select :service_type, ["FTTN/B", "FTTP", "HFC", "LTS", "FW", "VOIP/UNIV", "PSTN", "LEGACY"],
+                   { prompt: 'select one', selected: @reminder.service_type }, class: 'form-control input-sm',
+                   required: true %>
     </div>
 
     <div class="form-group col-md-2">
       <%= f.label :fault_type %>
-      <%= f.select :fault_type, ["Offline", "Dropouts", "Speed", "Outage", "Migration"], { include_blank: 'optional', selected: @reminder.fault_type }, class: 'form-control input-sm' %>
+      <%= f.select :fault_type, ["Offline", "Dropouts", "Speed", "Outage", "Migration"],
+                   { include_blank: 'optional', selected: @reminder.fault_type }, class: 'form-control input-sm' %>
     </div>
 
     <div class="form-group col-md-3">
@@ -57,7 +62,9 @@
 
     <div class="form-group col-md-2">
       <%= f.label :check_for, "Check for?" %>
-      <%= f.select :check_for, ["online/usage", "customer contact", "nbn response", "vocus response", "work ticket update", "2DayWarning", "resolved"], { include_blank: "optional", selected: @reminder.check_for }, class: 'form-control input-sm' %>
+      <%= f.select :check_for, ["online/usage", "customer contact", "nbn response", "vocus response",
+                                "work ticket update", "2DayWarning", "resolved", "appointment update"],
+                   { include_blank: "optional", selected: @reminder.check_for }, class: 'form-control input-sm' %>
     </div>
   </div>
 

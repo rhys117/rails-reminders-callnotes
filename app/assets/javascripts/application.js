@@ -209,7 +209,8 @@ function escapeRegExp(text) {
 function DeleteLine(line, type) {
   // Deletes line and also blank line afterwards if one
   // searching in reverse so it's always last instance in notes
-    var regex = new RegExp("(?=" + escapeRegExp(line ) + ").*\n?", 'm');
+    $("[data-question='" + line + "']").remove();
+    var regex = new RegExp("(?=" + escapeRegExp(line ) + ":).*\n?", 'm');
     var id = '#call_note_' + type + '_notes';
     var notes = $(id).val();
     var lines = notes.split("\n").reverse();
@@ -229,10 +230,7 @@ function DeleteLine(line, type) {
         lines.splice(index_of_line, 1);
     }
 
-    $("[data-question='" + line + "']").remove();
-
     var removed_line_notes = lines.reverse().join('\n');
-
     $(id).val(removed_line_notes);
 }
 
@@ -258,43 +256,43 @@ function PrependToNotes(selection, type) {
 
 // Presets for reminder create
 function PresetOnlineUsage(){
-  $('#reminder_check_for').val('online/usage')
-  $('#reminder_priority').val('2')
-  $('#reminder_select_date').val('2')
+  $('#reminder_check_for').val('online/usage');
+  $('#reminder_priority').val('2');
+  $('#reminder_select_date').val('2');
 }
 
 function PresetCustomerContact(){
-  $('#reminder_check_for').val('customer contact')
-  $('#reminder_priority').val('2')
-  $('#reminder_select_date').val('5')
+  $('#reminder_check_for').val('customer contact');
+  $('#reminder_priority').val('2');
+  $('#reminder_select_date').val('5');
 }
 
 function PresetNbnResponse(){
-  $('#reminder_check_for').val('nbn response')
-  $('#reminder_priority').val('3')
-  $('#reminder_select_date').val('2')
+  $('#reminder_check_for').val('nbn response');
+  $('#reminder_priority').val('3');
+  $('#reminder_select_date').val('2');
 }
 
 function PresetWorkTicketUpdate(){
-  $('#reminder_check_for').val('work ticket update')
-  $('#reminder_priority').val('2')
-  $('#reminder_select_date').val('2')
+  $('#reminder_check_for').val('work ticket update');
+  $('#reminder_priority').val('2');
+  $('#reminder_select_date').val('2');
 }
 
 function PresetVocusResponse(){
-  $('#reminder_check_for').val('vocus response')
-  $('#reminder_priority').val('3')
-  $('#reminder_select_date').val('2')
+  $('#reminder_check_for').val('vocus response');
+  $('#reminder_priority').val('3');
+  $('#reminder_select_date').val('2');
 }
 
 function Preset2DayWarning(){
-  $('#reminder_check_for').val('2DayWarning')
-  $('#reminder_priority').val('1')
-  $('#reminder_select_date').val('2')
+  $('#reminder_check_for').val('2DayWarning');
+  $('#reminder_priority').val('1');
+  $('#reminder_select_date').val('2');
 }
 
 function PresetResolved(){
-  $('#reminder_check_for').val('resolved')
-  $('#reminder_priority').val('1')
-  $('#reminder_select_date').val('2')
+  $('#reminder_check_for').val('resolved');
+  $('#reminder_priority').val('1');
+  $('#reminder_select_date').val('2');
 }

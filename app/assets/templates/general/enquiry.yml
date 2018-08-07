@@ -41,7 +41,7 @@ Password reset: |
   { Sent Successfully, Unsuccessful - Remote Support }
 COMPONENT - Sent Successfully: |
   Sent customer one time link: Yes/No
-  - confirmed customer could access and change password: Yes/Np
+  - confirmed customer could access and change password: Yes/No
 COMPONENT - Unsuccessful - Remote Support: |
   Customer unable to access email sent to billing account
   - was due to one time link expiring: Yes/No

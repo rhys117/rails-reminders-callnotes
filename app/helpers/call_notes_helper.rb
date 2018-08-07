@@ -162,6 +162,7 @@ module CallNotesHelper
       # split line into question and answers and sort split answers
       next if line.nil?
       question, answer = line.split(':')
+      answer ||= ''
       split_answers = answers_order(answer.split('/'))
 
       # delete blank space in answers
