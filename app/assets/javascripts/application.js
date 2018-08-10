@@ -25,9 +25,6 @@ document.addEventListener("turbolinks:load", function() {
     $('#filter_out').on('keyup', search_and_filter);
     $('#search').on('keyup', search_and_filter);
 
-    $('#filter_out').val(localStorage.getItem("filter_out"));
-    $('#search').val(localStorage.getItem("search"));
-
     if (document.getElementById("search") !== null) {
       search_and_filter();
     }
@@ -53,9 +50,6 @@ document.addEventListener("turbolinks:load", function() {
   function search_and_filter(){
     var searchTerm = $('#search').val().toLowerCase();
     var filterTerm = $('#filter_out').val().toLowerCase();
-
-    localStorage.setItem("search", searchTerm);
-    localStorage.setItem("filter_out", filterTerm);
 
     $('#reminders tbody tr').each(function(){
       var lineStr = $(this).text().toLowerCase();

@@ -1,0 +1,56 @@
+<%= form_for(@call_note, :url => { :action => 'index' }, html: { method: 'post' } ) do |f| %>
+  <div class='form-row row'>
+    <div class='form-group col-md-3'>
+      <%= f.label :call, 'Call Commenced', class: 'd-block' %>
+      <%= f.datetime_select :time, { :discard_day => true, :discard_month => true, :discard_year => true },
+                            class: 'form-control datetime_select' %>
+    </div>
+  </div>
+
+  <% template_form_groups('general', 'call_info').each do |lines| %>
+    <div class='form-row row'>
+      <% lines.each do |line_array| %>
+        <% line_array.each do |_, settings| %>
+          <div class='form-group col-md-<%= settings['size'] %>'>
+            <%= f.label settings['q'].parameterize('_').to_sym, settings['q'] %>
+            <% case settings['type'] %>
+            <% when 'select' %>
+              <%= f.select settings['q'].parameterize('_').to_sym, settings['options'], { prompt: 'select one' },
+                           { class: 'form-control' } %>
+            <% when 'text_field' %>
+              <%= f.text_field settings['q'].parameterize('_'), class: 'form-control' %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+
+      <div class='form-group col-md-2'>
+        <%= f.label :phone_number %>
+        <%= f.text_field :phone_number, class: 'form-control', required: true %>
+      </div>
+
+      <div class="form-group col-md-2">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+
+      <div class='form-group col-md-2'>
+        <%= f.label :id_check %>
+        <%= f.select :id_check, select_options[:id_check], { prompt: 'select one' }, { class: 'form-control' } %>
+      </div>
+    </div>
+
+  <%= render partial: 'call_notes/form_components/templates', locals: { f: f } %>
+
+  <%= render partial: 'call_notes/form_components/note_taking_areas', locals: { f: f } %>
+
+  <%= render partial: 'call_notes/form_components/call_conclusion', locals: { f: f } %>
+
+  <%= render partial: 'call_notes/form_components/correspondence', locals: { f: f, } %>
+  <div class="actions">
+    <%= f.submit 'Generate Notes', class: 'form-control btn-primary' %>
+  </div>
+<% end %>
+</div>

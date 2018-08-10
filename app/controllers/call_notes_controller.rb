@@ -33,7 +33,7 @@ class CallNotesController < ApplicationController
   end
 
   def version_two
-
+    @call_note = CallNote.new
   end
   private
 

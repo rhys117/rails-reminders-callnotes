@@ -1,37 +1,46 @@
 ---
 call_info:
-	questions:  
-    - call_type: 
+  questions:
+    - call_type:
         q: Call type
-        type: 'select'
-        options: 
-        - ans: Incoming live call 
-          disabled:
-        - ans: Outgoing call
-          disabled:
-        - ans: Outgoing callback request
-          disabled:
+        type: select
+        options:
+        - Incoming live call
+        - Outgoing call
+        - Outgoing callback request
         tooltip: Specify if this is a incoming, or outgoing call, and if it is a callback or not
         size: 2
     - phone_number:
-    	  q: Phone Number
-        type: 'text'
-        tooptip: Specify the phone number or if the number was private
+        q: Phone Number
+        type: text_field
+        tooltip: Specify the phone number or if the number was private
+        size: 2
     - call_answer:
         q: Call answer
         type: select
         options:
-        - ans: Spoke to
-          disabled:
-        - ans: Left VM
-          disabled: 
-          - call_type:
-            - Outgoing call
-            - Outgoing callback request
-        - ans: Rang out, no VM
-          disabled:
-          - call_type:
-            - Outgoing call
-            - Outgoing callback request
+        - Spoke to
+        - Left VM
+        - Rang out. No VM option
         tooltip: Specify if you spoke to customer of if you left VM if there was no answer
+        size: 2
+        subsections:
+          Spoke To: spoke_to
+spoke_to:
+  questions:
+    - name:
+        q: Name
+        type: text_field
+        tooltip: Specify who you spoke to
+        size: 2
+    - id_check:
+        q: ID check
+        type: select
+        options:
+        - Confirmed ID
+        - Confirmed as technical advocate
+        - Confirmed as authorised representative
+        - Caller not on account
+        - Unable to confirm ID
+        tooltip: Too confirm callers identity, must verify 3 points of ID [Name, DOB, Address or Phone Number]
         size: 2

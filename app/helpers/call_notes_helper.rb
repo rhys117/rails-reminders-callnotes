@@ -257,4 +257,25 @@ module CallNotesHelper
     !((input_type == 'formatting' && question.length < 1) || input_type == 'components' ||
         question[0..5] == 'Note -')
   end
+
+  def template_form_groups(category, selection)
+    path = "#{::Rails.root}/app/assets/templates_v2"
+    template = YAML.load_file("#{path}/#{category}.yml")[selection]
+
+    lines = []
+    current_line = []
+    width = 12 # matches bootstrap 12 grid
+
+    template['questions'].each do |options|
+      width -= options['size'].to_i
+      if width <= 0
+        lines << current_line
+        current_line = []
+        width = 12
+      end
+      current_line << options
+    end
+    lines << current_line  unless current_line.empty?
+    lines
+  end
 end

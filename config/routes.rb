@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   end
 
   get '/auto_manage', to: 'reminders#auto_manage'
-  get '/call_notes_version_two' => 'call_notes#version_two'
+  get '/call_notes_v2' => 'call_notes#version_two'
   resources :call_notes do
     post '/call_notes' => 'call_notes#index', :as => 'index'
   end
