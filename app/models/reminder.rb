@@ -16,6 +16,8 @@ class Reminder < ApplicationRecord
   validates :priority, presence: true
   validates_inclusion_of :complete, :in => [true, false]
 
+  before_validation :clean_data
+
 
 def self.search(search)
   if Rails.env.development?
@@ -37,8 +39,17 @@ end
       end
     end
 
+    def clean_data
+      # trim whitespace from beginning and end of string attributes
+      attribute_names.each do |name|
+        if send(name).respond_to?(:strip)
+          send("#{name}=", send(name).strip)
+        end
+      end
+    end
+
     def normalize_blank_values
-      attributes.each do |column, value|
+      attributes.each do |column, _|
         self[column].present? || self[column] = nil
       end
     end

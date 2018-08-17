@@ -258,13 +258,25 @@ module CallNotesHelper
         question[0..5] == 'Note -')
   end
 
-  def template_form_groups(category, selection)
+  def load_template(category, selection)
     path = "#{::Rails.root}/app/assets/templates_v2"
-    template = YAML.load_file("#{path}/#{category}.yml")[selection]
+    YAML.load_file("#{path}/#{category}.yml")[selection]
+  end
 
+  def process_template(template)
     lines = []
     current_line = []
     width = 12 # matches bootstrap 12 grid
+
+    #
+    results = []
+    template['questions'].each do |options|
+      results << options
+      if options['subsections']
+
+      end
+    end
+    #
 
     template['questions'].each do |options|
       width -= options['size'].to_i
@@ -277,5 +289,11 @@ module CallNotesHelper
     end
     lines << current_line  unless current_line.empty?
     lines
+  end
+
+  def template_form_groups(category, selection)
+    template = load_template(category, selection)
+
+    process_template(template)
   end
 end

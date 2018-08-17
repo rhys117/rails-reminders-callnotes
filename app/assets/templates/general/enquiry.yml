@@ -20,36 +20,15 @@ COMPONENT - Plan upgrade: |
   - confirmed customer understood and agreed to cost: Yes/No
   >> processed: Yes/No
   Pasted sams dialog confirmation/s: textarea
+
+  Explained to customer would take up to 3 hours to process: Yes/No
 COMPONENT - Data block: |
   Customer requested data block
   - confirmed customer understood and agreed to cost: Yes/No
   >> processed: Yes/No
   Pasted sams dialog confirmation: textarea
-Inbox Full: |
-  Customer is calling to report inbox is full
 
-  Customer uses client: thunderbird/outlook/live mail/webmail/other
-  - confirmed customers email address:
-
-  Does inbox appear to be full: yes/no
-  - discussed how to delete mail: yes/no
-  - discussed not receiving mail from time inbox was full: yes/no
-Password reset: |
-  Customer is requesting a password reset
-  - confirmed email address:
-  - customer has access to billing email: Yes/No
-  { Sent Successfully, Unsuccessful - Remote Support }
-COMPONENT - Sent Successfully: |
-  Sent customer one time link: Yes/No
-  - confirmed customer could access and change password: Yes/No
-COMPONENT - Unsuccessful - Remote Support: |
-  Customer unable to access email sent to billing account
-  - was due to one time link expiring: Yes/No
-
-  Starting Remote Support
-  - pasted link in: Yes/No
-  - confirmed customer could access and change password: Yes/No
-  Ending Remote Support
+  Explained to customer would take up to 3 hours to process: Yes/No
 Setup details: |
   Customer seeking help configuring setup
   - Is it a new service: Yes/No

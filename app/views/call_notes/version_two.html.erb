@@ -26,21 +26,20 @@
     </div>
   <% end %>
 
-      <div class='form-group col-md-2'>
-        <%= f.label :phone_number %>
-        <%= f.text_field :phone_number, class: 'form-control', required: true %>
-      </div>
+  <div class='form-group col-md-2'>
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number, class: 'form-control', required: true %>
+  </div>
 
-      <div class="form-group col-md-2">
-        <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-control' %>
-      </div>
+  <div class="form-group col-md-2">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
 
-      <div class='form-group col-md-2'>
-        <%= f.label :id_check %>
-        <%= f.select :id_check, select_options[:id_check], { prompt: 'select one' }, { class: 'form-control' } %>
-      </div>
-    </div>
+  <div class='form-group col-md-2'>
+    <%= f.label :id_check %>
+    <%= f.select :id_check, select_options[:id_check], { prompt: 'select one' }, { class: 'form-control' } %>
+  </div>
 
   <%= render partial: 'call_notes/form_components/templates', locals: { f: f } %>
 
@@ -53,4 +52,3 @@
     <%= f.submit 'Generate Notes', class: 'form-control btn-primary' %>
   </div>
 <% end %>
-</div>
