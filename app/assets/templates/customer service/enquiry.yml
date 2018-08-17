@@ -1,0 +1,32 @@
+Plan upgrade: |
+  Customer requested plan upgrade
+  - upgrade to start: next billing cycle/immediately
+  - temporary or permanent change: Temporary/Permanent
+  - confirmed customer understood and agreed to cost: Yes/No
+  >> processed: Yes/No
+  Pasted sams dialog confirmation/s: textarea
+Data block: |
+  Customer requested data block
+  - confirmed customer understood and agreed to cost: Yes/No
+  >> processed: Yes/No
+  Pasted sams dialog confirmation: textarea
+
+  Explained to customer would take up to 3 hours to process: Yes/No
+Add advocate: |
+  Customer requesting to add technical advocate to account
+  - Advocate name:
+  >> added advocate in MySkyMesh: Yes/No
+
+  Discussed being able to add advocates in MySkyMesh: Yes/No
+New service, not active: |
+  Customer calling due to new service not yet being active
+
+  Confirmed
+  - nbn ORD complete: Yes/No
+  - SkyMesh provisioning complete: Yes/No
+  { Not complete }
+COMPONENT - Not complete: |
+  Discussed with customer service is still waiting on: nbn order/SkyMesh provisioning
+  - informed customer of expected timeframe until service active: Yes/No
+
+

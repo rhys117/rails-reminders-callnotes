@@ -1,0 +1,49 @@
+Setup: |
+  Customer calling to request assistance in email setup
+
+  Confirmed email address:
+  - client: thunderbird/outlook/live mail/webmail/other
+
+  Discussed with customer
+  - required settings and configuration guides: Yes/No
+  - accessibility via webmail: Yes/No
+  { Requesting 3rd party support }
+COMPONENT - Requesting 3rd party support: |
+  Customer is requesting support for 3rd party product
+  - discussed limitation of 3rd party product support: Yes/No
+  - suggested to customer where to find appropriate support: Yes/No
+Password reset: |
+  Customer is requesting a password reset
+  - confirmed email address:
+  - customer has access to billing email: Yes/No
+  { Sent Successfully, Unsuccessful - Remote Support }
+COMPONENT - Sent Successfully: |
+  Sent customer one time link: Yes/No
+  - confirmed customer could access and change password: Yes/No
+COMPONENT - Unsuccessful - Remote Support: |
+  Customer unable to access email sent to billing account
+  - was due to one time link expiring: Yes/No
+
+  Starting Remote Support
+  - pasted link in: Yes/No
+  - confirmed customer could access and change password: Yes/No
+  Ending Remote Support
+Inbox Full: |
+  Customer is calling to report inbox is full
+
+  Customer uses client: thunderbird/outlook/live mail/webmail/other
+  - confirmed customers email address:
+
+  Does inbox appear to be full: yes/no
+  - discussed how to delete mail: yes/no
+  - discussed not receiving mail from time inbox was full: yes/no
+Unable to send: |
+  Customer calling to report they are unable to send mail
+
+  Confirmed email address:
+  - client: thunderbird/outlook/live mail/webmail/other
+
+  Discussed with customer
+  - ensured customer on SkyMesh network: Yes/No
+  - required settings and configuration guides: Yes/No
+  { Requesting 3rd party support }
