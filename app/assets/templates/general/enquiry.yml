@@ -1,5 +1,11 @@
 Calling to report: 'Customer is calling to report: '
 Calling for update: 'Customer calling for an update on current case: '
+SkyHawk: |
+  SkyHawk results
+  - Confirmed no service redirection: Yes/No
+  - Service shaped at:
+  - Lease status: Active/Inactive
+  - Response to ARP ping: Yes/No
 Known outage: |
   Customer reports service is offline
   - advised customer was part of widespread outage: Yes/No

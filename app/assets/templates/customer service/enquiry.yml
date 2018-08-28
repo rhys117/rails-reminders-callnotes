@@ -1,5 +1,5 @@
 Plan upgrade: |
-  Customer requested plan upgrade
+  Customer requested plan change
   - upgrade to start: next billing cycle/immediately
   - temporary or permanent change: Temporary/Permanent
   - confirmed customer understood and agreed to cost: Yes/No
@@ -28,5 +28,3 @@ New service, not active: |
 COMPONENT - Not complete: |
   Discussed with customer service is still waiting on: nbn order/SkyMesh provisioning
   - informed customer of expected timeframe until service active: Yes/No
-
-

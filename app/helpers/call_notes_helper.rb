@@ -213,10 +213,14 @@ module CallNotesHelper
         'callback' => "Callback for #{params[:call_note]['phone_number']} >> #{call_answer} #{params[:call_note]['name']}"
       },
       :id_check => {
-        'confirmed_id' => "- confirmed ID \n",
-        'confirmed_id_tech' => "- confirmed ID as technical advocate \n",
-        'confirmed_id_auth' => "- confirmed ID as authorised representative \n",
-        'not_on_account' => "- caller not on account \n"
+        'confirmed_id' => "- confirmed ID",
+        'confirmed_id_tech' => "- confirmed ID as technical advocate",
+        'confirmed_id_auth' => "- confirmed ID as authorised representative",
+        'not_on_account' => "- caller not on account"
+      },
+      :not_onsite => {
+        '1' => "- not onsite \n",
+        '0' => ""
       },
       :call_conclusion => {
         'advised_work' => "Advised expected timeframe for #{params[:call_note]['conclusion_condition']} and agreed to contact on #{conclusion_call_update} \n- best contact is: #{params[:call_note]['conclusion_best_contact']}",

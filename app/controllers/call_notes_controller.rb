@@ -40,7 +40,7 @@ class CallNotesController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def call_note_params
     params.require(:call_note).permit(:time, :name, :call_type, :phone_number, :call_answer,
-                                      :id_check, :enquiry_notes, :call_conclusion, :conclusion_condition,
+                                      :id_check, :not_onsite, :enquiry_notes, :call_conclusion, :conclusion_condition,
                                       :conclusion_agreed_contact, :conclusion_contact_date,
                                       :conclusion_best_contact, :work_notes, :correspondence_notes)
   end
