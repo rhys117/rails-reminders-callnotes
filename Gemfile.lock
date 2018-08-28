@@ -212,7 +212,6 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
-  turbolinks (~> 5)
   tzinfo-data
   uglifier
   web-console (>= 3.3.0)
