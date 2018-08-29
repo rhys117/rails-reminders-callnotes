@@ -17,6 +17,7 @@ class Reminder < ApplicationRecord
   validates_inclusion_of :complete, :in => [true, false]
 
   before_validation :clean_data
+  before_validation :complete_false_if_nil
 
 
 def self.search(search)

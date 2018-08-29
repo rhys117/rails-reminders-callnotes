@@ -17,15 +17,14 @@
 //= require bootstrap
 //= require_tree .
 
-document.addEventListener("turbolinks:load", function() {
-  $(document).ready(function(){
+$(document).ready(function(){
     var clipboard = new Clipboard('.copy-text');
 
     $('#filter_out').on('keyup', search_and_filter);
     $('#search').on('keyup', search_and_filter);
 
     if (document.getElementById("search") !== null) {
-      search_and_filter();
+        search_and_filter();
     }
 
     textareaResize($("#call_note_enquiry_notes"), $("#call_note_work_notes"));
@@ -33,35 +32,34 @@ document.addEventListener("turbolinks:load", function() {
 
     // stop enter key from submitting form on notes page but allow in textareas
     if (window.location.pathname == '/call_notes/new') {
-      jQuery(function($) {
-        $(document).on("keydown", function(e) {
-          if (e.which === 13 && !$(e.target).is("textarea")) {
-            e.preventDefault();
-            console.log("ENTER PREVENTED");
-            return;
-          }
+        jQuery(function($) {
+            $(document).on("keydown", function(e) {
+                if (e.which === 13 && !$(e.target).is("textarea")) {
+                    e.preventDefault();
+                    console.log("ENTER PREVENTED");
+                    return;
+                }
+            });
         });
-      });
     }
-  });
+});
 
-  // search and filter on reminder pages
-  function search_and_filter(){
+// search and filter on reminder pages
+function search_and_filter(){
     var searchTerm = $('#search').val().toLowerCase();
     var filterTerm = $('#filter_out').val().toLowerCase();
 
     $('#reminders tbody tr').each(function(){
-      var lineStr = $(this).text().toLowerCase();
-      if(lineStr.indexOf(searchTerm.trim()) === -1 && searchTerm.length > 0){
-        $(this).hide();
-      } else if(lineStr.indexOf(filterTerm.trim()) !== -1 && filterTerm.length > 0) {
-        $(this).hide();
-      } else {
-        $(this).show();
-      }
+        var lineStr = $(this).text().toLowerCase();
+        if(lineStr.indexOf(searchTerm.trim()) === -1 && searchTerm.length > 0){
+            $(this).hide();
+        } else if(lineStr.indexOf(filterTerm.trim()) !== -1 && filterTerm.length > 0) {
+            $(this).hide();
+        } else {
+            $(this).show();
+        }
     });
-  }
-})
+}
 
 // resize work notes to match enquiry notes size at all times
 var textareaResize = function(source, dest) {
