@@ -16,7 +16,12 @@ gem 'jquery-turbolinks'
 gem 'whenever', require: false
 gem 'pry'
 gem 'multi_logger'
+
+# Graphql API
 gem 'graphql'
+gem 'graphql-guard'
+gem 'search_object', '1.2.0'
+gem 'search_object_graphql', '0.1'
 
 gem "font-awesome-rails"
 

@@ -1,13 +1,13 @@
 class GraphqlController < ApplicationController
-  skip_before_filter :verify_authenticity_token
-  
+  skip_before_action :verify_authenticity_token
+
   def execute
     variables = ensure_hash(params[:variables])
     query = params[:query]
     operation_name = params[:operationName]
     context = {
-      # Query context goes here, for example:
-      # current_user: current_user,
+        session: session,
+        current_user: current_user
     }
     result = SampleAppSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result

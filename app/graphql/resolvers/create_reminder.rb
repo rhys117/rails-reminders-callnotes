@@ -1,11 +1,9 @@
 class Resolvers::CreateReminder < GraphQL::Function
   # arguments passed as "args"
   argument :date, !types.String
-  argument :user_id, !types.String
   argument :reference, !types.String
   argument :priority, !types.String
   argument :service_type, !types.String
-
   argument :complete, types.Boolean
   argument :vocus_ticket, types.String
   argument :nbn_search, types.String
@@ -21,10 +19,10 @@ class Resolvers::CreateReminder < GraphQL::Function
   # _obj - is parent object, which in this case is nil
   # args - are the arguments passed
   # _ctx - is the GraphQL context (which would be discussed later)
-  def call(_obj, args, _ctx)
+  def call(_obj, args, ctx)
     Reminder.create!(
         date: args[:date],
-        user_id: args[:user_id],
+        user_id: ctx[:session][:user_id],
         reference: args[:reference],
         priority: args[:priority].to_i,
         service_type: args[:service_type],
