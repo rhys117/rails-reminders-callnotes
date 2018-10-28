@@ -20,13 +20,17 @@ class Reminder < ApplicationRecord
   before_validation :complete_false_if_nil
 
 
-def self.search(search)
-  if Rails.env.development?
-    where("nbn_search LIKE ? OR fault_type LIKE ? OR notes LIKE ? OR service_type LIKE ? OR reference LIKE ? OR check_for LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
-  else
-    where("nbn_search ILIKE ? OR fault_type ILIKE ? OR notes ILIKE ? OR service_type ILIKE ? OR reference ILIKE ? OR check_for ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+  def self.search(search)
+    if Rails.env.development?
+      where("nbn_search LIKE ? OR fault_type LIKE ? OR notes LIKE ? OR service_type LIKE ? OR reference LIKE ? OR check_for LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    else
+      where("nbn_search ILIKE ? OR fault_type ILIKE ? OR notes ILIKE ? OR service_type ILIKE ? OR reference ILIKE ? OR check_for ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    end
   end
-end
+
+  def self.current_incomplete(reminders)
+    reminders.where('date <= ? AND complete= ?', Date.current, 'f')
+  end
 
   private
 
@@ -50,8 +54,6 @@ end
     end
 
     def normalize_blank_values
-      attributes.each do |column, _|
-        self[column].present? || self[column] = nil
-      end
+      attributes.each { |column, _| self[column] = nil unless self[column].present? }
     end
 end

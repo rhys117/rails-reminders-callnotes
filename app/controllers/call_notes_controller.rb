@@ -15,7 +15,7 @@ class CallNotesController < ApplicationController
   end
 
   def selected_template
-    params[:cat_id] = 'general' if params[:cat_id].length < 1
+    params[:cat_id] = 'general' if params[:cat_id].empty?
     templates = YAML.load_file("#{::Rails.root}/app/assets/templates/#{params[:cat_id].downcase}/#{params[:type]}.yml")
     @selected = templates[params[:template]]
     respond_to do |format|
@@ -23,7 +23,6 @@ class CallNotesController < ApplicationController
     end
   end
 
-  # GET /call_notes/new
   def new
     @call_note = CallNote.new
   end
@@ -32,12 +31,13 @@ class CallNotesController < ApplicationController
     @reminder = Reminder.new
   end
 
+  # Work in progress v2 (generate forms off of json >> will then move to form creator and db)
   def version_two
     @call_note = CallNote.new
   end
+
   private
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def call_note_params
     params.require(:call_note).permit(:time, :name, :call_type, :phone_number, :call_answer,
                                       :id_check, :not_onsite, :enquiry_notes, :call_conclusion, :conclusion_condition,

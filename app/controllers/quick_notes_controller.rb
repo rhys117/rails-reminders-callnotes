@@ -24,7 +24,8 @@ class QuickNotesController < ApplicationController
   end
 
   def update
-    if @quick_note = current_user.quick_notes.find(params[:id]).update_attributes(quick_note_params)
+    @quick_note = current_user.quick_notes.find(params[:id]).update_attributes(quick_note_params)
+    if @quick_note
       flash[:success] = "Quick copy updated"
       redirect_to(edit_quick_note_path)
     else

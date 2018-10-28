@@ -12,6 +12,6 @@ Types::QueryType = GraphQL::ObjectType.define do
   end
 
   field :Reminder, !types[Types::ReminderType] do
-    resolve -> (obj, args, ctx) { Reminder.all }
+    resolve -> (obj, args, ctx) { binding.pry; Reminder.all }
   end
 end

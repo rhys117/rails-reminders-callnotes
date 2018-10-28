@@ -4,7 +4,7 @@ class RemindersController < ApplicationController
 
   def home
     if logged_in?
-      @current_reminders = current_user.reminders.ordered_priority.where('date <= ? AND complete= ?', Date.current, 'f')
+      @current_reminders = current_user.current_incomplete_reminders
       @reminder = Reminder.new
       @quick_notes = current_user.quick_notes.all
     end

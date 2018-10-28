@@ -40,9 +40,8 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
-  # Defines a proto-feed.
-  # See "Following users" for the full implementation.
-  def feed
-    Micropost.where("user_id = ?", id)
+  def current_incomplete_reminders
+    users_prioritised = reminders.ordered_priority
+    Reminder.current_incomplete(users_prioritised)
   end
 end

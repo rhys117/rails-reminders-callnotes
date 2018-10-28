@@ -1,4 +1,4 @@
-# Ruby on Rails Reminder, Quick Copy and Call Note Generator.
+# Reminder, Quick Copy and Call Note Generator.
 
 This is a work in progress tool designed to manage work-flow within a call center roll with upstream provider and internal system references. For security purposes much of the configuration and internal information has been stripped. This web application has been developed with a particular companies work-flow already in mind.
 
@@ -33,6 +33,8 @@ nbn_url: https://www.nbnco.com.au/?search=
 ```
 
 ## Call Note Templates
+This was designed with text based templates already in mind. As such it was built to interpret existing designs.  
+
 The call note generator will take templates and create a form based on their contents. When a user makes a selection it will edit the content of a textarea below dynamically with javascript.
 
 Call note templates should be placed the relevant folder in a lib/generator_templates folder. You should include three subdirectories 'email', 'enquiry' and 'work' within generator_templates and each should have at least one yaml file. Each yaml file should be named after it's category. Within the yaml file include the name of the templates as the variable name and the template afterwards as a string.
@@ -64,3 +66,7 @@ If you wish to add quick copy buttons you which will display on the left of the 
 
 ## Call Notes
 Please refer to configuration above.
+
+# Todo
+- Migrate login to Devise
+- Implement v2 of call notes (genreate off of JSON)
