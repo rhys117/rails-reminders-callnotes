@@ -30,10 +30,6 @@ Rails.application.routes.draw do
   get '/call_notes' => 'call_notes#index'
   post '/call_notes' => 'call_notes#create', as: 'create_call_note'
 
-  # resources :call_notes do
-  #   post '/call_notes' => 'call_notes#index', :as => 'index'
-  # end
-
   get '/fetch_correspondence' => 'call_notes#correspondence_categories', as: 'fetch_correspondence'
   get '/fetch_selected_template' => 'call_notes#selected_template', as: 'fetch_selected_template'
   get '/fetch_template_categories' => 'call_notes#template_categories', as: 'fetch_template_categories'

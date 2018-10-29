@@ -21,8 +21,21 @@
 .byebug_history
 
 # ignore template
-app/assets/templates
+app/assets/templates/customer service
+app/assets/templates/deployments
+app/assets/templates/email
+app/assets/templates/ftth
+app/assets/templates/fttn
+app/assets/templates/fw
+app/assets/templates/hfc
+app/assets/templates/lts
+app/assets/templates/offnet
+app/assets/templates/onnet
+app/assets/templates/sales
 
 # ignore sensitive config
 config/sign_up.yml
 config/urls.yml
+
+# ignore correspondence
+app/assets/correspondence
