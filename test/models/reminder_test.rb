@@ -44,9 +44,4 @@ class ReminderTest < ActiveSupport::TestCase
     @reminder.priority = nil
     assert_not @reminder.valid?
   end
-
-  test "complete should be present" do
-    @reminder.complete = nil
-    assert_not @reminder.valid?
-  end
 end

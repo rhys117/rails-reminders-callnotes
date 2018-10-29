@@ -25,9 +25,14 @@ Rails.application.routes.draw do
 
   get '/auto_manage', to: 'reminders#auto_manage'
   get '/call_notes_v2' => 'call_notes#version_two'
-  resources :call_notes do
-    post '/call_notes' => 'call_notes#index', :as => 'index'
-  end
+
+  get '/call_notes/new' => 'call_notes#new', as:'new_call_note'
+  get '/call_notes' => 'call_notes#index'
+  post '/call_notes' => 'call_notes#create', as: 'create_call_note'
+
+  # resources :call_notes do
+  #   post '/call_notes' => 'call_notes#index', :as => 'index'
+  # end
 
   get '/fetch_correspondence' => 'call_notes#correspondence_categories', as: 'fetch_correspondence'
   get '/fetch_selected_template' => 'call_notes#selected_template', as: 'fetch_selected_template'
